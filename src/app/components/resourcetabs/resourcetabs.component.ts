@@ -67,7 +67,6 @@ export class ResourcetabsComponent implements OnInit {
       this.descriptionArray[i].selected = false;
     }
     this.descriptionArray[input].selected = true;
-    console.log(this.descriptionArray);
   }
 
   ngOnInit(): void {
