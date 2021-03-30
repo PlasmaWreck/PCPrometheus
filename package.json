@@ -22,7 +22,9 @@
     "@angular/router": "~11.2.0",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "angular-routing": "^0.3.1",
+    "awesome": "0.0.7",
     "bootstrap": "^5.0.0-beta3",
+    "font": "0.0.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
