@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { ComputerBuildingComponent } from './pages/computer-building/computer-building.component';
-
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 
