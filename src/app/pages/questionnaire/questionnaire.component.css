@@ -1,0 +1,12 @@
+.container-fluid{
+    font-family: 'Mitr', sans-serif;
+    font-weight: Regular;
+    color: white;
+    }
+.contentRow{
+    border: 1px solid #FF6D17;
+    opacity: 180%;
+    margin: 0;
+    width: 80%;
+    border-radius: 2px;
+}
