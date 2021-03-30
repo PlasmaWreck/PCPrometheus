@@ -4,10 +4,12 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 
 
 import { PartsdescriptionComponent } from './pages/partsdescription/partsdescription.component'
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
   {path: 'partdescription', component :PartsdescriptionComponent},
-  {path: 'questionnaire', component :QuestionnaireComponent}
+  {path: 'questionnaire', component :QuestionnaireComponent},
+  {path: '', component :HomepageComponent}
 ];
 
 @NgModule({
