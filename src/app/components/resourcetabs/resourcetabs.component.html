@@ -1,38 +1,15 @@
 <div class="container mt-5">
     <div class="row w-75 tabsRow">
-        <div (click)="changeText(0)" [ngClass]="{'selected' : descriptionArray[0].selected}" class="col d-flex flex-column align-items-center">
+        <div (click)="changeText(i)" [ngClass]="{'selected' : descriptionArray[i].selected}"
+            class="col d-flex flex-column align-items-center" *ngFor="let item of descriptionArray; index as i">
             <hr>
-            <p class="my-auto">Processor</p>
-        </div>
-        <div (click)="changeText(1)" [ngClass]="{'selected' : descriptionArray[1].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">MotherBoard</p>
-        </div>
-        <div (click)="changeText(2)" [ngClass]="{'selected' : descriptionArray[2].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">Memory</p>
-        </div>
-        <div (click)="changeText(3)" [ngClass]="{'selected' : descriptionArray[3].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">Graphics Card</p>
-        </div>
-        <div (click)="changeText(4)" [ngClass]="{'selected' : descriptionArray[4].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">Case</p>
-        </div>
-        <div (click)="changeText(5)" [ngClass]="{'selected' : descriptionArray[5].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">Storage Device</p>
-        </div>
-        <div (click)="changeText(6)" [ngClass]="{'selected' : descriptionArray[6].selected}" class="col d-flex flex-column align-items-center">
-            <hr>
-            <p class="my-auto">Power Supply</p>
+            <p class="my-auto">{{descriptionArray[i].partTitle}}</p>
         </div>
     </div>
     <div class="row pt-4 contentRow">
         <div class="col-3">
             <div class="pictureSection">
-                <img class="imageControl" src={{imageArray[arrayIndex]}} alt="Cool">
+                <img class="imageControl" src={{descriptionArray[arrayIndex].imgPath}} alt="Cool">
             </div>
         </div>
         <div class="col-9">

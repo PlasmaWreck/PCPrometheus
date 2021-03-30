@@ -21,7 +21,7 @@
     height: 46px;
     margin-right: 1px;
     padding: 0;
-    transition: transform 250ms;
+    transition: transform 200ms;
 }
 
 .tabsRow .selected{
