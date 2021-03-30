@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
+
+import { PartsdescriptionComponent } from './pages/partsdescription/partsdescription.component'
+
 const routes: Routes = [
-  {path: 'questionnaire', component :QuestionnaireComponent},
+  {path: 'partdescription', component :PartsdescriptionComponent},
+  {path: 'questionnaire', component :QuestionnaireComponent}
 ];
 
 @NgModule({
