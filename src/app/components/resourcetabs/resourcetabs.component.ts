@@ -9,6 +9,16 @@ export class ResourcetabsComponent implements OnInit {
 
   constructor() { }
   arrayIndex: number = 0;
+
+  imageArray = [
+    "assets/images/Processor.png",
+    "assets/images/MotherBoard.png",
+    "assets/images/Memory.png",
+    "assets/images/GraphicsCard.png",
+    "assets/images/Case.png",
+    "assets/images/Storage.png",
+    "assets/images/PowerSupply.png",
+  ];
   
   descriptionArray = [
     {

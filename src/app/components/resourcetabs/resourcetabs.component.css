@@ -43,7 +43,6 @@
     width: 85%;
 }
 
-.contentRow .pictureSection{
-    background-color: hotpink;
-    height:90%
+.imageControl{
+    width: 100%;
 }
