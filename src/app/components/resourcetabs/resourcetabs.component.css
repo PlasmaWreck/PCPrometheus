@@ -1,0 +1,49 @@
+.container{
+    min-width: 1713px;
+}
+
+.tabsRow{
+    font-size: 18px;
+}
+
+.tabsRow hr{
+    border: 1px solid #EF4A34;
+    opacity: 100%;
+    margin: 0;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.tabsRow .col{
+    background-color: #3B5C65;
+    width: 193px;
+    margin-right: 1px;
+    padding: 0;
+}
+
+.contentRow{
+    background-color: #446A74;
+    height: 586px;
+}
+
+.contentRow .h4{
+    font-size: 20px;
+}
+.contentRow hr{
+    border: 1px solid #EF4A34;
+    opacity: 180%;
+    margin: 0;
+    width: 80%;
+    border-radius: 2px;
+}
+
+.contentRow p{
+    font-weight: 300;
+    margin-top: 20px;
+    width: 85%;
+}
+
+.contentRow .pictureSection{
+    background-color: hotpink;
+    height:90%
+}
