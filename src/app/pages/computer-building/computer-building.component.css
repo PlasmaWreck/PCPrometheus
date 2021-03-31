@@ -39,4 +39,10 @@
 .fa-search{
     font-size: 1.6rem;
     transform: translate(.6rem,.4rem);
+    cursor: pointer;
+    
+}
+.fa-search:hover{
+    color: rgb(158, 158, 158);
+    
 }
