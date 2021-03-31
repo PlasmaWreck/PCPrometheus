@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-computer-building',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputerBuildingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dService: DataService) { }
 
   ngOnInit(): void {
+    this.dService.GetData().subscribe(data=>console.log(data));
   }
 
+  
 }
