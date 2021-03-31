@@ -1,9 +1,61 @@
-<div class="container-fluid navExample">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12">
-      <h1>Nav Example</h1>
+    <div class="col-12 topNavbar d-flex align-center my-auto">
+      <img id="navBrand" routerLink="/" class="my-auto ms-2" src="assets/images/NavBrand.png"
+        alt="Pc Prometheus Navbar Brand">
+      <img class="my-auto ms-auto" src="assets/images/IonicSearch.png" alt="Search Icon">
+      <app-search-bar class="my-auto ms-3"></app-search-bar>
+      <img class="my-auto ms-4 me-5" src="assets/images/CartIcon.png" alt="Cart Icon">
+    </div>
+    <div class="col-12 botNavbar d-flex align-items-center">
+
+
+
+        <div class="" ngbDropdown #builderDrop="ngbDropdown">
+          <button class="btn btn-secondary " id="dropdownBuilders" ngbDropdownAnchor
+            (focus)="builderDrop.open()">Computer Builders</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBuilders" class="DM">
+            <button class="w-100" ngbDropdownItem>Builder</button>
+            <button ngbDropdownItem>Another Action</button>
+          </div>
+        </div>
+
+
+
+        <div class="" ngbDropdown #myDrop="ngbDropdown">
+          <button class="btn btn-secondary">Recommended Builds</button>
+        </div>
+
+
+
+
+        <div class="" ngbDropdown #resourcesDrop="ngbDropdown">
+          <button class="btn btn-secondary " id="dropdownResources" ngbDropdownAnchor
+            (focus)="resourcesDrop.open()">PC Building Resources</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownResources" class="DM">
+            <button class="w-100" ngbDropdownItem>Action - 1</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+
+
+
+        <div class="" ngbDropdown #productsDrop="ngbDropdown">
+          <button class="btn btn-secondary " id="dropdownProducts" ngbDropdownAnchor
+            (focus)="productsDrop.open()">Products</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownProducts" class="DM">
+            <button class="w-100" ngbDropdownItem>Action - 1</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+
+        
+      <div class="col-7">
+
+      </div>
     </div>
   </div>
 </div>
 <router-outlet></router-outlet>
-
