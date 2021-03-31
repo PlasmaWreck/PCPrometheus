@@ -12,6 +12,7 @@ import { ComputerBuildingComponent } from './pages/computer-building/computer-bu
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 
 
 
@@ -22,7 +23,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     PartsdescriptionComponent,
     ResourcetabsComponent,
     ComputerBuildingComponent,
-    HomepageComponent
+    HomepageComponent,
+    PartinstallationComponent
 
   ],
   imports: [
