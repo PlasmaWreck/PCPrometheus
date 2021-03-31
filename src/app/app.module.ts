@@ -9,6 +9,7 @@ import { PartsdescriptionComponent } from './pages/partsdescription/partsdescrip
 import { ResourcetabsComponent } from './components/resourcetabs/resourcetabs.component';
 import { ComputerBuildingComponent } from './pages/computer-building/computer-building.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     PartsdescriptionComponent,
     ResourcetabsComponent,
     ComputerBuildingComponent,
-    HomepageComponent
+    HomepageComponent,
+    PartinstallationComponent
 
   ],
   imports: [

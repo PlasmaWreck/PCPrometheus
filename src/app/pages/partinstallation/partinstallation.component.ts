@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-partsdescription',
-  templateUrl: './partsdescription.component.html',
-  styleUrls: ['./partsdescription.component.css']
+  selector: 'app-partinstallation',
+  templateUrl: './partinstallation.component.html',
+  styleUrls: ['./partinstallation.component.css']
 })
-export class PartsdescriptionComponent implements OnInit {
+export class PartinstallationComponent implements OnInit {
+
+  constructor() { }
 
   descriptionArray = [
     {
@@ -51,8 +53,6 @@ export class PartsdescriptionComponent implements OnInit {
       imgPath: "assets/images/PowerSupply.png"
     }
   ]
-
-  constructor() { }
 
   ngOnInit(): void {
   }
