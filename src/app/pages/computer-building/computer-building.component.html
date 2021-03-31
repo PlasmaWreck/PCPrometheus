@@ -10,7 +10,7 @@
         <div class="col-2">
             <!--Filter-->
             <div class="row bg-filter">
-                <div class="col-12 bg-danger">
+                <div class="col-12 bg-danger p-0">
                     <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
                         <button class="btn btn-danger DM text-start" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Part</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM text-center">
@@ -21,10 +21,7 @@
                       </div>
                 </div>
                 <div class="col-12">
-                    <h2 class="py-2">Example Slider</h2>
-                    <div class="custom-slider">
-                        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
-                      </div>
+                    <app-motherboard-filter></app-motherboard-filter>
                 </div>
             </div>
             <!--empty Space-->
@@ -96,7 +93,7 @@
                                 <div class="col-3 d-flex align-items-center">
                                     $349.99
                                 </div>
-                                <div class="col-9">
+                                <div class="col-9 d-flex justify-content-end">
                                     <div class="btn btn-primary"><b>Add to list</b></div>
                                 </div>
                             </div>
