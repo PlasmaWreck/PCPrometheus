@@ -12,7 +12,7 @@ export class PartsdescriptionComponent implements OnInit {
       partTitle: "Processor",
       descTitle: "Processor",
       description:"A central processing unit (CPU), also called a central processor, main processor or just processor, is the brain of the computer. It carries out all of the tasks and does the heavy lifting. It's probably the most important part of the computer and can also be expensive. We recommend AMD or Intel, AMD has the Ryzen and Threadripper series. Intel has a lot of choices but we recommend anything over a 7th Gen i5 or i7.",
-      selected: false,
+      selected: true,
       imgPath: "assets/images/Processor.png"
     },
     {

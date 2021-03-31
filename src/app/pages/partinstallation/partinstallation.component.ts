@@ -14,7 +14,7 @@ export class PartinstallationComponent implements OnInit {
       partTitle: "Case",
       descTitle: "Opening the Computer Case:",
       description: "  Most brands make it very easy to access your computer case now. Often you can take of all sides of a computer for ease of access to the inner components. However, here we will just be focusing on the side panels. Most computer cases follow one of two ways of securing the side panels to the case. The first, most common with metal and plastic sides of a case, the panel is slide on from the back of the computer and then secured with screws so it wont pop off the case. The other, more common on glass panels in cases, has the panel lined up with four holes in the corners of the case. These are simply placed in the designated slot and secured with screws in said four corners. To open up the first type of panel, simply locate the rear screws and unscrew them to allow you to slide off the side panel. To remove the second type of panel locate to locations of the screws on the panels, unscrew them, and carefully remove the panel from the case.",
-      selected: false,
+      selected: true,
       imgPath: "assets/images/Case.png"
     },
     {

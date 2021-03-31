@@ -4,9 +4,40 @@
     color: white;
     }
 .contentRow{
-    border: 1px solid #FF6D17;
+    border: 2px solid #FF6D17;
     opacity: 180%;
     margin: 0;
     width: 80%;
     border-radius: 2px;
+}
+
+.easySteps{
+    padding-top: 125px;
+}
+.easySteps2{
+    padding-top: 50px;
+}
+
+.mainUse{
+    padding-top: 200px;
+}
+
+.verticalBorder{
+    border: 1px solid #FF6D17;
+    opacity: 180%;
+    margin: 0;
+    height: 85%;
+    border-radius: 2px;
+    margin-top: 30px;
+}
+
+.orangeFont{
+    color:#FF6D17;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-decoration: underline;
+}
+
+.grayBackground{
+    background-color: gray;
 }
