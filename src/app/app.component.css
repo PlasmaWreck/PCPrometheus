@@ -21,7 +21,6 @@
     background-color: #3B5C65;
     min-height: 50px;
     font-size: 20px;
-    letter-spacing: -40px;
 }
 
 .botNavbar 
@@ -34,8 +33,36 @@
     outline: none !important;
     box-shadow: none !important;
     font-size: 20px;
+    height:100%;
+    font-weight:300;
     letter-spacing: -1px;
 }
+
+.dropdown-menu{
+    width: 100%;
+    border-radius: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color:#24363B;
+    text-align: center;
+}
+
+.dropdown-item{
+    color: #ffffff;
+    font-size:15px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    word-spacing: -3px;
+}
+
+.dropdown-item:hover{
+    background-color: #ffffff31;
+
+}
+
 
 .dropdown-toggle::after{
     vertical-align: middle;

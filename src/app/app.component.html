@@ -7,41 +7,40 @@
       <app-search-bar class="my-auto ms-3"></app-search-bar>
       <img class="my-auto ms-4 me-5" src="assets/images/CartIcon.png" alt="Cart Icon">
     </div>
-    <div class="col-12 botNavbar d-flex align-items-center">
+    <div class="col-12 botNavbar p-0 d-flex align-items-center">
 
 
 
-        <div class="" ngbDropdown #builderDrop="ngbDropdown">
+        <div class="h-100" ngbDropdown #builderDrop="ngbDropdown">
           <button class="btn btn-secondary " id="dropdownBuilders" ngbDropdownAnchor
             (focus)="builderDrop.open()">Computer Builders</button>
           <div ngbDropdownMenu aria-labelledby="dropdownBuilders" class="DM">
-            <button class="w-100" ngbDropdownItem>Builder</button>
-            <button ngbDropdownItem>Another Action</button>
+            <button routerLink="/ComputerBuilding" class="w-100" ngbDropdownItem>Component Picker</button>
+            <button routerLink="/questionnaire" ngbDropdownItem>Prometheus' Path</button>
           </div>
         </div>
 
 
 
-        <div class="" ngbDropdown #myDrop="ngbDropdown">
-          <button class="btn btn-secondary">Recommended Builds</button>
+        <div class="h-100" ngbDropdown #myDrop="ngbDropdown">
+          <button routerLink="/" class="btn btn-secondary">Recommended Builds</button>
         </div>
 
 
 
 
-        <div class="" ngbDropdown #resourcesDrop="ngbDropdown">
+        <div class="h-100" ngbDropdown #resourcesDrop="ngbDropdown">
           <button class="btn btn-secondary " id="dropdownResources" ngbDropdownAnchor
             (focus)="resourcesDrop.open()">PC Building Resources</button>
           <div ngbDropdownMenu aria-labelledby="dropdownResources" class="DM">
-            <button class="w-100" ngbDropdownItem>Action - 1</button>
-            <button ngbDropdownItem>Another Action</button>
-            <button ngbDropdownItem>Something else is here</button>
+            <button ngbDropdownItem>The Parts that Make A Computer</button>
+            <button ngbDropdownItem>Putting The Pieces Together</button>
           </div>
         </div>
 
 
 
-        <div class="" ngbDropdown #productsDrop="ngbDropdown">
+        <div class="h-100" ngbDropdown #productsDrop="ngbDropdown">
           <button class="btn btn-secondary " id="dropdownProducts" ngbDropdownAnchor
             (focus)="productsDrop.open()">Products</button>
           <div ngbDropdownMenu aria-labelledby="dropdownProducts" class="DM">
@@ -51,7 +50,7 @@
           </div>
         </div>
 
-        
+
       <div class="col-7">
 
       </div>
