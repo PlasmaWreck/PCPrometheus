@@ -11,11 +11,20 @@
             <!--Filter-->
             <div class="row bg-filter">
                 <div class="col-12 bg-danger">
-                    <h2>Select Part</h2>
+                    <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
+                        <button class="btn btn-danger DM text-start" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Part</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM text-center">
+                          <button class="w-100" ngbDropdownItem>Action - 1</button>
+                          <button ngbDropdownItem >Another Action</button>
+                          <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                      </div>
                 </div>
                 <div class="col-12">
-                    <label for="customRange1" class="form-label">Price</label>
-                    <input type="range" class="form-range" id="customRange1">
+                    <h2 class="py-2">Example Slider</h2>
+                    <div class="custom-slider">
+                        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+                      </div>
                 </div>
             </div>
             <!--empty Space-->
