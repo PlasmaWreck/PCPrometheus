@@ -1,5 +1,6 @@
-import { LabelType, Options } from '@angular-slider/ngx-slider';
+
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-computer-building',
@@ -8,24 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputerBuildingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dService: DataService) { }
 
   ngOnInit(): void {
+    this.dService.GetData().subscribe(data=>console.log(data));
   }
-  minValue: number = 0;
-  maxValue: number = 500;
-  options: Options = {
-    floor: 0,
-    ceil: this.maxValue,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return "<b>Min price:</b> $" + value;
-        case LabelType.High:
-          return "<b>Max price:</b> $" + value;
-        default:
-          return "$" + value;
-      }
-    }
-  };
+
+  
 }

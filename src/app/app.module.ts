@@ -11,8 +11,12 @@ import { ComputerBuildingComponent } from './pages/computer-building/computer-bu
 
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
+import { MotherboardFilterComponent } from './components/ComputerBuilding/motherboard-filter/motherboard-filter.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
+
 
 
 
@@ -26,12 +30,17 @@ import { PartinstallationComponent } from './pages/partinstallation/partinstalla
     HomepageComponent,
     PartinstallationComponent
 
+
+    MotherboardFilterComponent,
+
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgxSliderModule
+    NgxSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
