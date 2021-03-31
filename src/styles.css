@@ -2,3 +2,16 @@
 body{
     background-color: #182023;;
 }
+
+.custom-slider .ngx-slider .ngx-slider-selection {
+    background: rgb(255, 255, 255) !important;
+  }
+  .custom-slider .ngx-slider .ngx-slider-pointer-min {
+      background-color: rgb(255, 255, 255);
+  }
+  .custom-slider .ngx-slider .ngx-slider-pointer-max {
+    background-color: rgb(255, 255, 255);
+}
+  .custom-slider .ngx-slider .ngx-slider-bubble {
+    color: white;
+}

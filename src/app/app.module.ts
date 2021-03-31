@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartsdescriptionComponent } from './pages/partsdescription/partsdescription.component';
 import { ResourcetabsComponent } from './components/resourcetabs/resourcetabs.component';
 import { ComputerBuildingComponent } from './pages/computer-building/computer-building.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ComputerBuildingComponent } from './pages/computer-building/computer-bu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
