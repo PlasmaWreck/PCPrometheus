@@ -10,14 +10,23 @@
         <div class="col-2 m-0">
             <!--Filter-->
             <div class="row bg-filter">
-                <div class="col-12 bg-danger p-0">
+                <div class="col-12 p-0">
                     <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
-                        <button class="btn btn-danger DM text-start" id="dropdownManual" ngbDropdownAnchor
+                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
                             (focus)="myDrop.open()">Select Part</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM text-center">
-                            <button class="w-100" ngbDropdownItem>Action - 1</button>
-                            <button ngbDropdownItem>Another Action</button>
-                            <button ngbDropdownItem>Something else is here</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
+                            <button ngbDropdownItem>CPU</button>
+                            <button ngbDropdownItem>CPU Cooler</button>
+                            <button ngbDropdownItem>Motherboard</button>
+                            <button ngbDropdownItem>Memory</button>
+                            <button ngbDropdownItem>Storage</button>
+                            <button ngbDropdownItem>Video Card</button>
+                            <button ngbDropdownItem>Power Supply</button>
+                            <button ngbDropdownItem>Optical Drive</button>
+                            <button ngbDropdownItem>Operating System</button>
+                            <button ngbDropdownItem>Case</button>
+                            
+                            
                         </div>
                     </div>
                 </div>

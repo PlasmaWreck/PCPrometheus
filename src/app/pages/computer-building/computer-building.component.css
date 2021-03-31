@@ -28,6 +28,18 @@
 }
 .DM {
     width: 100%;
+}
+.Select-Parts-Dropdown{
+    background-color: #EF4A34 !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    -webkit-text-stroke: .9px black;
+    -webkit-text-fill-color: white;
+    border-radius: 0%;
+    width: 100%;
     margin-left: 0px;
     margin-right: 0% !important;
+}
+.xx{
+
 }

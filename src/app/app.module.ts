@@ -28,7 +28,7 @@ import { PartinstallationComponent } from './pages/partinstallation/partinstalla
     ResourcetabsComponent,
     ComputerBuildingComponent,
     HomepageComponent,
-    PartinstallationComponent
+    PartinstallationComponent,
 
 
     MotherboardFilterComponent,
