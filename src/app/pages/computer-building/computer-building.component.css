@@ -6,11 +6,7 @@
     margin-left: 17rem;
     margin-right: 17rem;
 }
-.item_bar{
-    background-color: #24363B;
-    
-    border-bottom: rgb(175, 175, 175) solid .001rem;
-}
+
 .spec_title{
     border-bottom: rgb(175, 175, 175) solid .001rem;
 }
