@@ -1,5 +1,8 @@
 .hr-tag{
-    color: #FF6D17;
+    border: 1px solid #FF6D17;
+    margin-top: 5px ;
+    opacity: 100%;
+    border-radius: 2px;
     margin-left: 17rem;
     margin-right: 17rem;
 }
