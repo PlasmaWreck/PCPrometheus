@@ -1,20 +1,12 @@
-
 .container-fluid{
     font-family: 'Mitr', sans-serif;
     font-weight: Regular;
     color: white;
-}
-
-.title{
-    color:white;
-}
-.title h1{
-    font-size: 50px;
-}
-.title hr{
+    }
+.contentRow{
     border: 1px solid #FF6D17;
-    margin-top: 5px ;
-    opacity: 100%;
-    min-width: 987px;
+    opacity: 180%;
+    margin: 0;
+    width: 80%;
     border-radius: 2px;
 }
