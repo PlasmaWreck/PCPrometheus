@@ -85,36 +85,14 @@
                         <div class="spec_title col-3">Price</div>
                     </div>
                     <!--//Item-->
-                    <div class="row item_bar py-3 d-flex align-items-center">
-                        <div class=" col-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    Image here
-                                </div>
-                                <div class="col-8">
-                                    Ryzen 5G ultra fart
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">Manufacturer</div>
-                        <div class="col-1">8</div>
-                        <div class="col-1">3.8GHz</div>
-                        <div class="col-2">16</div>
-                        <div class="col-3">
-                            <div class="row">
-                                <div class="col-3 d-flex align-items-center">
-                                    $349.99
-                                </div>
-                                <div class="col-9 d-flex justify-content-end">
-                                    <div class="btn btn-primary"><b>Add to list</b></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div *ngFor="let item of itemArray; let i = index ">
+                        <app-item-box index="{{i}}" name="{{item.name}}" Manuf="{{item.Manufacturer}}" Cores="{{item.Cores}}" GHz="{{item.GHz}}" Threads="{{item.Threads}}" Price="{{item.Price}}" ></app-item-box>
                     </div>
+                    
+                    
                     <!--//Item-->
 
                 </div>
-
 
 
             </div>

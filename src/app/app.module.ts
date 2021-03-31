@@ -15,6 +15,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { RecbuildComponent } from './pages/recbuild/recbuild.component';
+import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-box.component';
 
 
 
@@ -30,7 +31,8 @@ import { RecbuildComponent } from './pages/recbuild/recbuild.component';
     MotherboardFilterComponent,
     HomepageComponent,
     SearchBarComponent,
-    RecbuildComponent
+    RecbuildComponent,
+    ItemBoxComponent
 
   ],
   imports: [
