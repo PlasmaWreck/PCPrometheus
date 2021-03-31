@@ -12,19 +12,20 @@
             <div class="row bg-filter">
                 <div class="col-12 bg-danger">
                     <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
-                        <button class="btn btn-danger DM text-start" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Select Part</button>
+                        <button class="btn btn-danger DM text-start" id="dropdownManual" ngbDropdownAnchor
+                            (focus)="myDrop.open()">Select Part</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM text-center">
-                          <button class="w-100" ngbDropdownItem>Action - 1</button>
-                          <button ngbDropdownItem >Another Action</button>
-                          <button ngbDropdownItem>Something else is here</button>
+                            <button class="w-100" ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-12">
                     <h2 class="py-2">Example Slider</h2>
                     <div class="custom-slider">
                         <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
-                      </div>
+                    </div>
                 </div>
             </div>
             <!--empty Space-->
@@ -64,9 +65,9 @@
                         <div class="spec_title col-3">
                             <div class="row">
                                 <div class="col-4"></div>
-                            <div class="col-8">
-                                <b>Name</b>
-                            </div>
+                                <div class="col-8">
+                                    <b>Name</b>
+                                </div>
                             </div>
                         </div>
                         <div class="spec_title col-2">Manufacturer</div>
