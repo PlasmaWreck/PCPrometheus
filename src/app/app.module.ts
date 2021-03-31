@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-
+import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 
 
 
@@ -29,7 +29,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     PartinstallationComponent,
     MotherboardFilterComponent,
     HomepageComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    RecbuildComponent
+
   ],
   imports: [
     BrowserModule,
