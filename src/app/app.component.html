@@ -23,7 +23,7 @@
 
 
         <div class="h-100" ngbDropdown #myDrop="ngbDropdown">
-          <button routerLink="/" class="btn btn-secondary">Recommended Builds</button>
+          <button routerLink="/recbuild" class="btn btn-secondary">Recommended Builds</button>
         </div>
 
 
@@ -33,8 +33,8 @@
           <button class="btn btn-secondary " id="dropdownResources" ngbDropdownAnchor
             (focus)="resourcesDrop.open()">PC Building Resources</button>
           <div ngbDropdownMenu aria-labelledby="dropdownResources" class="DM">
-            <button ngbDropdownItem>The Parts that Make A Computer</button>
-            <button ngbDropdownItem>Putting The Pieces Together</button>
+            <button routerLink="/partdescription" ngbDropdownItem>The Parts that Make A Computer</button>
+            <button routerLink="/partinstallation" ngbDropdownItem>Putting The Pieces Together</button>
           </div>
         </div>
 

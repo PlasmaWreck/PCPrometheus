@@ -15,7 +15,6 @@ const routes: Routes = [
   {path: 'partdescription', component :PartsdescriptionComponent}, 
   {path: 'ComputerBuilding', component :ComputerBuildingComponent},
   {path: 'questionnaire', component :QuestionnaireComponent},
-
   {path: 'partinstallation', component: PartinstallationComponent},
   {path: 'recbuild', component:RecbuildComponent},
   {path: '', component :HomepageComponent}
