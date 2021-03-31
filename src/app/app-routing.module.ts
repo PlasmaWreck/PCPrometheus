@@ -7,11 +7,13 @@ import { QuestionnaireComponent } from './pages/questionnaire/questionnaire.comp
 
 import { PartsdescriptionComponent } from './pages/partsdescription/partsdescription.component'
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 
 const routes: Routes = [
   {path: 'partdescription', component :PartsdescriptionComponent}, 
   {path: 'ComputerBuilding', component :ComputerBuildingComponent},
   {path: 'questionnaire', component :QuestionnaireComponent},
+  {path: 'partinstallation', component: PartinstallationComponent},
   {path: '', component :HomepageComponent}
 ];
 

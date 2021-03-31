@@ -15,6 +15,7 @@ import { MotherboardFilterComponent } from './components/ComputerBuilding/mother
 import { HttpClientModule } from '@angular/common/http';
 
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 
 
 
@@ -26,6 +27,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     PartsdescriptionComponent,
     ResourcetabsComponent,
     ComputerBuildingComponent,
+    HomepageComponent,
+    PartinstallationComponent
+
 
     MotherboardFilterComponent,
 
