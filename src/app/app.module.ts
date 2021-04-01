@@ -16,6 +16,7 @@ import { PartinstallationComponent } from './pages/partinstallation/partinstalla
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-box.component';
+import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.component';
 
 
 
@@ -32,7 +33,8 @@ import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-bo
     HomepageComponent,
     SearchBarComponent,
     RecbuildComponent,
-    ItemBoxComponent
+    ItemBoxComponent,
+    HollowBtnComponent
 
   ],
   imports: [
