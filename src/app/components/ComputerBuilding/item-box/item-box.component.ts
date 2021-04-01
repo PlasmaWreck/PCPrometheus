@@ -18,6 +18,7 @@ export class ItemBoxComponent implements OnInit {
   @Input () Threads: string;
   @Input () Price: string;
   @Input () index: string;
+  @Input () thumbnail: string;
   GetColor(indx){
     if(indx % 2 == 0){
       return "even-bg"

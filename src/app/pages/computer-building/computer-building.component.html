@@ -85,8 +85,8 @@
                         <div class="spec_title col-3">Price</div>
                     </div>
                     <!--//Item-->
-                    <div *ngFor="let item of itemArray; let i = index ">
-                        <app-item-box index="{{i}}" name="{{item.name}}" Manuf="{{item.Manufacturer}}" Cores="{{item.Cores}}" GHz="{{item.GHz}}" Threads="{{item.Threads}}" Price="{{item.Price}}" ></app-item-box>
+                    <div *ngFor="let item of array; let i = index ">
+                        <app-item-box thumbnail="{{item.images[1].href}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.regularPrice}}" ></app-item-box>
                     </div>
                     
                     

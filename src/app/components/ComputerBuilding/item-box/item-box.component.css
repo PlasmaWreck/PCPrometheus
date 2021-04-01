@@ -7,3 +7,10 @@
 .even-bg{
     background-color: #24363B;
 }
+.thumbnail{
+    width: 4rem;
+    height: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
+    
+}
