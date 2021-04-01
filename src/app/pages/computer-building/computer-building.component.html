@@ -7,15 +7,33 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-2">
+        <div class="col-2 m-0">
             <!--Filter-->
             <div class="row bg-filter">
-                <div class="col-12 bg-danger">
-                    <h2>Select Part</h2>
+                <div class="col-12 p-0">
+                    <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
+                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
+                            (focus)="myDrop.open()">Select Part</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
+                            <button ngbDropdownItem>CPU</button>
+                            <button ngbDropdownItem>CPU Cooler</button>
+                            <button ngbDropdownItem>Motherboard</button>
+                            <button ngbDropdownItem>Memory</button>
+                            <button ngbDropdownItem>Storage</button>
+                            <button ngbDropdownItem>Video Card</button>
+                            <button ngbDropdownItem>Power Supply</button>
+                            <button ngbDropdownItem>Optical Drive</button>
+                            <button ngbDropdownItem>Operating System</button>
+                            <button ngbDropdownItem>Case</button>
+                            
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12">
-                    <label for="customRange1" class="form-label">Price</label>
-                    <input type="range" class="form-range" id="customRange1">
+
+                    <app-motherboard-filter></app-motherboard-filter>
+
                 </div>
             </div>
             <!--empty Space-->
@@ -36,10 +54,10 @@
                         <div class="col-6 d-flex justify-content-end">
                             <div class="row">
                                 <div class="col-2">
-                                    <i class="fav fa-500px"></i>
+                                    <i class="fas fa-search"></i>
                                 </div>
                                 <div class="col-10">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Search"
+                                    <input class="form-control form-control-default" type="text" placeholder="Search"
                                         aria-label=".form-control-lg example">
                                 </div>
                             </div>
@@ -55,9 +73,9 @@
                         <div class="spec_title col-3">
                             <div class="row">
                                 <div class="col-4"></div>
-                            <div class="col-8">
-                                <b>Name</b>
-                            </div>
+                                <div class="col-8">
+                                    <b>Name</b>
+                                </div>
                             </div>
                         </div>
                         <div class="spec_title col-2">Manufacturer</div>
@@ -67,36 +85,14 @@
                         <div class="spec_title col-3">Price</div>
                     </div>
                     <!--//Item-->
-                    <div class="row item_bar py-3 d-flex align-items-center">
-                        <div class=" col-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    Image here
-                                </div>
-                                <div class="col-8">
-                                    Ryzen 5G ultra fart
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">Manufacturer</div>
-                        <div class="col-1">8</div>
-                        <div class="col-1">3.8GHz</div>
-                        <div class="col-2">16</div>
-                        <div class="col-3">
-                            <div class="row">
-                                <div class="col-3 d-flex align-items-center">
-                                    $349.99
-                                </div>
-                                <div class="col-9">
-                                    <div class="btn btn-primary"><b>Add to list</b></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div *ngFor="let item of array; let i = index ">
+                        <app-item-box thumbnail="{{item.images[1].href}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.regularPrice}}" ></app-item-box>
                     </div>
+                    
+                    
                     <!--//Item-->
 
                 </div>
-
 
 
             </div>

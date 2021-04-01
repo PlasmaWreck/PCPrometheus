@@ -1,0 +1,19 @@
+.hol_btn{
+    border: 2px solid rgba(58, 133, 191, 0.75);
+  border-radius: 40px;
+  border-color: #FF6D17;
+  
+  
+}
+.hol_btn:hover{
+    background-color: #FF6D17;
+    color: white;
+}
+.hol_btn:active{
+    background-color:#994413;
+  border-color: #994413;
+
+}
+.hol_btn:focus{
+  box-shadow: inset 0 1px 1px #FF6D17, 0 0 16px #ff6c1700;
+}
