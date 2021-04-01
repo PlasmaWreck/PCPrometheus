@@ -15,6 +15,7 @@ export class HollowBtnComponent implements OnInit {
     if(Text){
       return Text
     }else{
+      //this is the default text and reminder of what attribute to use to input text
       return "{{BtnText}}"
     }
   }
