@@ -10,11 +10,15 @@ import { DataService } from 'src/app/service/data.service';
 export class ComputerBuildingComponent implements OnInit {
 
   constructor(private dService: DataService) { }
-
+  array = []
   ngOnInit(): void {
-    this.dService.GetData().subscribe(data=>console.log(data));
+    this.dService.GetData().subscribe(data=>this.array = data.products);
+    this.dService.GetData().subscribe(data=>console.log(data.products));
+    
+    
   }
-
+  
+  
   itemArray = [
     {
       "name": "Fart",
