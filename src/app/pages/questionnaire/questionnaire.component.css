@@ -3,11 +3,22 @@
     font-weight: Regular;
     color: white;
     }
+.lightFont{
+    font-weight: lighter;
+}
 .contentRow{
     border: 2px solid #FF6D17;
     opacity: 180%;
     margin: 0;
     width: 80%;
+    border-radius: 2px;
+}
+
+.cardBorder{
+    border: 1px solid #FF6D17;
+    opacity: 180%;
+    margin: 0;
+    width: 100%;
     border-radius: 2px;
 }
 
@@ -22,6 +33,10 @@
     padding-top: 200px;
 }
 
+.spendingHeader{
+    padding-top: 150px;
+}
+
 .verticalBorder{
     border: 1px solid #FF6D17;
     opacity: 180%;
@@ -33,11 +48,75 @@
 
 .orangeFont{
     color:#FF6D17;
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: .5em;
+    margin-right: .5em;
     text-decoration: underline;
+    font-weight: lighter;
 }
 
 .grayBackground{
     background-color: gray;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.moveLeft{
+    margin-left: 9%;
+}
+
+.moveLeft2{
+    margin-left: 23%;
+}
+
+.moveRight{
+    margin-right: 9%;
+}
+
+.cardColor{
+    background-color:  #24363B;
+}
+
+.wrapper{
+    max-height:550px;
+    background-color: gray;
+    overflow-y: auto;
+    max-width: 85%;
+    margin-left: 8%;
+    text-align: center;
+}
+
+.buttonColor{
+    background-color:#ff6c1700;
+    border-color: #FF6D17;
+    border:#FF6D17 solid;
+}
+
+.wrapper2{
+    max-height:600px;
+    background-color: gray;
+    display: flex;
+    overflow-x: auto;
+    max-width: 800px;
+}
+
+.wrapper2 .item{
+    min-width: 375px;
+    height: 560px;
+    text-align: center;
+}
+
+.alignStart{
+    display: flex;
+    align-items: flex-start;
+}
+.card-text{
+    text-align: start;
+}
+
+.marginTop{
+    margin-top: 50px;
+}
+
+.priceBtn{
+    margin-left: 175px;
 }
