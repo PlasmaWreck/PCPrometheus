@@ -18,6 +18,7 @@ import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-box.component';
 import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
+import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
 
 
 
@@ -36,7 +37,8 @@ import { GamingBuildComponent } from './pages/gaming-build/gaming-build.componen
     RecbuildComponent,
     ItemBoxComponent,
     HollowBtnComponent,
-    GamingBuildComponent
+    GamingBuildComponent,
+    PartsDescriptionComponent
 
   ],
   imports: [

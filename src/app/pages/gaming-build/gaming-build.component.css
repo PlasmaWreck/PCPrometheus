@@ -1,0 +1,29 @@
+.container-overflow{
+    overflow-x: hidden;
+}
+.gamingBuildHeroBG{
+   background-image: linear-gradient(to right bottom,blue, white);
+}
+.HeroCard_Top{
+    background-color: #182023;
+    border-bottom: solid .2rem #FF6D17;
+}
+.HeroCard_Bottom{
+    background-color: #24363B;
+}
+.Text-Orange{
+    color: #FF6D17;
+}
+.HeroTitle{
+    text-shadow: rgba(0, 0, 0, 0.404) 1px 5px 10px;
+}
+.Combo_Title{
+    border-bottom: #FF6D17 solid 1px;
+}
+.Orange-link{
+    color: #FF6D17 !important;
+}
+.text-margin{
+    margin-left: 9rem;
+    margin-right: 9rem;
+}
