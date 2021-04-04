@@ -35,6 +35,7 @@ import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.co
     RecbuildComponent,
     ItemBoxComponent,
     HollowBtnComponent
+    
 
   ],
   imports: [

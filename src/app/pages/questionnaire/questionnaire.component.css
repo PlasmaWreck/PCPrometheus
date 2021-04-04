@@ -4,7 +4,7 @@
     color: white;
     }
 .lightFont{
-    font-weight: lighter;
+    font-weight:lighter;
 }
 .contentRow{
     border: 2px solid #FF6D17;
@@ -118,7 +118,5 @@
 }
 
 .priceBtn{
-    margin-left: 175px;
-}
-
-
+    margin-left: 185px;
+}    
