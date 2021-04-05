@@ -19,6 +19,7 @@ import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-bo
 import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
 
 
 
@@ -38,7 +39,8 @@ import { PartsDescriptionComponent } from './components/buildshowcase/parts-desc
     ItemBoxComponent,
     HollowBtnComponent,
     GamingBuildComponent,
-    PartsDescriptionComponent
+    PartsDescriptionComponent,
+    VideogamesComponent
 
 
   ],
