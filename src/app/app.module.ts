@@ -17,6 +17,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-box.component';
 import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.component';
+import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 
 
 
@@ -34,7 +35,8 @@ import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.co
     SearchBarComponent,
     RecbuildComponent,
     ItemBoxComponent,
-    HollowBtnComponent
+    HollowBtnComponent,
+    ApigroundsComponent
 
   ],
   imports: [

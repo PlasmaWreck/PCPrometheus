@@ -1,0 +1,646 @@
+directive @HasPlanTier(tier: PlanTier!) on FIELD_DEFINITION
+directive @BlockAll(roles: [Role!]!) on FIELD_DEFINITION
+directive @RequireAny(roles: [Role!]!) on FIELD_DEFINITION
+# Exposes a URL that specifies the behaviour of this scalar.
+directive @specifiedBy(
+  # The URL that specifies the behaviour of this scalar.
+  url: String!
+) on SCALAR
+input ApiCredentials {
+  # The name of the API that you are providing credentials for. An Octopart
+  # representative will give this value to you if needed.
+  api_name: String!
+  # Authentication details. `client_id` and `client_secret` should be given together when an API requires them.
+  client_id: String
+  # Authentication details. `client_id` and `client_secret` should be given together when an API requires them.
+  client_secret: String
+  # Authentication details. `username` and `password` should be given together when an API requires them.
+  username: String
+  # Authentication details. `username` and `password` should be given together when an API requires them.
+  password: String
+}
+
+# Used to show the filters that are applied to current search.
+type AppliedFilter {
+  # shortname is the key in the filters Map.  Usually an attribute shortname, or `manufacturer_id`, `distributor_id`, etc.
+  shortname: String!
+  # human readable name to display in the UI
+  name: String!
+  # values in the filter Map.
+  values: [String!]!
+  # human readable values to display in the UI
+  display_values: [String!]!
+}
+
+# Defines an attribute like Capacitance or Resistance.
+type Attribute {
+  # Internal Octopart ID
+  id: ID!
+  # display name
+  name: String!
+  # use as key for `sort` or `filter` in part search
+  shortname: String!
+  # use to group together similar attributes, e.g. Technical, Physical, Compliance
+  group: String!
+}
+
+# Groups similar attributes together, as can be seen with column groups in specs view
+type AttributeGroup {
+  # Name of group, e.g. Technical, Physical, Compliance
+  name: String!
+  # Attributes in group
+  attributes: [Attribute!]!
+}
+
+# Information for use on /electronic-parts Category pages.
+type Blurb {
+  # Category name.
+  name: String!
+  # Path to /electronic-parts Category page.
+  path_name: String!
+  # Short description of Category.
+  description: String!
+  # Longer description of Category.
+  content: String!
+}
+
+# cad_agg produces a CadBucket with the count of parts that have CAD Symbol + Footprint and 3D model
+type CadBucket {
+  cad_state: String!
+  count: Int
+}
+
+# A Category exists in a Category tree.  Examples include Passive Components or
+# Capacitors.  The `path` field is helpful to see where a category is in the tree.
+# Category id `4161` is the root of tree.
+type Category {
+  # Octopart internal id.  Root id is 4161
+  id: ID!
+  # ID of parent category.
+  parent_id: ID!
+  # Display name
+  name: String!
+  # List of all ancestor in category tree.
+  ancestors: [Category!]!
+  # List of direct children in category tree.
+  children: [Category!]!
+  # Slash separated path.  Can be used to visit URL for category page.  (e.g.
+  # `/electronic-parts/circuit-protection/esd-and-circuit-protection-ics`)
+  path: String!
+  # List of Attributes deemed to be relevant to this category.  (e.g. Resistance
+  # for Resistor category).  Useful for showing contextual filters in UI.
+  relevant_attributes: [Attribute!]!
+  # Blurb for Category, used on /electronic-parts pages.
+  blurb: Blurb
+  # Number of parts in Category.
+  num_parts: Int!
+}
+
+# category_agg produces a CategoryBucket with category + counts
+type CategoryBucket {
+  category: Category!
+  count: Int
+}
+
+# A company record represents a manufacturer or distributor, depending on context.
+type Company {
+  # Octopart internal id
+  id: ID!
+  # Display name of company
+  name: String!
+  # Aliases of company
+  aliases: [String!]!
+  # Homepage URL of company
+  homepage_url: String
+  # Used for URLs like `/manufacturers/aimtec` or `/distributors/digi-key`
+  slug: String!
+  # True if a manufacturer participates in Octopart's Verified Manufacturer
+  # program.  See [verified](https://octopart.com/verified) for more information.
+  is_verified: Boolean!
+  # True if a distributor is a broker.  See [authorized](https://octopart.com/authorized) for more information.
+  is_broker: Boolean! @deprecated(reason: "use `PartSeller.is_broker` instead")
+  # True if a distributor has an API integration with Octopart to provide latest pricing and stock data.
+  is_distributorapi: Boolean!
+}
+
+# manufacturer_agg and distributor_agg produce a CompanyBucket with company + counts
+type CompanyBucket {
+  company: Company!
+  count: Int
+}
+
+# A country's name, country code, and continent code.
+type Country {
+  name: String!
+  country_code: String!
+  continent_code: String!
+}
+
+# Textual description of a part
+type Description {
+  # Description text
+  text: String!
+  # Source of description.  Used for attribution.
+  credit_string: String!
+  # Source URL of description.  Used for attribution.
+  credit_url: String!
+}
+
+# Document represents a PDF file and can be a Datasheet, Compliance Document, PCN, etc.
+type Document {
+  name: String!
+  page_count: Int
+  created_at: Time
+  url: String!
+  credit_string: String!
+  credit_url: String!
+  mime_type: String!
+}
+
+# DocumentCollection groups documents together by type: Datasheets, Compliance Statements.
+type DocumentCollection {
+  # Name of group, e.g. Datasheets
+  name: String!
+  # List of Documents in group
+  documents: [Document!]!
+}
+
+# Image of a part.  In the case of some symbol and footprint images, the scaled
+# version may not actually be scaled and cropped, and may need to be scaled using
+# CSS or other techniques.
+type Image {
+  url_largest: String! @deprecated(reason: "use `url` instead")
+  url_55px: String! @deprecated(reason: "use `url` instead")
+  url_75px: String! @deprecated(reason: "use `url` instead")
+  url_90px: String! @deprecated(reason: "use `url` instead")
+  # Image URL
+  url: String!
+  # Source of description.  Used for attribution.
+  credit_string: String!
+  # Source URL of description.  Used for attribution.
+  credit_url: String!
+}
+
+# A JSON Object with arbitrary keys and values.
+# e.g. `{"logicfunction": ["Buffer", "Transceiver", "Inverting"]}
+`
+scalar Map
+
+# An offer is a specific buyable part from a distributor, with specific packaging, pricing, stock, moq.
+type Offer {
+  # Cache ID
+  _cache_id: String!
+  # Octopart internal ID for this offer
+  id: ID!
+  # Stock Keeping Unit used by internally by distributor
+  sku: String!
+  # Number of units available to be shipped.  (aka Stock, Quantity)
+  inventory_level: Int!
+  # Packaging of parts (eg Tape, Reel)
+  packaging: String
+  # Minimum Order Quantity: smallest number of parts that can be purchased
+  moq: Int
+  prices: [PricePoint!]!
+  # The URL to view offer on distributor website.  This will redirect via Octopart's server.
+  click_url: String!
+  # Octopart internal URL for this offer.
+  internal_url: String!
+  # The last time data was received from distributor feed or API for this offer.
+  updated: Time!
+  # Number of days to acquire parts from factory.
+  factory_lead_days: Int
+  # Number of parts on order from factory.
+  on_order_quantity: Int
+  # Order multiple for factory orders.
+  factory_pack_quantity: Int
+  # Number of items which must be ordered together.
+  order_multiple: Int
+  # The quantity of parts as packaged by the seller.
+  multipack_quantity: Int
+  # Whether this offer is specific to the customer making the request.
+  is_custom_pricing: Boolean!
+}
+
+# Part model contains the relevant data around a part, including: datasheets, specs, sellers + offers, images, etc.
+type Part {
+  # Cache ID
+  _cache_id: String!
+  # Octopart internal ID for this part.  Appears at the end of PDP URL / `slug` field.
+  id: ID!
+  # manufacturer + mpn for easy display
+  name: String!
+  # Manufacturer Part Number
+  mpn: String!
+  # Best guess at a generic MPN
+  generic_mpn: String!
+  # Company that manufactures this part
+  manufacturer: Company!
+  # A link to the manufacturer detail page for this part or series.
+  manufacturer_url: String
+  # A link to a manufacturer page to request free sample kits for this part.
+  free_sample_url: String
+  # Documents including Datasheets, Compliance Documents, PCNs
+  document_collections: [DocumentCollection!]!
+  # Best description around 110 characters long, as can be seen on SERP or PDP.
+  # May need truncation if all descriptions are long.
+  short_description: String!
+  # All part descriptions from sources
+  descriptions: [Description!]!
+  # All part images
+  images: [Image!]!
+  # Attribute values for this part
+  specs: [Spec!]!
+  # Path component of PDP URL (e.g. `/ad7792bruz-analog+devices-402798`)
+  slug: String!
+  # A link to the part page on Octopart. Do not include `rel="nofollow"` when linking to this URL.
+  octopart_url: String!
+  # Parts identified by Octopart to be similar in specs and functionality.
+  similar_parts: [Part!]!
+  # Parts identified by the manufacturer as companion products.
+  companion_products: [SponsoredPart!]!
+  category: Category
+  series: PartSeries
+  best_image: Image
+  best_datasheet: Document
+  reference_designs: [ReferenceDesign!]!
+  # Data about part's CAD model.  If null `cad_request_url` can be used to request a CAD model be made.
+  cad: PartCad
+  # URL to request a CAD model from eeconcierge if a part doesn't already have a
+  # CAD model.  Will be null part is not eligible, e.g. a multimeter
+  cad_request_url: String
+  # The UID from Octopart APIv3.  Provided for backwards compatibility, in general ID should be used.
+  v3uid: ID!
+  # A [Map](#map) of number of related objects.  Can be used to know the number of
+  # `images` or `descriptions` without having to request those related objects.
+  counts: Map!
+  # The median USD price at quantity 1,000, discarding outliers.  A reasonable estimate of average price for a part.
+  median_price_1000: PricePoint
+  # Sum of stock available across all distributors
+  total_avail: Int!
+  # The average stock level at each distributor
+  avg_avail: Float!
+  # Companies with Offers for this part
+  sellers(
+    include_brokers: Boolean! = false
+    authorized_only: Boolean! = false
+  ): [PartSeller!]!
+  # The estimated factory lead time in days derived from trusted distributor offers.
+  estimated_factory_lead_days: Int
+  # This part might be known by these alternate MPNs
+  aka_mpns: [String!]!
+}
+
+type PartCad {
+  # URL to add this part to your Upverter library. Requires an Upverter account.
+  add_to_library_url: String
+  # If true, a STEP model will be included with the tool-specific downloads.
+  has_3d_model: Boolean!
+  has_altium: Boolean!
+  has_eagle: Boolean!
+  has_orcad: Boolean!
+  has_kicad: Boolean!
+  download_url_altium: String!
+  download_url_eagle: String!
+  download_url_orcad: String!
+  download_url_kicad: String!
+  footprint_image_url: String
+  symbol_image_url: String
+}
+
+type PartMatch {
+  # Will match `reference` supplied in PartMatchQuery.
+  reference: String
+  # Number of parts matched
+  hits: Int!
+  # Matched parts (may be subset, based on start + limit)
+  parts: [Part!]!
+  # Possible error message
+  error: String
+}
+
+input PartMatchOptions {
+  # If true, only parts with at least one authorized seller will be returned.
+  require_authorized_sellers: Boolean = false
+  # If true, only parts with stock available will be returned.
+  require_stock_available: Boolean = false
+  # a key: value map of filters. See [filter values](/api/v4/values#filters)
+  filters: Map
+}
+
+input PartMatchQuery {
+  mpn: String
+  sku: String
+  mpn_or_sku: String
+  manufacturer: String
+  seller: String
+  start: Int! = 0
+  limit: Int! = 3
+  reference: String
+}
+
+type PartResult {
+  # Cache ID
+  _cache_id: String!
+  # The part object
+  part: Part!
+  explain: String! @deprecated(reason: "always empty")
+  # If the search `q` is an alternate MPN for this part, the `aka_mpn` will be populated with this alternate MPN.
+  aka_mpn: String
+  # Description with query terms highlighted.  Often this is the same as part.short_description,
+  # but if the search `q` matched on a different description it may be longer than
+  # part.short_description and require truncation.
+  description: String!
+}
+
+# Result of part search.
+type PartResultSet {
+  total: Int! @deprecated(reason: "use `hits` instead")
+  # Number of parts in result set
+  hits: Int!
+  # Contains nested part along side some fields specific to the query that explain reason for match.
+  results: [PartResult!]
+  # Grouped attributes used to render the columns in specs view.
+  specs_view_attribute_groups: [AttributeGroup!]!
+  # If an invalid query was modified or rejected, warnings indicate this fact to
+  # the user.  For example if query contained too many tokens, some tokens may be ignored.
+  warnings: [String!]
+  # Perform aggregations on Spec values across multiple Attributes.
+  # You *must* specify `attribute_names` for this field to be populated.
+  # `attribute_names` should be a list of Attribute.shortname values (e.g. `capacitance` or `voltage_rating_dc`)
+  spec_aggs(
+    # a list of Attribute.shortname values to aggregate on (e.g. `capacitance` or `voltage_rating_dc`)
+    attribute_names: [String!]!
+    # number of spec value buckets to return (default 10)
+    size: Int! = 10
+  ): [SpecAgg!]!
+  # Aggregate on manufacturers for this result set
+  manufacturer_agg(
+    # number of buckets to return (default 10)
+    size: Int! = 10
+  ): [CompanyBucket!]!
+  # Aggregate on distributors for this result set
+  distributor_agg(
+    # number of buckets to return (default 10)
+    size: Int! = 10
+  ): [CompanyBucket!]!
+  # Aggregate on categories for this result set
+  category_agg(
+    # number of buckets to return (default 10)
+    size: Int! = 10
+  ): [CategoryBucket!]!
+  # Aggregate on the availability of CAD models for the result set
+  cad_agg: [CadBucket!]!
+  # Categories that are determined by search algo to be related to the search
+  # term.  Useful for suggesting a Category filter in the search UI.
+  suggested_categories: [CategoryBucket!]!
+  # Attributes that are determined by search algo to be related to the search
+  # term.  Useful for suggesting most relevant filters in the search UI.
+  suggested_filters: [Attribute!]!
+  # Full list of available Attributes in the result set
+  all_filters: [Attribute!]!
+  # If a Category filter is applied, this will be the Category
+  applied_category: Category
+  # If filters are applied, this will contain display information
+  applied_filters: [AppliedFilter!]!
+}
+
+# A company with offers for a given part
+type PartSeller {
+  # Cache ID
+  _cache_id: String!
+  # The distributor
+  company: Company!
+  # Distributor's country
+  country: String
+  # List of offers.  Multiple offers may exist in different packaging.
+  # While multiple geo-targeted offers may exist, currently the API only exposes
+  # one geo-targeted offer at a time based on `country` parameter.
+  # Please contact us if you have a need to see all geo-targeted offer variants.
+  offers: [Offer!]!
+  # True if the distributor is an authorized distributor for this manufacturer.
+  # See [authorized](https://octopart.com/authorized) for more information.
+  is_authorized: Boolean!
+  # True if the distributor is a Non-Authorized Dealer.  See
+  # [authorized](https://octopart.com/authorized) for more information.
+  is_broker: Boolean!
+  # True if you can request a quote from this seller.
+  is_rfq: Boolean!
+  # List of countries the seller ships to. An empty list represents zero shipping restrictions.
+  ships_to_countries: [Country!]!
+}
+
+# A Part can be a member of a PartSeries, which represents a product line or "family" of parts from the manufacturer.
+#
+# See [series](https://octopart.com/series) page for examples.
+type PartSeries {
+  # Octopart internal ID for this series
+  id: ID!
+  # Name of the part series
+  name: String!
+  # Octopart URL for this series, specific to the parent part
+  url: String!
+}
+
+enum PlanTier {
+  FREE
+  BASIC
+  PRO
+  ENTERPRISE
+}
+
+# Price in a specific currency + quantity.  By supplying a `currency` parameter
+# the API will populate an estimated converted_price in the user's desired currency.
+type PricePoint {
+  # Cache ID
+  _cache_id: String!
+  # Minimum purchase quantity to get this price (aka price break)
+  quantity: Int!
+  # Price in currency
+  price: Float!
+  # Currency for price
+  currency: String!
+  # Price converted to user's currency using foreign exchange rates.
+  #
+  # Since this is an estimate, an indicator should be shown to user if currency != converted_currency.
+  converted_price: Float!
+  # Currency for `converted_price`.  Will match value of `currency` argument.
+  converted_currency: String!
+  # The exchange rate used to calculate converted_price
+  conversion_rate: Float!
+}
+
+type Query {
+  # Get all attributes
+  attributes: [Attribute!]!
+  # Get manufacturer companies
+  manufacturers(
+    # list of company IDs.  Omit to fetch all manufacturers.
+    ids: [String!]
+  ): [Company!]!
+  # Get seller companies (distributors)
+  sellers(
+    # list of company IDs.  Omit to fetch all sellers.
+    ids: [String!]
+  ): [Company!]!
+  # Get categories
+  categories(
+    # list of category IDs. Omit to fetch all categories.
+    ids: [String!]
+    # list of /electronic-parts SEO page paths for categories.
+    paths: [String!]
+  ): [Category!]!
+  # Get parts by ID.
+  parts(
+    # list of part IDs. APIv3 UIDs are also supported.
+    ids: [String!]!
+    # user's country
+    country: String! = "US"
+    # user's currency
+    currency: String! = "USD"
+    # fetch latest pricing and stock data from distributor API.
+    # Company.is_distributorapi indicates if a distributor supports this feature.
+    distributorapi: Boolean
+    # how long to wait for distributor API to respond as a duration string (e.g. `3s` or `500ms`)
+    distributorapi_timeout: String! = "3s"
+    # if needed, pass along credentials for API integrations
+    custom_pricing_credentials: [ApiCredentials!]
+  ): [Part]!
+  # Attempt to complete a partial query string.  Used for autosuggest / typeahead text inputs.
+  suggest(
+    # partial query string
+    q: String!
+    # category_id to scope suggestions to
+    category_id: String
+    # only return part number suggestions
+    part_numbers_only: Boolean
+  ): [Suggestion!]!
+  # Search parts, including filters, pagination, aggregation, sorting
+  search(
+    # the query to search
+    q: String
+    # user's country
+    country: String! = "US"
+    # user's currency
+    currency: String! = "USD"
+    # offset in the result set
+    start: Int
+    # page size of results
+    limit: Int
+    # field to sort by.  See [sort values](/api/v4/values#sort)
+    sort: String
+    # direction of sort: `asc` or `desc`
+    sort_dir: SortDirection
+    # filter to remove parts with no stocking distributors
+    in_stock_only: Boolean
+    # a key: value map of filters. See [filter values](/api/v4/values#filters)
+    filters: Map
+    # fetch latest pricing and stock data from distributor API.
+    # Company.is_distributorapi indicates if a distributor supports this feature.
+    distributorapi: Boolean
+    # how long to wait for distributor API to respond as a duration string (e.g. `3s` or `500ms`)
+    distributorapi_timeout: String! = "3s"
+    # if needed, pass along credentials for API integrations
+    custom_pricing_credentials: [ApiCredentials!]
+  ): PartResultSet!
+  # Suggest an alternate `q` when no results are found
+  spelling_correction(
+    # query string to correct
+    q: String!
+  ): [SpellingCorrection!]!
+  # Match multiple manufacturer + mpn pairs at once.  Useful for when you have a
+  # list of parts, as with a BOM (Bill of Materials)
+  multi_match(
+    # list of inputs to attempt to match
+    queries: [PartMatchQuery!]!
+    # options when matching such as applying filters or only including authorized or in-stock parts
+    options: PartMatchOptions
+    # user's country
+    country: String! = "US"
+    # user's currency
+    currency: String! = "USD"
+    # fetch latest pricing and stock data from distributor API.
+    # Company.is_distributorapi indicates if a distributor supports this feature.
+    distributorapi: Boolean
+    # how long to wait for distributor API to respond as a duration string (e.g. `3s` or `500ms`)
+    distributorapi_timeout: String! = "3s"
+    # if needed, pass along credentials for API integrations
+    custom_pricing_credentials: [ApiCredentials!]
+  ): [PartMatch!]!
+}
+
+type ReferenceDesign {
+  name: String!
+  url: String!
+}
+
+enum Role {
+  DISTRIBUTOR
+  CADMODELS
+  INTERNAL
+}
+
+enum SortDirection {
+  asc
+  desc
+}
+
+# Represents a specific value of an Attribute for a given Part
+type Spec {
+  attribute: Attribute!
+  # The formatted display value
+  display_value: String!
+}
+
+type SpecAgg {
+  attribute: Attribute!
+  buckets: [SpecBucket!]!
+  # min is the lowest spec value in this result set for numerical attributes
+  min: Float
+  # max is the greatest spec value in this result set for numerical attributes
+  max: Float
+  # display_min is the formatted string of min
+  display_min: String
+  # display_max is the formatted string of max
+  display_max: String
+}
+
+type SpecBucket {
+  # display_value is the string value. For numerical attributes it is the formatted version of float_value
+  display_value: String!
+  # float_value is populated if the attribute is numeric
+  float_value: Float
+  # count will be null if aggregation timed out
+  count: Int
+}
+
+type SpellingCorrection {
+  correction_string: String!
+  hits: Int!
+}
+
+# Part identified by manufacturer as being a companion part, for instance a mated connector pair.
+type SponsoredPart {
+  # Cache ID
+  _cache_id: String!
+  ppid: ID! @deprecated(reason: "use part.id instead")
+  source_id: ID! @deprecated(reason: "unused")
+  # Related part
+  part: Part!
+  # URL to visit for related part
+  url: String!
+}
+
+# Suggests a query based on partial query input.  Used for autocomplete / typeahead UIs.
+type Suggestion {
+  # Suggested text of longer query
+  text: String!
+  # If the suggestion should also apply a category_id filter, this is the category name
+  in_category_name: String!
+  # If the suggestion should also apply a category_id filter, this is the Category ID
+  in_category_id: String!
+}
+
+# A time in RFC3339 format
+# e.g. 2006-01-02T15:04:05Z
+scalar Time
+
