@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { GetService } from 'src/app/service/Get/get.service';
 import { LoginService } from 'src/app/service/Login/login.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/service/Login/login.service';
 })
 export class LoginComponent implements OnInit {
   LoginForm: FormGroup;
-  constructor(private FormBuilder: FormBuilder, private lservice: LoginService) { }
+  constructor(private FormBuilder: FormBuilder, private lservice: LoginService, private gService: GetService) { }
 
   ngOnInit(): void {
     this.LoginForm = this.FormBuilder.group({
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
     }
   }
   clickMe(){
-    this.lservice.getList().then(
+    this.gService.getList().then(
       (res:any)=>{
         console.log(res);
       }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Iuser } from 'src/app/Interfaces/iuser';
-import { DataService } from '../data.service';
+import { DataService } from '../Data/data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,7 @@ export class LoginService {
   {
     return this.dService.post("auth/login",userToLogin).toPromise();
   }
-  getList()
-  {
-    return this.dService.get("userinfo").toPromise();
-  }
+ 
 
 
   setLoginBool(loginValue:any)
