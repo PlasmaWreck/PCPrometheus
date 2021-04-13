@@ -19,8 +19,12 @@ import { ItemBoxComponent } from './components/ComputerBuilding/item-box/item-bo
 import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
+import { LoginComponent } from './pages/login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
-
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { PartsDescriptionComponent } from './components/buildshowcase/parts-desc
     ItemBoxComponent,
     HollowBtnComponent,
     GamingBuildComponent,
-    PartsDescriptionComponent
+    PartsDescriptionComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -47,7 +52,14 @@ import { PartsDescriptionComponent } from './components/buildshowcase/parts-desc
     NgbModule,
     NgxSliderModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["https://csa2020studentapi.azurewebsites.net/","http://localhost:5000"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

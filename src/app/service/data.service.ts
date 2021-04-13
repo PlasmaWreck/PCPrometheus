@@ -6,7 +6,10 @@ import { environment } from 'src/environments/environment';
 import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions={
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json',
+  Authorization: "my-auth-token"
+})
+
 }
 @Injectable({
   providedIn: 'root'
@@ -60,8 +63,11 @@ export class DataService {
   }
   //--------------------------------------------------------------
 
-  public getLogin(key:string): Observable<any>
+  public get(key:string): Observable<any>
   {
+    let tokenInfo:string = "bearer "+localStorage.getItem("token"); 
+    httpOptions.headers = httpOptions.headers.set("Authorization",tokenInfo);
+
     return this.http.get(this.loginUrl+key,httpOptions).pipe(
       map(res => this.data = res),
       tap((res: any) => this.handleSuccess(res, null)),
@@ -71,7 +77,7 @@ export class DataService {
 
 
   public post(route: string, item: any, optionalMsg?: string): any {
-    return this.http.post(this.url + route, item)
+    return this.http.post(this.loginUrl + route, item)
       .pipe(
         map(res => this.data = res),
         tap((res: any) => this.handleSuccess(res, null)),

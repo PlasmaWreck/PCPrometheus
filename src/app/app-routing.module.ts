@@ -10,6 +10,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { PartinstallationComponent } from './pages/partinstallation/partinstallation.component';
 import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'partinstallation', component: PartinstallationComponent},
   {path: 'recbuild', component:RecbuildComponent},
   {path: '', component :HomepageComponent},
-  {path: 'GamingBuild', component :GamingBuildComponent}
+  {path: 'GamingBuild', component :GamingBuildComponent},
+  {path: 'LoginPage', component :LoginComponent}
 ];
 
 @NgModule({
