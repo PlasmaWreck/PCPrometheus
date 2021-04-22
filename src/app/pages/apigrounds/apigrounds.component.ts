@@ -1,12 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { AddService } from 'src/app/service/prometheusapi/Add/add.service';
-import { DeleteService } from 'src/app/service/prometheusapi/Delete/delete.service';
-import { GetService } from 'src/app/service/prometheusapi/Get/get.service';
-import { UpdateService } from 'src/app/service/prometheusapi/Update/update.service';
-
-import { map } from 'rxjs/operators';
 import { IGraphicsCard } from 'src/app/Interfaces/Igraphicscard';
 import { AddService } from 'src/app/service/prometheusapi/Add/add.service';
 import { DeleteService } from 'src/app/service/prometheusapi/Delete/delete.service';
