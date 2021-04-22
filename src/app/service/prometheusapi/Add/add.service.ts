@@ -9,7 +9,8 @@ export class AddService {
 
   constructor(private dService: DataService) { }
 
-  addStudent(studentToAdd: IGraphicsCard){
-    return this.dService.post("GraphicsCard/add", studentToAdd).toPromise();
+  addGraphicsCard(cardToAdd: IGraphicsCard){
+    return this.dService.post("GraphicsCard/add", cardToAdd).toPromise();
+
   }
 }

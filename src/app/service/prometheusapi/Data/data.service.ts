@@ -94,7 +94,7 @@ export class DataService {
     // A POST has two parameters, The Full URl + Key as well as our item Which is our the Object we want to add to the API.
     // EX URL:  https://csa2020studentapi.azurewebsites.net/ + userinfo/add;
 
-    return this.http.post(this.url, item)
+    return this.http.post(this.url + "/Add", item)
       // THE PIPE LETS YOU COMBINE MULTIPLE FUNCTIONS INTO ONE FUNCTION 
       .pipe(
 
