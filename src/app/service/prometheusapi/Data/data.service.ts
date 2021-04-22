@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 const httpOptions = {
   headers: new HttpHeaders({ 
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg2OTUxNDgsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCJ9.0sWETEASrTBIokPUhUh_sParsrYEkWkC7xPcfCdRYSU' }),
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg0Mzk0MzMsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTAwMCJ9.Iny0yeDnEEeEmBJUDJKaF9ClmjKDhV1ZAe1kROGYMFo' }),
 };
 
 @Injectable({

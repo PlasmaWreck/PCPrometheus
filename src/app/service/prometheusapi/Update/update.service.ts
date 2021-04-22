@@ -5,12 +5,11 @@ import { DataService } from '../Data/data.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AddService {
+export class UpdateService {
 
   constructor(private dService: DataService) { }
 
-  addGraphicsCard(cardToAdd: IGraphicsCard){
-    return this.dService.post("GraphicsCard/add", cardToAdd).toPromise();
-
+  Update(userToUpdate: IGraphicsCard){
+    return this.dService.post("GraphicsCard/update", userToUpdate).toPromise();
   }
 }
