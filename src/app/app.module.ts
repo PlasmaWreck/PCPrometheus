@@ -20,6 +20,8 @@ import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.co
 import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
+import { VideogamesComponent } from './pages/videogames/videogames.component';
+import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 
 
 
@@ -40,7 +42,10 @@ import { PartsDescriptionComponent } from './components/buildshowcase/parts-desc
     HollowBtnComponent,
     ApigroundsComponent,
     GamingBuildComponent,
-    PartsDescriptionComponent
+    PartsDescriptionComponent,
+    VideogamesComponent,
+    SurveypartpickerComponent
+
 
 
   ],
