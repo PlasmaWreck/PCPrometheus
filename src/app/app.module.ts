@@ -20,6 +20,7 @@ import { HollowBtnComponent } from './components/Global/hollow-btn/hollow-btn.co
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
+import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 
 
 
@@ -40,7 +41,8 @@ import { VideogamesComponent } from './pages/videogames/videogames.component';
     HollowBtnComponent,
     GamingBuildComponent,
     PartsDescriptionComponent,
-    VideogamesComponent
+    VideogamesComponent,
+    SurveypartpickerComponent
 
 
   ],

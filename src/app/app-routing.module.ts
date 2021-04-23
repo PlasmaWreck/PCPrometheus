@@ -8,9 +8,12 @@ import { PartinstallationComponent } from './pages/partinstallation/partinstalla
 import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
+import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+
 
 
 const routes: Routes = [
+  {path: 'surveyparts', component :SurveypartpickerComponent},
   {path: 'partdescription', component :PartsdescriptionComponent}, 
   {path: 'ComputerBuilding', component :ComputerBuildingComponent},
   {path: 'questionnaire', component :QuestionnaireComponent},
