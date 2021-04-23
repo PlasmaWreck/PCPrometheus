@@ -9,6 +9,7 @@ import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'questionnaire', component :QuestionnaireComponent},
   {path: 'partinstallation', component: PartinstallationComponent},
   {path: 'recbuild', component:RecbuildComponent},
+  {path: 'apiworking', component:ApigroundsComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
   {path: 'videogames', component : VideogamesComponent}
