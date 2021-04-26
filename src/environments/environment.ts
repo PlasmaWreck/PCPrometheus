@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  api:"https://pcpapi.azurewebsites.net/GraphicsCard"
+  api:"https://pcpapi.azurewebsites.net/"
 };
-
+//https://pcpapi.azurewebsites.net/GraphicsCard
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

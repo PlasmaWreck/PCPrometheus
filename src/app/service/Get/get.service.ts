@@ -10,6 +10,6 @@ export class GetService {
 
   getList()
   {
-    return this.dService.get("userinfo").toPromise();
+    return this.dService.get("accountinfo").toPromise();
   }
 }
