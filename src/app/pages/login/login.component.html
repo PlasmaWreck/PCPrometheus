@@ -3,11 +3,11 @@
         <legend>User Form</legend>
         <form [formGroup]="LoginForm" (ngSubmit)="submitForm()">
             <div class="form-group">
-                <label for="Username">UserName</label>
-                <input type="text"  class="form-control" id="Username" formControlName="Username">
+                <label for="Username">Email</label>
+                <input type="text"  class="form-control" id="Username" formControlName="Email">
             </div>
             <div class="form-group">
-                <label for="">UserName</label>
+                <label for="">Password</label>
                 <input type="text" class="form-control" id="Password" formControlName="Password">
             </div>
             <button type="submit" class="btn btn-primary mt-3" [disabled]="!LoginForm.valid">Submit</button>
