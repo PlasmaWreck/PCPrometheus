@@ -3,6 +3,11 @@
     font-weight: Regular;
     color: white;
     }
+.container{
+    font-family: 'Mitr', sans-serif;
+    font-weight: Regular;
+    color: white;
+}
 .lightFont{
     font-weight:lighter;
 }
@@ -119,4 +124,15 @@
 
 .priceBtn{
     margin-left: 185px;
-}    
+}
+
+.cardColor2{
+    background-color: #3B5C65;
+}
+
+.cardTextCenter{
+    text-align: center;
+}
+.cardMargin{
+    margin-top: 90px;
+}

@@ -14,9 +14,6 @@
 .topNavbar #navBrand:focus{
     outline: none;
 }
-
-
-
 .botNavbar{
     background-color: #3B5C65;
     min-height: 50px;
@@ -25,17 +22,21 @@
 
 .botNavbar 
 .btn-secondary,
-.btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus{
     background-color: rgba(255, 255, 255, 0);
     border-color: rgba(255, 255, 255, 0);
+    border-right-color: #FF6D17;
+    border-radius: 0px;
     outline: none !important;
     box-shadow: none !important;
     font-size: 20px;
     height:100%;
     font-weight:300;
     letter-spacing: -1px;
+}
+.btn-secondary:hover{
+    background-color: rgba(0, 0, 0, 0.26) !important;
 }
 
 .dropdown-menu{
@@ -46,7 +47,6 @@
     background-color:#24363B;
     text-align: center;
 }
-
 .dropdown-item{
     color: #ffffff;
     font-size:15px;
@@ -56,6 +56,18 @@
     padding-left: 5px;
     padding-right: 5px;
     word-spacing: -3px;
+}
+.dropdown-menu hr{
+    border: none;
+    background-color: #FF6D17;
+    height: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left:10px;
+    margin-right: 10px;
+    opacity: 100%;
+    min-width: 80%;
+    
 }
 
 .dropdown-item:hover{

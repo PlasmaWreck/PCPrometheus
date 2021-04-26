@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api:"https://codestack21testdb.azurewebsites.net/"
+  api:"https://pcpapi.azurewebsites.net/GraphicsCard"
 };
 
 /*
