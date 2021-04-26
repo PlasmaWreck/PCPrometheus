@@ -10,7 +10,7 @@ import { GamingBuildComponent } from './pages/gaming-build/gaming-build.componen
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
-
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,8 @@ const routes: Routes = [
   {path: 'apiworking', component:ApigroundsComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
-  {path: 'videogames', component : VideogamesComponent}
+  {path: 'videogames', component : VideogamesComponent},
+  {path: 'LoginPage', component :LoginComponent}
 ];
 
 @NgModule({

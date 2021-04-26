@@ -22,8 +22,12 @@ import { GamingBuildComponent } from './pages/gaming-build/gaming-build.componen
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { LoginComponent } from './pages/login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
-
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -44,9 +48,8 @@ import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpi
     GamingBuildComponent,
     PartsDescriptionComponent,
     VideogamesComponent,
-    SurveypartpickerComponent
-
-
+    SurveypartpickerComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -55,7 +58,14 @@ import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpi
     NgbModule,
     NgxSliderModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["https://csa2020studentapi.azurewebsites.net/","http://localhost:5000"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
