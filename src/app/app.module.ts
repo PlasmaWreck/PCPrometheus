@@ -49,7 +49,8 @@ export function tokenGetter() {
     PartsDescriptionComponent,
     VideogamesComponent,
     SurveypartpickerComponent,
-    LoginComponent
+    LoginComponent,
+
 
   ],
   imports: [

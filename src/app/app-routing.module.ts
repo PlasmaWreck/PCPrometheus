@@ -21,6 +21,7 @@ const routes: Routes = [
   {path: 'partinstallation', component: PartinstallationComponent},
   {path: 'recbuild', component:RecbuildComponent},
   {path: 'apiworking', component:ApigroundsComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
   {path: 'videogames', component : VideogamesComponent},
