@@ -1,13 +1,13 @@
 <div class="container-fluid text-light">
     <div class="row py-4">
-        <div class="col-2"></div>
-        <div class="col-10 text-center">
+     
+        <div class=" offset-lg-2 col-12 col-lg-10 text-center">
             <h1>PC Building</h1>
             <hr class="hr-tag">
         </div>
     </div>
     <div class="row">
-        <div class="col-2 m-0">
+        <div class="col-2 d-none d-lg-block m-0">
             <!--Filter-->
             <div class="row bg-filter">
                 <div class="col-12 p-0">
@@ -41,7 +41,7 @@
 
             </div>
         </div>
-        <div class="col-10">
+        <div class="col-12 col-lg-10">
             <!--Body-->
             <div class="row bg-list">
                 <div class="col-12">
@@ -70,19 +70,18 @@
 
                 <div class="col-12">
                     <div class="row">
-                        <div class="spec_title col-3">
+                        <div class="spec_title col-3 d-none d-lg-block">
                             <div class="row">
-                                <div class="col-4"></div>
-                                <div class="col-8">
+                                <div class="col-8 offset-4 ">
                                     <b>Name</b>
                                 </div>
                             </div>
                         </div>
-                        <div class="spec_title col-2">Manufacturer</div>
-                        <div class="spec_title col-1">Cores</div>
-                        <div class="spec_title col-1">GHz</div>
-                        <div class="spec_title col-2">Threads</div>
-                        <div class="spec_title col-3">Price</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
+                        <div class="spec_title col-1 d-none d-lg-block">Cores</div>
+                        <div class="spec_title col-1 d-none d-lg-block">GHz</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">

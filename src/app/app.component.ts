@@ -7,4 +7,12 @@ import { Component, } from '@angular/core';
 })
 export class AppComponent {
   title = 'PcPrometheus';
+  public isMenuCollapsed = false;
+
+
+  public isComputerBuildsCollapsed = true;
+  public isPCResourcesCollapsed = true;
+  public isProductsCollapsed = true;
+
+
 }
