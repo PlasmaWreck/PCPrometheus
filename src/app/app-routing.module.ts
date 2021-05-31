@@ -11,18 +11,20 @@ import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 import { LoginComponent } from './pages/login/login.component';
+import { OfficeBuildComponent } from './pages/office-build/office-build.component';
 
 
 const routes: Routes = [
   {path: 'surveyparts', component :SurveypartpickerComponent},
   {path: 'partdescription', component :PartsdescriptionComponent}, 
-  {path: 'ComputerBuilding', component :ComputerBuildingComponent},
+  {path: 'ComputerBuilding/:partType', component :ComputerBuildingComponent},
   {path: 'questionnaire', component :QuestionnaireComponent},
   {path: 'partinstallation', component: PartinstallationComponent},
   {path: 'recbuild', component:RecbuildComponent},
   {path: 'apiworking', component:ApigroundsComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
+  {path: 'OfficeBuild', component :OfficeBuildComponent},
   {path: 'videogames', component : VideogamesComponent},
   {path: 'LoginPage', component :LoginComponent}
 ];

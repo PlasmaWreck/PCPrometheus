@@ -46,3 +46,11 @@
     color: rgb(158, 158, 158);
     
 }
+
+ .modal-content {
+    background-color: #292b2c !important;
+    color: white !important;
+  }
+  .dark-modal .close {
+    color: white;
+  }

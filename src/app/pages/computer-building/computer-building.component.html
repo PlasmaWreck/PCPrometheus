@@ -31,8 +31,17 @@
                     </div>
                 </div>
                 <div class="col-12">
-
-                    <app-motherboard-filter></app-motherboard-filter>
+                    <!--Filters-->
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Price</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <hr>
+                            </div>
+                    
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -62,7 +71,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 mt-2 d-lg-none">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div ngbDropdown class="d-inline-block ">
+                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown" id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                            <button ngbDropdownItem>CPU</button>
+                                            <button ngbDropdownItem>CPU Cooler</button>
+                                            <button ngbDropdownItem>Motherboard</button>
+                                            <button ngbDropdownItem>Memory</button>
+                                            <button ngbDropdownItem>Storage</button>
+                                            <button ngbDropdownItem>Video Card</button>
+                                            <button ngbDropdownItem>Power Supply</button>
+                                            <button ngbDropdownItem>Optical Drive</button>
+                                            <button ngbDropdownItem>Operating System</button>
+                                            <button ngbDropdownItem>Case</button>
+                                        </div>
+                                      </div>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                </div>
+                            </div>
                             <hr>
                         </div>
                     </div>
@@ -98,3 +130,418 @@
         </div>
     </div>
 </div>
+
+<ng-template #longContent let-modal class="dark-modal">
+    <div class="modal-header ">
+      <h4 class="modal-title">Filter</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!--Filters-->
+        <div class="row">
+            <div class="col-12">
+                <b class="">Price</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        <!--Motherboard-->
+        <span *ngIf="partType === 'motherboard'">
+            <div class="row pt-3">
+                
+                <hr>
+                <div class="col-12 pb-2">
+                    <b>Manufacturer</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    ASRock
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    AMD
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12 pb-2">
+                    <b>Socket/CPU</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    AM4
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    LGA1200
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    LGA2066
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    sTR4
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    sTRX4
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12 pb-2">
+                    <b>Form Factor</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    AMD B450
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    AMD B550
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    AMD X570
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Intel B460
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Intel Z490
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-12">
+                            <b class="">Memory Slots</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="memorySlots_minValue" [(highValue)]="memorySlots_maxValue" [options]="memorySlots_options"></ngx-slider>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </span>
+        <!--Motherboard-->
+        <span *ngIf="partType === 'cpu'">
+            <div class="col-12 pb-2">
+                <b>Manufacturer</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Intel
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                AMD
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <b class="">Cores</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue" [options]="Cores_options"></ngx-slider>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <b class="">GHz</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue" [options]="GHz_options"></ngx-slider>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!--cooler-->
+        <span *ngIf="partType === 'cooler'">
+            <div class="row">
+                <div class="col-12 pb-2">
+                    <b>Manufacturer</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Cooler Master
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Noctura
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <b class="">Fan RPM</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="fanRpm_minValue" [(highValue)]="fanRpm_maxValue" [options]="fanRpm_options"></ngx-slider>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <b class="">Noise Level</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="noiseLevel_minValue" [(highValue)]="noiseLevel_maxValue" [options]="noiseLevel_options"></ngx-slider>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!--memory-->
+        <span *ngIf="partType === 'memory'">
+            <div class="row">
+                <div class="col-12 pb-2">
+                    <b>Manufacturer</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Cotsair
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Crucials
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="speed_minValue" [(highValue)]="speed_maxValue" [options]="speed_options"></ngx-slider>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12 pb-2">
+                    <b>Module</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Cooler Master
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Noctura
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!--storage-->
+        <span *ngIf="partType === 'storage'">
+            <div class="row">
+                <div class="col-12 pb-2">
+                    <b>Manufacturer</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Kingston
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Samsung
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12 pb-2">
+                    <b>Type</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Cotsair
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Crucials
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="Cache_minValue" [(highValue)]="Cache_maxValue" [options]="Cache_options"></ngx-slider>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!--videocard-->
+        <span *ngIf="partType === 'videocard'">
+            <div class="row">
+                <div class="col-12 pb-2">
+                    <b>Manufacturer</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Kingston
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Samsung
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="capacity_minValue" [(highValue)]="capacity_maxValue" [options]="capacity_options"></ngx-slider>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="coreClock_minValue" [(highValue)]="coreClock_maxValue" [options]="coreClock_options"></ngx-slider>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="boostClock_minValue" [(highValue)]="boostClock_maxValue" [options]="boostClock_options"></ngx-slider>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!--powersupply-->
+        <span *ngIf="partType === 'powersupply'">
+            
+        </span>
+        <!--opticaldrive-->
+        <span *ngIf="partType === 'opticaldrive'">
+            
+        </span>
+        <!--case-->
+        <span *ngIf="partType === 'case'">
+            
+        </span>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  

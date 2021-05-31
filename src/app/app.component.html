@@ -16,16 +16,16 @@
         <button class="btn btn-secondary " id="dropdownBuilders" ngbDropdownAnchor (focus)="builderDrop.open()">Computer
           Builders</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBuilders" class="DM">
-          <button routerLink="/ComputerBuilding" class="w-100" ngbDropdownItem>Component Picker</button>
+          <button routerLink="{{partsPage_Route}}" class="w-100" ngbDropdownItem>Component Picker</button>
           <hr>
-          <button routerLink="/questionnaire" ngbDropdownItem>Prometheus' Path</button>
+          <button routerLink="{{questionnaire_Route}}" ngbDropdownItem>Prometheus' Path</button>
         </div>
       </div>
 
 
 
       <div class="h-100" ngbDropdown #myDrop="ngbDropdown">
-        <button routerLink="/recbuild" class="btn btn-secondary">Recommended Builds</button>
+        <button routerLink="{{recBuild_Route}}" class="btn btn-secondary">Recommended Builds</button>
       </div>
 
 
@@ -35,9 +35,9 @@
         <button class="btn btn-secondary " id="dropdownResources" ngbDropdownAnchor (focus)="resourcesDrop.open()">PC
           Building Resources</button>
         <div ngbDropdownMenu aria-labelledby="dropdownResources" class="DM">
-          <button routerLink="/partdescription" ngbDropdownItem>The Parts that Make A Computer</button>
+          <button routerLink="{{partDesc_Route}}" ngbDropdownItem>The Parts that Make A Computer</button>
           <hr>
-          <button routerLink="/partinstallation" ngbDropdownItem>Putting The Pieces Together</button>
+          <button routerLink="{{partsInstall_Route}}" ngbDropdownItem>Putting The Pieces Together</button>
         </div>
       </div>
 
@@ -80,10 +80,10 @@
         <!-- Step 4: Close the menu when a link is clicked. -->
         <a class="nav-link"  (click)="isComputerBuildsCollapsed = !isComputerBuildsCollapsed">Computer Builders <i class="fas fa-sort-down"></i></a>
         <ul #collapse="ngbCollapse" [ngbCollapse]="isComputerBuildsCollapsed" class="navbar-nav ">
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'/partdescription'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partsPage_Route}}">
             Component Picker
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'/questionnaire'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{questionnaire_Route}}">
             Prometheus' Path
           </li>
         </ul>
@@ -94,10 +94,10 @@
       <li class="nav-item">
         <a class="nav-link"  (click)="isPCResourcesCollapsed = !isPCResourcesCollapsed">PC Building Resources <i class="fas fa-sort-down"></i></a>
         <ul #collapse="ngbCollapse" [ngbCollapse]="isPCResourcesCollapsed" class="navbar-nav ">
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partDesc_Route}}">
             The Parts That Make A Computer
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'/partinstallation'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partsInstall_Route}}">
             Putting the Pieces Together
           </li>
         </ul>
@@ -105,36 +105,36 @@
       <li class="nav-item">
         <a class="nav-link"  (click)="isProductsCollapsed = !isProductsCollapsed">Products <i class="fas fa-sort-down"></i></a>
         <ul #collapse="ngbCollapse" [ngbCollapse]="isProductsCollapsed" class="navbar-nav ">
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <!-- <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" href="{{cpu_Route}}">
             CPU
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{cpuCooler_Route}}">
             CPU Cooler
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{motherboard_Route}}">
             Motherboard
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{memory_Route}}">
             Memory
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{storage_Route}}">
             Storage
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{videoCard_Route}}">
             Video Card
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{powerSupply_Route}}">
             Power Supply
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{opticalDrive_Route}}">
             Optical Drive
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{operatingSystem_Route}}">
             Operating System
           </li>
-          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'.'">
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{case_Route}}">
             Case
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>

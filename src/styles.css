@@ -15,3 +15,10 @@ body{
   .custom-slider .ngx-slider .ngx-slider-bubble {
     color: white;
 }
+.modal-content {
+  background-color: #292b2c !important;
+  color: white !important;
+}
+.dark-modal .close {
+  color: white;
+}

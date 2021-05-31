@@ -68,3 +68,12 @@
 .imageControl{
     width: 100%;
 }
+.mobileContianer{
+    background-color: #3B5C65;
+}
+.mobileDropdown{
+    border: none;
+    background-color: #FF6D17;
+    color: white;
+    padding: .5rem;
+}

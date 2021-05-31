@@ -19,7 +19,7 @@ export class PartsDescriptionComponent implements OnInit {
       console.log('hit')
       return "OddBG";
     }else{
-      return "EvenBG";
+      return "EvenBG order-0";
     }
   }
 }

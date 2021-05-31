@@ -24,6 +24,8 @@ import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { OfficeBuildComponent } from './pages/office-build/office-build.component';
+import { VideoEditingBuildComponent } from './pages/video-editing-build/video-editing-build.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -49,7 +51,9 @@ export function tokenGetter() {
     PartsDescriptionComponent,
     VideogamesComponent,
     SurveypartpickerComponent,
-    LoginComponent
+    LoginComponent,
+    OfficeBuildComponent,
+    VideoEditingBuildComponent
 
   ],
   imports: [
