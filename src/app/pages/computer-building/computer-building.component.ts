@@ -4,7 +4,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { DataService } from 'src/app/service/Data/data.service';
+import { IGraphicsCard } from 'src/app/Interfaces/Igraphicscard';
+import { PcpartspageService } from 'src/app/service/Parts/pcpartspage.service';
+import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 
 
 @Component({
@@ -15,14 +17,13 @@ import { DataService } from 'src/app/service/Data/data.service';
 export class ComputerBuildingComponent implements OnInit {
 
   partType: string;
-  constructor(private dService: DataService, private route: ActivatedRoute, private modalService: NgbModal) { }
+  constructor(private dService: DataService, private route: ActivatedRoute, private modalService: NgbModal, private partsService: PcpartspageService) { }
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });
   }
-  array = []
+  array:IGraphicsCard [];
   ngOnInit(): void {
-    this.dService.GetData().subscribe(data => this.array = data.products);
-    this.dService.GetData().subscribe(data => console.log(data.products));
+    
     this.partType = this.route.snapshot.paramMap.get("partType");
     console.log(this.partType)
   }
@@ -211,39 +212,118 @@ boostClock_minValue: number = 0;
     }
   };
 
-  itemArray = [
+  // itemArray = [
+  //   {
+  //     "name": "Fart",
+  //     "Manufacturer": "Ryzen",
+  //     "Cores": 12,
+  //     "GHz": 5,
+  //     "Threads": 55,
+  //     "Price": 349.99
+  //   },
+  //   {
+  //     "name": "Per Mega Shit",
+  //     "Manufacturer": "I don't know",
+  //     "Cores": 1,
+  //     "GHz": 43,
+  //     "Threads": 14,
+  //     "Price": 123.99
+  //   },
+  //   {
+  //     "name": "Snake Kills dumble dor",
+  //     "Manufacturer": "yeah",
+  //     "Cores": 8,
+  //     "GHz": 5,
+  //     "Threads": 14,
+  //     "Price": 123123.99
+  //   },
+  //   {
+  //     "name": "ahjksdhf",
+  //     "Manufacturer": "kicking",
+  //     "Cores": 8,
+  //     "GHz": 31,
+  //     "Threads": 14,
+  //     "Price": 3429.99
+  //   },
+  // ]
+  GetListByQuery(Query){
+    switch(Query)
     {
-      "name": "Fart",
-      "Manufacturer": "Ryzen",
-      "Cores": 12,
-      "GHz": 5,
-      "Threads": 55,
-      "Price": 349.99
-    },
-    {
-      "name": "Per Mega Shit",
-      "Manufacturer": "I don't know",
-      "Cores": 1,
-      "GHz": 43,
-      "Threads": 14,
-      "Price": 123.99
-    },
-    {
-      "name": "Snake Kills dumble dor",
-      "Manufacturer": "yeah",
-      "Cores": 8,
-      "GHz": 5,
-      "Threads": 14,
-      "Price": 123123.99
-    },
-    {
-      "name": "ahjksdhf",
-      "Manufacturer": "kicking",
-      "Cores": 8,
-      "GHz": 31,
-      "Threads": 14,
-      "Price": 3429.99
-    },
-  ]
+      case "motherboard":
 
+      break;
+    }
+  }
+  GraphicsCardList(){
+    this.dService.GetList("GraphicsCard").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  MotherboardList(){
+    this.dService.GetList("motherboard").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  CaseList(){
+    this.dService.GetList("Case").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  HardDriveList(){
+    this.dService.GetList("HardDrive").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  MemoryList(){
+    this.dService.GetList("Memory").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  OperatingSystemList(){
+    this.dService.GetList("OperatingSystem").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  PowerSupplyList(){
+    this.dService.GetList("PowerSupply").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  ProcessorList(){
+    this.dService.GetList("Processor").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
+  OpticalDriveList(){
+    this.dService.GetList("OpticalDrive").toPromise().then(
+      (List)=>{
+        this.array = List
+        console.log(this.array)
+      }
+    )
+  }
 }

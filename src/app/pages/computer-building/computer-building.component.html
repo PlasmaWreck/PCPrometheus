@@ -117,7 +117,7 @@
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.images[1].href}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.regularPrice}}" ></app-item-box>
+                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
                     </div>
                     
                     

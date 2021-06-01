@@ -12,6 +12,7 @@ import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpi
 import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OfficeBuildComponent } from './pages/office-build/office-build.component';
+import { VideoEditingBuildComponent } from './pages/video-editing-build/video-editing-build.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
   {path: 'OfficeBuild', component :OfficeBuildComponent},
+  {path: 'VideoEditingBuild', component :VideoEditingBuildComponent},
   {path: 'videogames', component : VideogamesComponent},
   {path: 'LoginPage', component :LoginComponent}
 ];
