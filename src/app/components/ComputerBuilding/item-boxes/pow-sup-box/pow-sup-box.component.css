@@ -1,0 +1,27 @@
+.item_bar{
+    border-bottom: rgb(175, 175, 175) solid .001rem;
+}
+.Odd-bg{
+    background-color: #3B5C65;
+}
+.even-bg{
+    background-color: #24363B;
+}
+.thumbnail{
+    width: 4rem;
+    height: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
+    
+}
+@media only screen and (max-width: 992px) {
+    .thumbnail{
+        width: 2rem;
+        height: 2rem;
+        
+        
+    }
+  }
+.Specs{
+    opacity: .8;
+}

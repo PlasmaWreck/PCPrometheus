@@ -1,6 +1,6 @@
 <div class="container-fluid text-light">
     <div class="row py-4">
-     
+
         <div class=" offset-lg-2 col-12 col-lg-10 text-center">
             <h1>PC Building</h1>
             <hr class="hr-tag">
@@ -12,8 +12,8 @@
             <div class="row bg-filter">
                 <div class="col-12 p-0">
                     <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
-                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
-                            (focus)="myDrop.open()">Select Part</button>
+                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual "
+                            ngbDropdownAnchor (focus)="myDrop.open()">Select Part</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
                             <button ngbDropdownItem>CPU</button>
                             <button ngbDropdownItem>CPU Cooler</button>
@@ -25,8 +25,8 @@
                             <button ngbDropdownItem>Optical Drive</button>
                             <button ngbDropdownItem>Operating System</button>
                             <button ngbDropdownItem>Case</button>
-                            
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -36,10 +36,11 @@
                         <div class="col-12">
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue"
+                                    [options]="Price_options"></ngx-slider>
                                 <hr>
                             </div>
-                    
+
                         </div>
                     </div>
 
@@ -75,7 +76,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div ngbDropdown class="d-inline-block ">
-                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown" id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
+                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown"
+                                            id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
                                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                             <button ngbDropdownItem>CPU</button>
                                             <button ngbDropdownItem>CPU Cooler</button>
@@ -88,11 +90,12 @@
                                             <button ngbDropdownItem>Operating System</button>
                                             <button ngbDropdownItem>Case</button>
                                         </div>
-                                      </div>
-                                    
+                                    </div>
+
                                 </div>
                                 <div class="col-6">
-                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown"
+                                        (click)="openScrollableContent(longContent)">Filter</button>
                                 </div>
                             </div>
                             <hr>
@@ -104,23 +107,26 @@
                     <div class="row">
                         <div class="spec_title col-3 d-none d-lg-block">
                             <div class="row">
-                                <div class="col-8 offset-4 ">
+                                <div class="col-3 offset-4 ">
                                     <b>Name</b>
                                 </div>
                             </div>
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Cores</div>
-                        <div class="spec_title col-1 d-none d-lg-block">GHz</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Liquid Cooling</div>
+
+                        <div class="spec_title col-2 d-none d-lg-block"># of Fans</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-cooler-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}"
+                            Manuf="{{item.brand}}" Liquid="{{item.liquidCooling}}" numOfFans="{{item.numOfFans}}"
+                            Price="{{item.price}}">
+                            </app-cooler-box>
                     </div>
-                    
-                    
+
+
                     <!--//Item-->
 
                 </div>
@@ -133,10 +139,10 @@
 
 <ng-template #longContent let-modal class="dark-modal">
     <div class="modal-header ">
-      <h4 class="modal-title">Filter</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        <h4 class="modal-title">Filter</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
         <!--Filters-->
@@ -144,14 +150,15 @@
             <div class="col-12">
                 <b class="">Price</b>
                 <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options">
+                    </ngx-slider>
                 </div>
             </div>
         </div>
-        
-       
-         
-        <span >
+
+
+
+        <span>
             <div class="row">
                 <div class="col-12 pb-2">
                     <b>Manufacturer</b>
@@ -164,7 +171,7 @@
                                 </label>
                             </div>
                         </div>
-                      
+
                         <div class="col-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -173,21 +180,23 @@
                                 </label>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <hr>
                 <div class="col-12">
                     <b class="">Fan RPM</b>
                     <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="fanRpm_minValue" [(highValue)]="fanRpm_maxValue" [options]="fanRpm_options"></ngx-slider>
+                        <ngx-slider [(value)]="fanRpm_minValue" [(highValue)]="fanRpm_maxValue"
+                            [options]="fanRpm_options"></ngx-slider>
                     </div>
                 </div>
                 <hr>
                 <div class="col-12">
                     <b class="">Noise Level</b>
                     <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="noiseLevel_minValue" [(highValue)]="noiseLevel_maxValue" [options]="noiseLevel_options"></ngx-slider>
+                        <ngx-slider [(value)]="noiseLevel_minValue" [(highValue)]="noiseLevel_maxValue"
+                            [options]="noiseLevel_options"></ngx-slider>
                     </div>
                 </div>
             </div>
@@ -368,10 +377,9 @@
         <span *ngIf="partType === 'case'">
             
         </span> -->
-      
+
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
     </div>
-  </ng-template>
-  
+</ng-template>

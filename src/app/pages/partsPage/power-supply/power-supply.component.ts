@@ -13,6 +13,7 @@ export class PowerSupplyComponent implements OnInit {
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.PowerSupplyList()
   }
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });

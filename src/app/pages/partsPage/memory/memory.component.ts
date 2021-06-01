@@ -13,6 +13,7 @@ export class MemoryComponent implements OnInit {
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.MemoryList();
   }
   Price_minValue: number = 0;
   Price_maxValue: number = 500;

@@ -13,6 +13,7 @@ export class OpticalDriveComponent implements OnInit {
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.OpticalDriveList()
   }
   OpticalDriveList(){
     this.dService.GetList("OpticalDrive").toPromise().then(

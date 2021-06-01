@@ -14,6 +14,7 @@ export class VideoCardComponent implements OnInit {
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.GraphicsCardList()
   }
   GraphicsCardList(){
     this.dService.GetList("GraphicsCard").toPromise().then(

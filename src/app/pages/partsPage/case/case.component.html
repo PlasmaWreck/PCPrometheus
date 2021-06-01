@@ -57,7 +57,7 @@
                     <div class="row pt-5">
                         <div class="col-6 ">
                             <h2>
-                                CPU
+                                Case
                             </h2>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="col-12">
-                    <div class="row">
+                    <div class="row align-items-end">
                         <div class="spec_title col-3 d-none d-lg-block">
                             <div class="row">
                                 <div class="col-8 offset-4 ">
@@ -110,14 +110,14 @@
                             </div>
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Cores</div>
-                        <div class="spec_title col-1 d-none d-lg-block">GHz</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-1 d-none d-lg-block">RGB</div>
+                        <div class="spec_title col-1 d-none d-lg-block">Form Factor</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Size</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-case-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" RGB="{{item.rgb}}" Form_Factor="{{item.mbFormFactor}}" Size="{{item.size}}" Price="{{item.price}}" ></app-case-box>
                     </div>
                     
                     

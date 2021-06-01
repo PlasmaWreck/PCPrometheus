@@ -13,6 +13,7 @@ export class OperatingSystemComponent implements OnInit {
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.OperatingSystemList()
   }
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });

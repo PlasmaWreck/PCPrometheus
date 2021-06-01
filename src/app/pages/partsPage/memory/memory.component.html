@@ -110,14 +110,13 @@
                             </div>
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Cores</div>
-                        <div class="spec_title col-1 d-none d-lg-block">GHz</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Capacity</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Clock Frequency</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-memory-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Capacity="{{item.capacity}}" Clock="{{item.clockFrequency}}" Threads="f" Price="{{item.price}}" ></app-memory-box>
                     </div>
                     
                     

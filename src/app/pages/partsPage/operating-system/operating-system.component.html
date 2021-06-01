@@ -110,14 +110,14 @@
                             </div>
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Cores</div>
-                        <div class="spec_title col-1 d-none d-lg-block">GHz</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-1 d-none d-lg-block">BD</div>
+                        <div class="spec_title col-1 d-none d-lg-block">DVD</div>
+                        <div class="spec_title col-2 d-none d-lg-block">CD</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-op-sys-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" BD="{{item.installMethod.split('/').includes('BD')}}" CD="{{item.installMethod.split('/').includes('CD')}}" DVD="{{item.installMethod.split('/').includes('DVD')}}" Price="{{item.price}}" ></app-op-sys-box>
                     </div>
                     
                     

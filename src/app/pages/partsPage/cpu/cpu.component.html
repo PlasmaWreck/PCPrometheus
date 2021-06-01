@@ -112,12 +112,12 @@
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
                         <div class="spec_title col-1 d-none d-lg-block">Cores</div>
                         <div class="spec_title col-1 d-none d-lg-block">GHz</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Threads</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Socket</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-cpu-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Cores="{{item.coreCount}}" GHz="{{item.frequency}}" Threads="{{item.socket}}" Price="{{item.price}}" ></app-cpu-box>
                     </div>
                     
                     
