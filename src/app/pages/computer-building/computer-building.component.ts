@@ -286,14 +286,7 @@ boostClock_minValue: number = 0;
       }
     )
   }
-  MemoryList(){
-    this.dService.GetList("Memory").toPromise().then(
-      (List)=>{
-        this.array = List
-        console.log(this.array)
-      }
-    )
-  }
+  
   OperatingSystemList(){
     this.dService.GetList("OperatingSystem").toPromise().then(
       (List)=>{

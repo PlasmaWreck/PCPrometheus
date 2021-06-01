@@ -57,7 +57,7 @@
                     <div class="row pt-5">
                         <div class="col-6 ">
                             <h2>
-                                Motherboard
+                                CPU
                             </h2>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -148,179 +148,10 @@
                 </div>
             </div>
         </div>
-        <!--Motherboard-->
-        <span>
-            <div class="row pt-3">
-                
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    ASRock
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    AMD
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Socket/CPU</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    AM4
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    LGA1200
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    LGA2066
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    sTR4
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    sTRX4
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Form Factor</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    AMD B450
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12 ">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    AMD B550
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    AMD X570
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Intel B460
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Intel Z490
-                                </label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="col-12">
-                            <b class="">Memory Slots</b>
-                            <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="memorySlots_minValue" [(highValue)]="memorySlots_maxValue" [options]="memorySlots_options"></ngx-slider>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </span>
-        <!-- <span *ngIf="partType === 'cpu'">
-            <div class="col-12 pb-2">
-                <b>Manufacturer</b>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Intel
-                            </label>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                AMD
-                            </label>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-12">
-                    <b class="">Cores</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue" [options]="Cores_options"></ngx-slider>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">GHz</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue" [options]="GHz_options"></ngx-slider>
-                    </div>
-                </div>
-            </div>
-        </span>
-        cooler
-        <span *ngIf="partType === 'cooler'">
+        
+       
+         
+        <span >
             <div class="row">
                 <div class="col-12 pb-2">
                     <b>Manufacturer</b>
@@ -361,7 +192,7 @@
                 </div>
             </div>
         </span>
-        memory
+        <!--memory
         <span *ngIf="partType === 'memory'">
             <div class="row">
                 <div class="col-12 pb-2">
