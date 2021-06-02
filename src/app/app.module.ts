@@ -43,6 +43,8 @@ import { OpSysBoxComponent } from './components/ComputerBuilding/item-boxes/op-s
 import { OptDriveBoxComponent } from './components/ComputerBuilding/item-boxes/opt-drive-box/opt-drive-box.component';
 import { PowSupBoxComponent } from './components/ComputerBuilding/item-boxes/pow-sup-box/pow-sup-box.component';
 import { VideoCardBoxComponent } from './components/ComputerBuilding/item-boxes/video-card-box/video-card-box.component';
+import { MotherboardComponent } from './pages/partsPage/motherboard/motherboard.component';
+import { MotherboardBoxComponent } from './components/ComputerBuilding/item-boxes/motherboard-box/motherboard-box.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -87,7 +89,9 @@ export function tokenGetter() {
     OpSysBoxComponent,
     OptDriveBoxComponent,
     PowSupBoxComponent,
-    VideoCardBoxComponent
+    VideoCardBoxComponent,
+    MotherboardComponent,
+    MotherboardBoxComponent
 
   ],
   imports: [

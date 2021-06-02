@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-opt-drive-box',
-  templateUrl: './opt-drive-box.component.html',
-  styleUrls: ['./opt-drive-box.component.css']
+  selector: 'app-motherboard-box',
+  templateUrl: './motherboard-box.component.html',
+  styleUrls: ['./motherboard-box.component.css']
 })
-export class OptDriveBoxComponent implements OnInit {
+export class MotherboardBoxComponent implements OnInit {
 
   constructor() { }
 
@@ -13,8 +13,8 @@ export class OptDriveBoxComponent implements OnInit {
   }
   @Input () name: string;
   @Input () Manuf: string;
-  @Input () BlueRay: string;
-  @Input () ConType: string;
+  @Input () Socket: string;
+  @Input () FormFactor: string;
   @Input () Price: string;
   @Input () index: string;
   @Input () thumbnail: string;
@@ -25,5 +25,4 @@ export class OptDriveBoxComponent implements OnInit {
       return "Odd-bg"
     }
   }
-
 }

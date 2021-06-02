@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="col-12">
-                    <div class="row align-items-end">
+                    <div class="row">
                         <div class="spec_title col-3 d-none d-lg-block">
                             <div class="row">
                                 <div class="col-8 offset-4 ">
@@ -108,14 +108,13 @@
                             </div>
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Memory</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Core Clock</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Type</div>
+                        <div class="spec_title col-2 d-none d-lg-block">CPU Socket</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Form Factor</div>
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-video-card-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.gpu}}" CoreClock="{{item.coreClockSpeed}}" Type="{{item.memoryType}}" MemorySize="{{item.memorySize}}" Price="{{item.price}}" ></app-video-card-box>
+                        <app-motherboard-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Socket="{{item.cpuSocket}}" FormFactor="{{item.formFactor}}"  Price="{{item.price}}" ></app-motherboard-box>
                     </div>
                     
                     
@@ -148,9 +147,8 @@
         </div>
         
        
-   
-        
-        <span *ngIf="partType === 'videocard'">
+    
+        <span >
             <div class="row">
                 <div class="col-12 pb-2">
                     <b>Manufacturer</b>
@@ -159,7 +157,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    Kingston
+                                    Cotsair
                                 </label>
                             </div>
                         </div>
@@ -168,46 +166,46 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    Samsung
+                                    Crucials
                                 </label>
                             </div>
                         </div>
                         
                     </div>
                 </div>
+                <div class="col-12">
+                    <b class="">Speed</b>
+                    <div class="custom-slider py-3">
+                        <ngx-slider [(value)]="speed_minValue" [(highValue)]="speed_maxValue" [options]="speed_options"></ngx-slider>
+                    </div>
+                </div>
                 <hr>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="capacity_minValue" [(highValue)]="capacity_maxValue" [options]="capacity_options"></ngx-slider>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="coreClock_minValue" [(highValue)]="coreClock_maxValue" [options]="coreClock_options"></ngx-slider>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="boostClock_minValue" [(highValue)]="boostClock_maxValue" [options]="boostClock_options"></ngx-slider>
+                <div class="col-12 pb-2">
+                    <b>Module</b>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Cooler Master
+                                </label>
+                            </div>
+                        </div>
+                      
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Noctura
+                                </label>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </span>
-        powersupply
-        <span *ngIf="partType === 'powersupply'">
-            
-        </span>
-        opticaldrive
-        <span *ngIf="partType === 'opticaldrive'">
-            
-        </span>
-        case
-        <span *ngIf="partType === 'case'">
-            
-        </span>
+        
       
     </div>
     <div class="modal-footer">

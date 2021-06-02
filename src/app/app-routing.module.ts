@@ -22,6 +22,7 @@ import { PowerSupplyComponent } from './pages/partsPage/power-supply/power-suppl
 import { OpticalDriveComponent } from './pages/partsPage/optical-drive/optical-drive.component';
 import { OperatingSystemComponent } from './pages/partsPage/operating-system/operating-system.component';
 import { CaseComponent } from './pages/partsPage/case/case.component';
+import { MotherboardComponent } from './pages/partsPage/motherboard/motherboard.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'PowerSupply', component :PowerSupplyComponent},
   {path: 'OpticalDrive', component :OpticalDriveComponent},
   {path: 'OperatingSystem', component :OperatingSystemComponent},
+  {path: 'Motherboard', component :MotherboardComponent},
   {path: 'Case', component :CaseComponent},
   {path: 'questionnaire', component :QuestionnaireComponent},
   {path: 'partinstallation', component: PartinstallationComponent},
