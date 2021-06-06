@@ -1,0 +1,158 @@
+<div class="container-fluid text-light">
+    <div class="row py-4">
+     
+        <div class=" offset-lg-2 col-12 col-lg-10 text-center">
+            <h1>PC Building</h1>
+            <hr class="hr-tag">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 d-none d-lg-block m-0">
+            <!--Filter-->
+            <div class="row bg-filter">
+                <div class="col-12 p-0">
+                    <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
+                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
+                            (focus)="myDrop.open()">Select Part</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
+                            <button routerLink="/Cooler"  ngbDropdownItem>CPU Cooler</button>
+                            <button routerLink="/Motherboard"  ngbDropdownItem>Motherboard</button>
+                            <button routerLink="/Memory"  ngbDropdownItem>Memory</button>
+                            <button routerLink="/Storage"  ngbDropdownItem>Storage</button>
+                            <button routerLink="/VideoCard"  ngbDropdownItem>Video Card</button>
+                            <button routerLink="/PowerSupply"  ngbDropdownItem>Power Supply</button>
+                            <button routerLink="/OpticalDrive"  ngbDropdownItem>Optical Drive</button>
+                            <button routerLink="/OperatingSystem"  ngbDropdownItem>Operating System</button>
+                            <button routerLink="/Case"  ngbDropdownItem>Case</button>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!--Filters-->
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Price</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <hr>
+                            </div>
+                    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--empty Space-->
+            <div class="row empty_Space">
+
+            </div>
+        </div>
+        <div class="col-12 col-lg-10">
+            <!--Body-->
+            <div class="row bg-list">
+                <div class="col-12">
+                    <div class="row pt-5">
+                        <div class="col-6 ">
+                            <h2>
+                                CPU
+                            </h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input class="form-control form-control-default" type="text" placeholder="Search"
+                                        aria-label=".form-control-lg example">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 d-lg-none">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div ngbDropdown class="d-inline-block ">
+                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown" id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                            <button routerLink="/Cooler"  ngbDropdownItem>CPU Cooler</button>
+                            <button routerLink="/Motherboard"  ngbDropdownItem>Motherboard</button>
+                            <button routerLink="/Memory"  ngbDropdownItem>Memory</button>
+                            <button routerLink="/Storage"  ngbDropdownItem>Storage</button>
+                            <button routerLink="/VideoCard"  ngbDropdownItem>Video Card</button>
+                            <button routerLink="/PowerSupply"  ngbDropdownItem>Power Supply</button>
+                            <button routerLink="/OpticalDrive"  ngbDropdownItem>Optical Drive</button>
+                            <button routerLink="/OperatingSystem"  ngbDropdownItem>Operating System</button>
+                            <button routerLink="/Case"  ngbDropdownItem>Case</button>
+                                        </div>
+                                      </div>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="spec_title col-3 d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-8 offset-4 ">
+                                    <b>Name</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Blu Ray</div>
+                        
+                        <div class="spec_title col-2 d-none d-lg-block">Connection Type</div>
+                        <div class="spec_title col-3 d-none d-lg-block">Price</div>
+                    </div>
+                    <!--//Item-->
+                    <div *ngFor="let item of array; let i = index ">
+                        <app-opt-drive-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" BlueRay="{{item.bluRay}}" ConType="{{item.connectionType}}" Price="{{item.price}}" ></app-opt-drive-box>
+                    </div>
+                    
+                    
+                    <!--//Item-->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #longContent let-modal class="dark-modal">
+    <div class="modal-header ">
+      <h4 class="modal-title">Filter</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!--Filters-->
+        <div class="row">
+            <div class="col-12">
+                <b class="">Price</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                </div>
+            </div>
+        </div>
+        
+       
+        <!--Add Filter-->
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  

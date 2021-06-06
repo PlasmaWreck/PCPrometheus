@@ -24,6 +24,27 @@ import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { OfficeBuildComponent } from './pages/office-build/office-build.component';
+import { VideoEditingBuildComponent } from './pages/video-editing-build/video-editing-build.component';
+import { CPUComponent } from './pages/partsPage/cpu/cpu.component';
+import { CoolerComponent } from './pages/partsPage/cooler/cooler.component';
+import { MemoryComponent } from './pages/partsPage/memory/memory.component';
+import { StorageComponent } from './pages/partsPage/storage/storage.component';
+import { VideoCardComponent } from './pages/partsPage/video-card/video-card.component';
+import { PowerSupplyComponent } from './pages/partsPage/power-supply/power-supply.component';
+import { OpticalDriveComponent } from './pages/partsPage/optical-drive/optical-drive.component';
+import { OperatingSystemComponent } from './pages/partsPage/operating-system/operating-system.component';
+import { CaseComponent } from './pages/partsPage/case/case.component';
+import { CaseBoxComponent } from './components/ComputerBuilding/item-boxes/case-box/case-box.component';
+import { CoolerBoxComponent } from './components/ComputerBuilding/item-boxes/cooler-box/cooler-box.component';
+import { CpuBoxComponent } from './components/ComputerBuilding/item-boxes/cpu-box/cpu-box.component';
+import { MemoryBoxComponent } from './components/ComputerBuilding/item-boxes/memory-box/memory-box.component';
+import { OpSysBoxComponent } from './components/ComputerBuilding/item-boxes/op-sys-box/op-sys-box.component';
+import { OptDriveBoxComponent } from './components/ComputerBuilding/item-boxes/opt-drive-box/opt-drive-box.component';
+import { PowSupBoxComponent } from './components/ComputerBuilding/item-boxes/pow-sup-box/pow-sup-box.component';
+import { VideoCardBoxComponent } from './components/ComputerBuilding/item-boxes/video-card-box/video-card-box.component';
+import { MotherboardComponent } from './pages/partsPage/motherboard/motherboard.component';
+import { MotherboardBoxComponent } from './components/ComputerBuilding/item-boxes/motherboard-box/motherboard-box.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -50,7 +71,27 @@ export function tokenGetter() {
     VideogamesComponent,
     SurveypartpickerComponent,
     LoginComponent,
-
+    OfficeBuildComponent,
+    VideoEditingBuildComponent,
+    CPUComponent,
+    CoolerComponent,
+    MemoryComponent,
+    StorageComponent,
+    VideoCardComponent,
+    PowerSupplyComponent,
+    OpticalDriveComponent,
+    OperatingSystemComponent,
+    CaseComponent,
+    CaseBoxComponent,
+    CoolerBoxComponent,
+    CpuBoxComponent,
+    MemoryBoxComponent,
+    OpSysBoxComponent,
+    OptDriveBoxComponent,
+    PowSupBoxComponent,
+    VideoCardBoxComponent,
+    MotherboardComponent,
+    MotherboardBoxComponent
 
   ],
   imports: [

@@ -144,4 +144,19 @@ export class DataService {
   public postFile(url: string, data: any, opt?: any): Observable<any> {
     return this.http.post<any>(this.url + url, data, { headers: { 'enctype': 'multipart/form-data' } });
   }
+
+  public GetList(key){
+    return this.http.get(this.url+key, httpOptions)
+
+      // THE PIPE LETS YOU COMBIME MULTIPLE FUNTIONS INTO ONE FUNCTION 
+      .pipe(
+
+        // Map is going through all items returned and stored in this.data variable.
+        map(res => this.data = res),
+
+        // ALLOW US TO TAP INTO THE OBSERVABLE TO BE ABLE CHECK FOR SUCCESS / FAILED ATTEMPT THEN DETERMINES HOW TO HANDLE IT. 
+        tap((res: any) => this.handleSuccess(res, null)),
+        catchError(err => this.handleError(err)),
+      );
+  }
 }

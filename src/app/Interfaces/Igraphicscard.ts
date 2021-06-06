@@ -12,6 +12,7 @@ export interface IGraphicsCard{
     PowerConnectors:String[],
     VideoOutputPorts:String[],
     APISupport:String,
-    ComputePerformance:Number
-
+    ComputePerformance:Number,
+    price: string,
+    imagePath: string
 }

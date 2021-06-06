@@ -28,7 +28,9 @@ export class ApigroundsComponent implements OnInit {
     PowerConnectors:["String","Of many Kinds"],
     VideoOutputPorts:["String","Of many Kinds"],
     APISupport:"None",
-    ComputePerformance:1
+    ComputePerformance:1,
+    price: "35 USD",
+    imagePath: "idk"
   };
 
   constructor(private aService:AddService,
