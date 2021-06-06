@@ -33,8 +33,8 @@ export class PartinstallationComponent implements OnInit {
     },
     {
       partTitle: "Memory Sticks",
-      descTitle: "Remember to fill this out:",
-      description: "I forgot to add in RAM installation...",
+      descTitle: "Installing The Memory Sticks:",
+      description: "To install memory sticks it is very important to first read the manuel included with your motherboard. The manuel will tell you what pattern to install your memory depending on the amount of cards you have. Once you know what slots to install the cards into, find the slots and release the clamps around them. Once that is done you should line up one of the cards with the small indent on the motherboard slot. From there insert the card and make sure it is firmly in the slot. Close the clamps around the memory stick and repeat for each of your cards.",
       selected: false,
       imgPath: "assets/images/Memory.png"
     },
