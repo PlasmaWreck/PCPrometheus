@@ -3,12 +3,14 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { GetService } from 'src/app/service/Get/get.service';
 import { LoginService } from 'src/app/service/Login/login.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   LoginForm: FormGroup;
   constructor(private FormBuilder: FormBuilder, private lservice: LoginService, private gService: GetService) { }
 
@@ -46,4 +48,5 @@ export class LoginComponent implements OnInit {
     localStorage.removeItem("token");
     console.log("You've logged out")
   }
+
 }
