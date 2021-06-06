@@ -1,3 +1,4 @@
+
 <div class="container bg-light">
     <fieldset>
         <legend>User Form</legend>
@@ -16,4 +17,29 @@
     <button class="btn-primary btn my-3" (click)="clickMe()">Get list</button>
     <hr>
     <button class="btn-primary btn my-3" (click)="LogOut()">Log-out</button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <form action="action_page.php" method="post">
+        <div>
+          <h1 style="font-size: 70px; text-align:center; color: #FF6D17">Welcome</h1>
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <button type="submit">Login</button>
+        </div>
+      
+        <div class="container">
+          <a href="#">Forgot password?</a>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
