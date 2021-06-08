@@ -9,6 +9,56 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./cooler.component.css']
 })
 export class CoolerComponent implements OnInit {
+  Price_minValue: number = 0;
+  Price_maxValue: number = 500;
+  Price_options: Options = {
+    floor: 0,
+    ceil: this.Price_maxValue,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return "$" + value;
+        case LabelType.High:
+          return "$" + value;
+        default:
+          return "$" + value;
+      }
+    }
+  };
+  Fans_minValue: number = 0;
+  Fans_maxValue: number = 16;
+  Fans_options: Options = {
+    floor: 0,
+    ceil: this.Fans_maxValue,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return "" + value;
+        case LabelType.High:
+          return "" + value;
+        default:
+          return "" + value;
+      }
+    }
+  };
+  PriceHigh = this.Price_options.ceil;
+  PriceLow = 0;
+  FansHigh = this.Fans_options.ceil;
+  FansLow = 0;
+
+  CoolerMasterIsChecked = false;
+  CorsairIsChecked = false;
+  ASUSIsChecked = false;
+  WJCoolIsChecked = false;
+  AresgameIsChecked = false;
+  NoctuaIsChecked = false;
+  BeQuietIsChecked = false;
+  VetrooIsChecked = false;
+  NzxtIsChecked = false;
+  //Liquid Cooling
+  YesIsChecked = false;
+  NoIsChecked = false;
+
   array;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
@@ -26,38 +76,8 @@ export class CoolerComponent implements OnInit {
       }
     )
   }
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
-  Price_options: Options = {
-    floor: 0,
-    ceil: this.Price_maxValue,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return "$" + value;
-        case LabelType.High:
-          return "$" + value;
-        default:
-          return "$" + value;
-      }
-    }
-  };
-  fanRpm_minValue: number = 0;
-  fanRpm_maxValue: number = 16;
-  fanRpm_options: Options = {
-    floor: 0,
-    ceil: this.fanRpm_maxValue,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return "" + value;
-        case LabelType.High:
-          return "" + value;
-        default:
-          return "" + value;
-      }
-    }
-  };
+  
+  
   noiseLevel_minValue: number = 0;
   noiseLevel_maxValue: number = 16;
   noiseLevel_options: Options = {

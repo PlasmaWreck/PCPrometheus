@@ -28,6 +28,26 @@ export class CaseComponent implements OnInit {
     }
   };
 
+  PriceHigh = this.Price_options.ceil;
+  PriceLow = 0;
+  ///Manufacture
+  LianIsChecked = false;
+  FractalIsChecked = false;
+  CorsairIsChecked = false;
+  CoolerMasterIsChecked = false;
+  SSUPDIsChecked = false;
+  ThermaltakeIsChecked = false;
+  AntecIsChecked = false;
+  NZXTIsChecked = false;
+  //RGB?
+  se;
+  YesIsChecked = false;
+  NoIsChecked = false;
+  //Size
+  MiniIsChecked = false;
+  MidIsChecked = false;
+  FullIsChecked = false;
+
   array;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
@@ -44,6 +64,24 @@ export class CaseComponent implements OnInit {
         console.log(this.array)
       }
     )
+  }
+
+  ConvertToMoney(val){
+    val = parseFloat(val.replace(/[^0-9.]/g, ''))
+    return val
+  }
+  
+  PriceRange(val){
+    console.log(val)
+    this.PriceHigh = val.highValue;
+    this.PriceLow = val.value;
+    console.log(this.PriceLow, this.PriceHigh)
+    this.FilterList()
+  }
+
+  FilterList()
+  {
+
   }
 
 
