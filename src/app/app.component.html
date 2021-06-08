@@ -81,7 +81,7 @@
               </div>
               <div class="col px-1">
                 <button class="d-flex flex-column align-items-center" routerLink="{{opticalDrive_Route}}" ngbDropdownItem><img
-                    src="assets/images/opticaldrive.png"><p class="w-100 my-0">Optical Drives</p></button>
+                    src="assets/images/"><p class="w-100 my-0">Optical Drives</p></button>
               </div>
               <div class="col px-1">
                 <button class="d-flex flex-column align-items-center" routerLink="{{operatingSystem_Route}}" ngbDropdownItem><img
@@ -124,10 +124,10 @@
           <a class="nav-link" (click)="isComputerBuildsCollapsed = !isComputerBuildsCollapsed">Computer Builders <i
               class="fas fa-sort-down"></i></a>
           <ul #collapse="ngbCollapse" [ngbCollapse]="isComputerBuildsCollapsed" class="navbar-nav ">
-            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partsPage_Route}}">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'{{partsPage_Route}}'">
               Component Picker
             </li>
-            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{questionnaire_Route}}">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'{{questionnaire_Route}}'">
               Prometheus' Path
             </li>
           </ul>

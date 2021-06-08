@@ -45,6 +45,8 @@ import { PowSupBoxComponent } from './components/ComputerBuilding/item-boxes/pow
 import { VideoCardBoxComponent } from './components/ComputerBuilding/item-boxes/video-card-box/video-card-box.component';
 import { MotherboardComponent } from './pages/partsPage/motherboard/motherboard.component';
 import { MotherboardBoxComponent } from './components/ComputerBuilding/item-boxes/motherboard-box/motherboard-box.component';
+import { FilterDropdownComponent } from './components/ComputerBuilding/filter-dropdown/filter-dropdown.component';
+import { StorageBoxComponent } from './components/ComputerBuilding/item-boxes/storage-box/storage-box.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -91,7 +93,9 @@ export function tokenGetter() {
     PowSupBoxComponent,
     VideoCardBoxComponent,
     MotherboardComponent,
-    MotherboardBoxComponent
+    MotherboardBoxComponent,
+    FilterDropdownComponent,
+    StorageBoxComponent
 
   ],
   imports: [

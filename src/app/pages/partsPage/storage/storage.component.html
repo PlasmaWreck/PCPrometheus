@@ -11,24 +11,7 @@
             <!--Filter-->
             <div class="row bg-filter">
                 <div class="col-12 p-0">
-                    <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
-                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
-                            (focus)="myDrop.open()">Select Part</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
-                            <button ngbDropdownItem>CPU</button>
-                            <button ngbDropdownItem>CPU Cooler</button>
-                            <button ngbDropdownItem>Motherboard</button>
-                            <button ngbDropdownItem>Memory</button>
-                            <button ngbDropdownItem>Storage</button>
-                            <button ngbDropdownItem>Video Card</button>
-                            <button ngbDropdownItem>Power Supply</button>
-                            <button ngbDropdownItem>Optical Drive</button>
-                            <button ngbDropdownItem>Operating System</button>
-                            <button ngbDropdownItem>Case</button>
-                            
-                            
-                        </div>
-                    </div>
+                   <app-filter-dropdown></app-filter-dropdown>
                 </div>
                 <div class="col-12">
                     <!--Filters-->
@@ -39,10 +22,60 @@
                                 <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
                                 <hr>
                             </div>
+                            
                     
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Seagate
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Western Digital
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Toshiba
+                                </label>
+                            </div>
+                        </div>
 
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Capacity</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <hr>
+                            </div>
+                            
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">RPM</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <hr>
+                            </div>
+                            
+                    
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--empty Space-->
@@ -57,7 +90,7 @@
                     <div class="row pt-5">
                         <div class="col-6 ">
                             <h2>
-                                CPU
+                                Storage
                             </h2>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -74,20 +107,7 @@
                         <div class="col-12 mt-2 d-lg-none">
                             <div class="row">
                                 <div class="col-6">
-                                    <div ngbDropdown class="d-inline-block ">
-                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown" id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
-                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                            <button routerLink="/Cooler"  ngbDropdownItem>CPU Cooler</button>
-                            <button routerLink="/Motherboard"  ngbDropdownItem>Motherboard</button>
-                            <button routerLink="/Memory"  ngbDropdownItem>Memory</button>
-                            <button routerLink="/Storage"  ngbDropdownItem>Storage</button>
-                            <button routerLink="/VideoCard"  ngbDropdownItem>Video Card</button>
-                            <button routerLink="/PowerSupply"  ngbDropdownItem>Power Supply</button>
-                            <button routerLink="/OpticalDrive"  ngbDropdownItem>Optical Drive</button>
-                            <button routerLink="/OperatingSystem"  ngbDropdownItem>Operating System</button>
-                            <button routerLink="/Case"  ngbDropdownItem>Case</button>
-                                        </div>
-                                      </div>
+                                    <app-filter-dropdown></app-filter-dropdown>
                                     
                                 </div>
                                 <div class="col-6">
@@ -110,13 +130,13 @@
                         </div>
                         <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
                         <div class="spec_title col-1 d-none d-lg-block">Capacity</div>
-                        <div class="spec_title col-1 d-none d-lg-block">Type</div>
-                        <div class="spec_title col-2 d-none d-lg-block">Cache</div>
-                        <div class="spec_title col-3 d-none d-lg-block">Price</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Type</div>
+                        <div class="spec_title col-2 d-none d-lg-block">RPM</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of array; let i = index ">
-                        <app-item-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.manufacturer}}" Cores="f" GHz="f" Threads="f" Price="{{item.price}}" ></app-item-box>
+                        <app-storage-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" capacity="{{item.diskSize}}" Type="f{{item.connectionType}}" RPM="{{item.rpm}}" Price="{{item.price}}" ></app-storage-box>
                     </div>
                     
                     
