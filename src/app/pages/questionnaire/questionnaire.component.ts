@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProPathService } from 'src/app/service/ProPath/pro-path.service';
 
 @Component({
   selector: 'app-questionnaire',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionnaireComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private DataService: ProPathService) { }
+budget = 0;
   ngOnInit(): void {
   }
 
+  saveBudget(budgetInputVal){
+    this.DataService.budget = budgetInputVal;
+  }
 }

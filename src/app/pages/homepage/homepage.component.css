@@ -1,14 +1,15 @@
-.white{
-    color: white;
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
 }
+
 html, body {
 
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 
 }
 .stylestart{
-    font-family: 'Mitr', sans-serif;
+  font-family: 'Mitr', sans-serif;
 }
 .herobtn{
 background-color: #FF6D17;
@@ -18,5 +19,16 @@ color:white;
 }
 
 .homeSecondaryBG{
-    background-color: #446A74;
+  background-color: #446A74;
 }
+.white{
+    color: white;
+}
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
