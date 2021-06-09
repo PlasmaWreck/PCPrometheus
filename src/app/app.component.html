@@ -81,7 +81,7 @@
               </div>
               <div class="col px-1">
                 <button class="d-flex flex-column align-items-center" ngbDropdownItem><img
-                    src="assets/images/.png"><p class="w-100 my-0">Optical Drives</p></button>
+                    src="assets/images/opticaldrive/ASUS24xDVD-RWSerial-ATAInternalOEMOpticalDriveDRW-24B1ST.png"><p class="w-100 my-0">Optical Drives</p></button>
               </div>
               <div class="col px-1">
                 <button class="d-flex flex-column align-items-center" ngbDropdownItem><img
@@ -89,7 +89,7 @@
               </div>
               <div class="col px-1">
                 <button class="d-flex flex-column align-items-center" ngbDropdownItem><img
-                    src="assets/images/SleeperPC.png"><p class="w-100 my-0">Cases</p></button>
+                    src="assets/images/cases/corsair5000d.png"><p class="w-100 my-0">Cases</p></button>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@
           <a class="nav-link" (click)="isProductsCollapsed = !isProductsCollapsed">Products <i
               class="fas fa-sort-down"></i></a>
           <ul #collapse="ngbCollapse" [ngbCollapse]="isProductsCollapsed" class="navbar-nav ">
-            <!-- <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" href="{{cpu_Route}}">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{cpu_Route}}">
             CPU
           </li>
           <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{cpuCooler_Route}}">
@@ -180,7 +180,7 @@
           </li>
           <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{case_Route}}">
             Case
-          </li> -->
+          </li>
           </ul>
         </li>
       </ul>
