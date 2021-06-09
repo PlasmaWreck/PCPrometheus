@@ -11,23 +11,7 @@
             <!--Filter-->
             <div class="row bg-filter">
                 <div class="col-12 p-0">
-                    <div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
-                        <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
-                            (focus)="myDrop.open()">Select Part</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
-                            <button routerLink="/Cooler"  ngbDropdownItem>CPU Cooler</button>
-                            <button routerLink="/Motherboard"  ngbDropdownItem>Motherboard</button>
-                            <button routerLink="/Memory"  ngbDropdownItem>Memory</button>
-                            <button routerLink="/Storage"  ngbDropdownItem>Storage</button>
-                            <button routerLink="/VideoCard"  ngbDropdownItem>Video Card</button>
-                            <button routerLink="/PowerSupply"  ngbDropdownItem>Power Supply</button>
-                            <button routerLink="/OpticalDrive"  ngbDropdownItem>Optical Drive</button>
-                            <button routerLink="/OperatingSystem"  ngbDropdownItem>Operating System</button>
-                            <button routerLink="/Case"  ngbDropdownItem>Case</button>
-                            
-                            
-                        </div>
-                    </div>
+                    <app-filter-dropdown></app-filter-dropdown>
                 </div>
                 <div class="col-12">
                     <!--Filters-->
@@ -41,7 +25,83 @@
                     
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-12 pb-2">
+                            <b>Manufacturer</b>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault" >
+                                            HP
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Nemix Ram
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Corsair
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            TEAMGROUP
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            LEVEN
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Crucial
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Capacity</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="col-12">
+                                <b class="">Clock Frequency</b>
+                                <div class="custom-slider py-3">
+                                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <!--empty Space-->
@@ -56,7 +116,7 @@
                     <div class="row pt-5">
                         <div class="col-6 ">
                             <h2>
-                                CPU
+                                Memory
                             </h2>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -73,21 +133,7 @@
                         <div class="col-12 mt-2 d-lg-none">
                             <div class="row">
                                 <div class="col-6">
-                                    <div ngbDropdown class="d-inline-block ">
-                                        <button class="btn-lg btn-danger w-100 Select-Parts-Dropdown" id="dropdownBasic1" ngbDropdownToggle>Select Part</button>
-                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                            <button routerLink="/Cooler"  ngbDropdownItem>CPU Cooler</button>
-                            <button routerLink="/Motherboard"  ngbDropdownItem>Motherboard</button>
-                            <button routerLink="/Memory"  ngbDropdownItem>Memory</button>
-                            <button routerLink="/Storage"  ngbDropdownItem>Storage</button>
-                            <button routerLink="/VideoCard"  ngbDropdownItem>Video Card</button>
-                            <button routerLink="/PowerSupply"  ngbDropdownItem>Power Supply</button>
-                            <button routerLink="/OpticalDrive"  ngbDropdownItem>Optical Drive</button>
-                            <button routerLink="/OperatingSystem"  ngbDropdownItem>Operating System</button>
-                            <button routerLink="/Case"  ngbDropdownItem>Case</button>
-                                        </div>
-                                      </div>
-                                    
+                                    <app-filter-dropdown></app-filter-dropdown>
                                 </div>
                                 <div class="col-6">
                                     <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>

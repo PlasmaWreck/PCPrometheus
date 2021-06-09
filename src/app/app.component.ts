@@ -8,22 +8,22 @@ import { Component, } from '@angular/core';
 export class AppComponent {
   title = 'PcPrometheus';
   //Routing
-  partsPage_Route="/ComputerBuilding/cpu"
+  partsPage_Route="/CPU"
   questionnaire_Route="/questionnaire"
   partDesc_Route="/partdescription"
   partsInstall_Route="/partinstallation"
   recBuild_Route="/recbuild"
   //Routing for parts
-  cpu_Route = "/ComputerBuilding/cpu"
-  cpuCooler_Route = "/ComputerBuilding/cooler"
-  motherboard_Route = "/ComputerBuilding/motherboard"
-  memory_Route = "/ComputerBuilding/memory"
-  storage_Route = "/ComputerBuilding/storage"
-  videoCard_Route = "/ComputerBuilding/videoCard"
-  powerSupply_Route = "/ComputerBuilding/powersupply"
-  opticalDrive_Route = "/ComputerBuilding/opticaldrive"
-  operatingSystem_Route = "/ComputerBuilding/operatingsystem"
-  case_Route = "/ComputerBuilding/case"
+  cpu_Route = "/CPU"
+  cpuCooler_Route = "/Cooler"
+  motherboard_Route = "/Motherboard"
+  memory_Route = "/Memory"
+  storage_Route = "/Storage"
+  videoCard_Route = "/VideoCard"
+  powerSupply_Route = "/Powersupply"
+  opticalDrive_Route = "/Opticaldrive"
+  operatingSystem_Route = "/OperatingSystem"
+  case_Route = "/Case"
   partTypesArray=[this.cpu_Route, this.cpuCooler_Route, this.motherboard_Route, ]
   public isMenuCollapsed = true;
 
