@@ -26,34 +26,35 @@ export class MemoryComponent implements OnInit {
     }
   };
   Capacity_minValue: number = 0;
-  Capacity_maxValue: number = 500;
+  Capacity_maxValue: number = 16;
   Capacity_options: Options = {
     floor: 0,
-    ceil: this.Price_maxValue,
+    ceil: this.Capacity_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "$" + value;
+          return value+"GB";
         case LabelType.High:
-          return "$" + value;
+          return value+"GB";
         default:
-          return "$" + value;
+          return value+"GB";
       }
     }
   };
   Clock_minValue: number = 0;
-  Clock_maxValue: number = 500;
+  Clock_maxValue: number = 3200;
   Clock_options: Options = {
+    step: 100,
     floor: 0,
-    ceil: this.Price_maxValue,
+    ceil: this.Clock_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "$" + value;
+          return value+"MHz";
         case LabelType.High:
-          return "$" + value;
+          return value+"MHz";
         default:
-          return "$" + value;
+          return value+"MHz";
       }
     }
   };
@@ -63,14 +64,16 @@ export class MemoryComponent implements OnInit {
   CapacityLow = 0;
   PriceHigh = this.Price_options.ceil;
   PriceLow = 0;
+
   HpIsChecked = false;
   NemixIsChecked = false;
   CorsairIsChecked = false;
   TeamGroupIsChecked = false;
   LevenIsChecked = false;
-  CruicialIsChecked = false;
+  CrucialIsChecked = false;
 
   array;
+  filteredList;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -100,12 +103,17 @@ export class MemoryComponent implements OnInit {
     this.dService.GetList("Memory").toPromise().then(
       (List)=>{
         this.array = List
+        this.filteredList = List
         console.log(this.array)
       }
     )
   }
-  ConvertToMoney(val){
-    val = parseFloat(val.replace(/[^0-9.]/g, ''))
+  ConvertToNumbers(val){
+    if(val !== "N/A"){
+      val = parseFloat(val.replace(/[^0-9.]/g, ''))
+    }else{
+      val = 0
+    }
     return val
   }
   
@@ -113,13 +121,79 @@ export class MemoryComponent implements OnInit {
     console.log(val)
     this.PriceHigh = val.highValue;
     this.PriceLow = val.value;
-    console.log(this.PriceLow, this.PriceHigh)
+    this.FilterList()
+  }
+  CapacityRange(val){
+    console.log(val)
+    this.CapacityHigh = val.highValue;
+    this.CapacityLow = val.value;
+    this.FilterList()
+  }
+  ClockRange(val){
+    console.log(val)
+    this.ClockHigh = val.highValue;
+    this.ClockLow = val.value;
     this.FilterList()
   }
 
+  HpCheck(val){
+    this.HpIsChecked = val;
+    this.FilterList();
+  }
+  NemixCheck(val){
+    this.NemixIsChecked = val;
+    this.FilterList();
+  }
+  CorsairCheck(val){
+    this.CorsairIsChecked = val;
+    this.FilterList();
+  }
+  TeamGroupCheck(val){
+    this.TeamGroupIsChecked = val;
+    this.FilterList();
+  }
+  LevenCheck(val){
+    this.LevenIsChecked = val;
+    this.FilterList();
+  }
+  CrucialCheck(val){
+    this.CrucialIsChecked = val;
+    this.FilterList();
+  }
+  
+
   FilterList()
   {
+    console.log("hit")
+    let ManufactureArray = [];
+    if(this.HpIsChecked)
+    {
+      ManufactureArray.push("HP");
+    }
+    if(this.NemixIsChecked)
+    {
+      ManufactureArray.push("Nemix Ram");
+    }
+    if(this.CorsairIsChecked)
+    {
+      ManufactureArray.push("Corsair");
+    }
+    if(this.TeamGroupIsChecked)
+    {
+      ManufactureArray.push("TEAMGROUP");
+    }
+    if(this.LevenIsChecked)
+    {
+      ManufactureArray.push("LEVEN");
+    }
+    if(this.CrucialIsChecked)
+    {
+      ManufactureArray.push("Crucial");
+    }
 
+    this.filteredList = this.array.filter(item =>{
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh
+    })
   }
 
 }
