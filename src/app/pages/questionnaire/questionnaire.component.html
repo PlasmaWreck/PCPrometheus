@@ -275,8 +275,8 @@
         <div class="col-4 easySteps">
             <div class="row">
                 <p class="mx-3" style="font-size: 28px;">My ideal computer price would be:</p>
-                <input class="mt-2" placeholder="Enter Price Here!" style="width: 550px;" type="text">
-                <app-hollow-btn BtnText="Start Survey!" class="priceBtn marginTop" routerLink="/videogames"></app-hollow-btn>
+                <input class="mt-2" placeholder="Enter Price Here!" style="width: 550px;" type="number" #budgetInput>
+                <app-hollow-btn BtnText="Start Survey!" (click)="saveBudget(budgetInput.value)" class="priceBtn marginTop" routerLink="/videogames"></app-hollow-btn>
             </div>
         </div>
         
