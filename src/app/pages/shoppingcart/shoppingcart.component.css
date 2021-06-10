@@ -20,13 +20,6 @@
 }
 
 .cardBorder{
-    border: 2px solid #FF6D17;
-    opacity: 180%;
-    margin: 0;
-    width: 100%;
-    border-radius: 2px;
-}
-.cardBorder2{
     border: 1px solid #FF6D17;
     opacity: 180%;
     margin: 0;
@@ -142,8 +135,4 @@
 }
 .cardMargin{
     margin-top: 90px;
-}
-.strictImage{
-    max-width: 400px;
-    max-height: 150px;
 }

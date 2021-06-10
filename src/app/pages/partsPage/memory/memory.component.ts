@@ -9,10 +9,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./memory.component.css']
 })
 export class MemoryComponent implements OnInit {
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 11;
+  Price_maxValue: number = 170;
   Price_options: Options = {
-    floor: 0,
+    floor: 11,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -25,10 +25,10 @@ export class MemoryComponent implements OnInit {
       }
     }
   };
-  Capacity_minValue: number = 0;
+  Capacity_minValue: number = 2;
   Capacity_maxValue: number = 16;
   Capacity_options: Options = {
-    floor: 0,
+    floor: 2,
     ceil: this.Capacity_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -71,7 +71,7 @@ export class MemoryComponent implements OnInit {
   TeamGroupIsChecked = false;
   LevenIsChecked = false;
   CrucialIsChecked = false;
-
+  SearchbarText;
   array;
   filteredList;
   constructor(private dService: DataService,private modalService: NgbModal) { }
@@ -160,7 +160,12 @@ export class MemoryComponent implements OnInit {
     this.CrucialIsChecked = val;
     this.FilterList();
   }
-  
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
 
   FilterList()
   {
@@ -192,7 +197,7 @@ export class MemoryComponent implements OnInit {
     }
 
     this.filteredList = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 

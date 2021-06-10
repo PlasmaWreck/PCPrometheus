@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: false,
+  api:"https://pcpapi.azurewebsites.net/"
 };

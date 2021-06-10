@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 })
 export class OperatingSystemComponent implements OnInit {
      
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 19;
+  Price_maxValue: number = 120;
   Price_options: Options = {
-    floor: 0,
+    floor: 19,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -33,6 +33,7 @@ export class OperatingSystemComponent implements OnInit {
   PriceLow = 0;
   filteredArray;
   array;
+  SearchbarText;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -81,10 +82,17 @@ export class OperatingSystemComponent implements OnInit {
     
     this.FilterList()
   }
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
+
   FilterList()
   {
     this.filteredArray = this.array.filter(item =>{
-      return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && (this.BDIsChecked ? item.installMethod.split("/").includes("BD") : true) && (this.DVDIsChecked ? item.installMethod.split("/").includes("DVD") : true) && (this.CDIsChecked ? item.installMethod.split("/").includes("CD") : true)
+      return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && (this.BDIsChecked ? item.installMethod.split("/").includes("BD") : true) && (this.DVDIsChecked ? item.installMethod.split("/").includes("DVD") : true) && (this.CDIsChecked ? item.installMethod.split("/").includes("CD") : true) && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
     console.log(this.filteredArray)
   }

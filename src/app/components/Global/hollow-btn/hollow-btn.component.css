@@ -14,4 +14,5 @@
 }
 .hol_btn:focus{
   box-shadow: inset 0 1px 1px #FF6D17, 0 0 16px #ff6c1700;
+  background-color: #FF6D17;
 }
