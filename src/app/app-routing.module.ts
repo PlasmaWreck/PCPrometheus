@@ -9,6 +9,7 @@ import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'recbuild', component:RecbuildComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
-  {path: 'videogames', component : VideogamesComponent}
+  {path: 'videogames', component : VideogamesComponent},
+  {path: 'shoppingcart', component : ShoppingcartComponent}
 ];
 
 @NgModule({

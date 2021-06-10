@@ -21,6 +21,7 @@ import { GamingBuildComponent } from './pages/gaming-build/gaming-build.componen
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 
 
 
@@ -42,7 +43,8 @@ import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpi
     GamingBuildComponent,
     PartsDescriptionComponent,
     VideogamesComponent,
-    SurveypartpickerComponent
+    SurveypartpickerComponent,
+    ShoppingcartComponent,
 
 
   ],
