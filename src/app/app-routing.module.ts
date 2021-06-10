@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
-  {path: 'shoppingcart', component : ShoppingcartComponent}
+  {path: 'shoppingcart', component : ShoppingcartComponent},
   {path: 'OfficeBuild', component :OfficeBuildComponent},
   {path: 'VideoEditingBuild', component :VideoEditingBuildComponent},
   {path: 'videogames', component : VideogamesComponent},
