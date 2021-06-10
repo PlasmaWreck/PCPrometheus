@@ -50,11 +50,11 @@ export class CPUComponent implements OnInit {
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "" + value;
+          return value +" GHz";
         case LabelType.High:
-          return "" + value;
+          return value+" GHz";
         default:
-          return "" + value;
+          return value+" GHz";
       }
     }
   };
