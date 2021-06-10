@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   LogOut(){
     localStorage.removeItem("token");
-    console.log("You've logged out")
+    alert("You've logged out")
   }
 
 }
