@@ -136,3 +136,7 @@
 .cardMargin{
     margin-top: 90px;
 }
+.strictImage{
+    max-width: 400px;
+    max-height: 150px;
+}
