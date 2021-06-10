@@ -19,7 +19,7 @@
                         <div class="col-12">
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
                                 <hr>
                             </div>
                             
@@ -28,8 +28,9 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <b>Manufacturer</b>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="SeagateCheck($event.target.checked)" [checked]="SeagateIsChecked">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Seagate
                                 </label>
@@ -37,7 +38,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="WesternCheck($event.target.checked)" [checked]="WesternIsChecked">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Western Digital
                                 </label>
@@ -45,7 +46,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="ToshibaCheck($event.target.checked)" [checked]="ToshibaIsChecked">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Toshiba
                                 </label>
@@ -58,7 +59,7 @@
                         <div class="col-12">
                             <b class="">Capacity</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Capacity_minValue" [(highValue)]="Capacity_maxValue" [options]="Capacity_options" (userChangeEnd)="CapacityRange($event)"></ngx-slider >
                                 <hr>
                             </div>
                             
@@ -69,11 +70,9 @@
                         <div class="col-12">
                             <b class="">RPM</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="RPM_minValue" [(highValue)]="RPM_maxValue" [options]="RPM_options" (userChangeEnd)="RPMRange($event)"></ngx-slider >
                                 <hr>
                             </div>
-                            
-                    
                         </div>
                     </div>
                 </div>
@@ -135,8 +134,8 @@
                         <div class="spec_title col-2 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
-                    <div *ngFor="let item of array; let i = index ">
-                        <app-storage-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" capacity="{{item.diskSize}}" Type="f{{item.connectionType}}" RPM="{{item.rpm}}" Price="{{item.price}}" ></app-storage-box>
+                    <div *ngFor="let item of filterArray; let i = index ">
+                        <app-storage-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" capacity="{{item.diskSize}}" Type="{{item.connectionType}}" RPM="{{item.rpm}}" Price="{{item.price}}" ></app-storage-box>
                     </div>
                     
                     

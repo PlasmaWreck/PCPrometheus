@@ -20,7 +20,7 @@
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
                                 <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue"
-                                    [options]="Price_options"></ngx-slider>
+                                    [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
                                 <hr>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="LianIsChecked" (change)="LianCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     LIAN
                                 </label>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="FractalIsChecked" (change)="FractalCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Fractal
                                 </label>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="CorsairIsChecked" (change)="CorsairCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Corsair
                                 </label>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="CoolerMasterIsChecked" (change)="CoolerMasterCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Cooler Master
                                 </label>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="SSUPDIsChecked" (change)="SSUPDCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     SSUPD
                                 </label>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="ThermaltakeIsChecked" (change)="ThermaltakeCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Thermaltake
                                 </label>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="AntecIsChecked" (change)="AntecCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Antec
                                 </label>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="NZXTIsChecked" (change)="NZXTCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     NZXT
                                 </label>
@@ -98,7 +98,7 @@
                         <div class="col-12">
                             <b>RGB?</b>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="YesIsChecked" (change)="YesCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Yes
                                 </label>
@@ -107,7 +107,7 @@
 
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="NoIsChecked" (change)="NoCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     No
                                 </label>
@@ -119,7 +119,7 @@
                         <div class="col-12">
                             <b>Size</b>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="MiniIsChecked" (change)="MiniCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Mini-Tower
                                 </label>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="MidIsChecked" (change)="MidCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Mid-Tower
                                 </label>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" [checked]="FullIsChecked" (change)="FullCheck($event.target.checked)" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Full-Tower
                                 </label>
@@ -204,7 +204,7 @@
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
-                    <div *ngFor="let item of array; let i = index ">
+                    <div *ngFor="let item of filteredArray; let i = index ">
                         <app-case-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}"
                             Manuf="{{item.brand}}" RGB="{{item.rgb}}" Form_Factor="{{item.mbFormFactor}}"
                             Size="{{item.size}}" Price="{{item.price}}"></app-case-box>

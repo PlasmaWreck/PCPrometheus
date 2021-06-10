@@ -10,7 +10,7 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 })
 export class StorageComponent implements OnInit {
   Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_maxValue: number = 617;
   Price_options: Options = {
     floor: 0,
     ceil: this.Price_maxValue,
@@ -26,34 +26,36 @@ export class StorageComponent implements OnInit {
     }
   };
   Capacity_minValue: number = 0;
-  Capacity_maxValue: number = 500;
+  Capacity_maxValue: number = 16;
   Capacity_options: Options = {
+    
     floor: 0,
-    ceil: this.Price_maxValue,
+    ceil: this.Capacity_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "$" + value;
+          return value+" TB";
         case LabelType.High:
-          return "$" + value;
+          return value+" TB";
         default:
-          return "$" + value;
+          return value+" TB";
       }
     }
   };
   RPM_minValue: number = 0;
-  RPM_maxValue: number = 500;
+  RPM_maxValue: number = 7200;
   RPM_options: Options = {
+    step: 100,
     floor: 0,
-    ceil: this.Price_maxValue,
+    ceil: this.RPM_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "$" + value;
+          return value +" PRM";
         case LabelType.High:
-          return "$" + value;
+          return value +" PRM";
         default:
-          return "$" + value;
+          return value +" PRM";
       }
     }
   };
@@ -68,6 +70,7 @@ export class StorageComponent implements OnInit {
   SeagateIsChecked = false;
 
   array;
+  filterArray;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -75,6 +78,7 @@ export class StorageComponent implements OnInit {
       (List)=>{
         console.log(List)
         this.array = List
+        this.filterArray = List;
       }
     )
   }
@@ -82,7 +86,7 @@ export class StorageComponent implements OnInit {
     this.modalService.open(longContent, { scrollable: true });
    
   }
-  ConvertToMoney(val){
+  ConvertToNumbers(val){
     val = parseFloat(val.replace(/[^0-9.]/g, ''))
     return val
   }
@@ -94,10 +98,56 @@ export class StorageComponent implements OnInit {
     console.log(this.PriceLow, this.PriceHigh)
     this.FilterList()
   }
+  CapacityRange(val){
+    console.log(val)
+    this.CapacityHigh = val.highValue;
+    this.CapacityLow = val.value;
+    console.log(this.PriceLow, this.PriceHigh)
+    this.FilterList()
+  }
+  RPMRange(val){
+    console.log(val)
+    this.RPMHigh = val.highValue;
+    this.RPMLow = val.value;
+    console.log(this.PriceLow, this.PriceHigh)
+    this.FilterList()
+  }
+
+  ToshibaCheck(val){
+    this.ToshibaIsChecked = val;
+    this.FilterList();
+  }
+  WesternCheck(val){
+    this.WesternIsChecked = val;
+    this.FilterList();
+  }
+  SeagateCheck(val){
+    this.SeagateIsChecked = val;
+    this.FilterList();
+  }
 
   FilterList()
   {
+    console.log("hit")
 
+    let ManufactureArray = [];
+    if(this.ToshibaIsChecked)
+    {
+      ManufactureArray.push("Toshiba");
+    }
+    if(this.WesternIsChecked)
+    {
+      ManufactureArray.push("Western Digital");
+    }
+    if(this.SeagateIsChecked)
+    {
+      ManufactureArray.push("Seagate");
+    }
+    
+    this.filterArray = this.array.filter(item=>{
+      console.log(this.ConvertToNumbers(item.diskSize))
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.diskSize) <= this.PriceHigh && this.ConvertToNumbers(item.diskSize) >= this.CapacityLow && this.ConvertToNumbers(item.diskSize) <= this.CapacityHigh && this.ConvertToNumbers(item.rpm) >= this.RPMLow && this.ConvertToNumbers(item.rpm) <= this.RPMHigh
+    })
   }
  
 }
