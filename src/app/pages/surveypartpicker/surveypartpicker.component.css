@@ -20,6 +20,13 @@
 }
 
 .cardBorder{
+    border: 2px solid #FF6D17;
+    opacity: 180%;
+    margin: 0;
+    width: 100%;
+    border-radius: 2px;
+}
+.cardBorder2{
     border: 1px solid #FF6D17;
     opacity: 180%;
     margin: 0;

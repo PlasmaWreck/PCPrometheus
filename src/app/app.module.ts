@@ -22,6 +22,7 @@ import { GamingBuildComponent } from './pages/gaming-build/gaming-build.componen
 import { PartsDescriptionComponent } from './components/buildshowcase/parts-description/parts-description.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { OfficeBuildComponent } from './pages/office-build/office-build.component';
@@ -48,6 +49,7 @@ import { MotherboardBoxComponent } from './components/ComputerBuilding/item-boxe
 import { FilterDropdownComponent } from './components/ComputerBuilding/filter-dropdown/filter-dropdown.component';
 import { StorageBoxComponent } from './components/ComputerBuilding/item-boxes/storage-box/storage-box.component';
 
+
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -72,6 +74,7 @@ export function tokenGetter() {
     PartsDescriptionComponent,
     VideogamesComponent,
     SurveypartpickerComponent,
+    ShoppingcartComponent,
     LoginComponent,
     OfficeBuildComponent,
     VideoEditingBuildComponent,

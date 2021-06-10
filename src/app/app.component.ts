@@ -7,6 +7,11 @@ import { Component, } from '@angular/core';
 })
 export class AppComponent {
   title = 'PcPrometheus';
+
+  onActivate(event){
+    window.scroll(0,0);
+  }
+
   //Routing
   partsPage_Route="/CPU"
   questionnaire_Route="/questionnaire"
@@ -31,8 +36,4 @@ export class AppComponent {
   public isComputerBuildsCollapsed = true;
   public isPCResourcesCollapsed = true;
   public isProductsCollapsed = true;
-
-
-
-
 }
