@@ -220,76 +220,131 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+    < class="modal-body">
         <!--Filters-->
         <div class="row">
             <div class="col-12">
                 <b class="">Price</b>
                 <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>Manufacturer</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="AsusIsChecked" (change)="AsusCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                ASUS
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="GigabyteIsChecked" (change)="GigabyteCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                GIGABYTE
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="BiostarIsChecked" (change)="BiostarCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Biostar
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="MsiIsChecked" (change)="MsiCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                MSI
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-        
-       
-    
-        <span >
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cotsair
-                                </label>
-                            </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>CPU Socket</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="AmdIsChecked" (change)="AmdCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                AMD
+                            </label>
                         </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Crucials
-                                </label>
-                            </div>
-                        </div>
-                        
                     </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="speed_minValue" [(highValue)]="speed_maxValue" [options]="speed_options"></ngx-slider>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Module</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cooler Master
-                                </label>
-                            </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="Lga1151IsChecked" (change)="Lga1151Check($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                LGA1151
+                            </label>
                         </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Noctura
-                                </label>
-                            </div>
-                        </div>
-                        
                     </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="SocketAm4IsChecked" (change)="SocketAm4Check($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                SocketAM4
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="Lga1200IsChecked" (change)="Lga1200Check($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                LGA1200
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        </span>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>Form Factor</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="ATXIsChecked" (change)="ATXCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                ATX
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="Micro_AtaxIsChecked" (change)="Micro_AtaxCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Micro-ATX
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="MiniITXIsChecked" (change)="MiniITXCheck($event.target.checked)" >
+                            <label class="form-check-label" for="flexCheckDefault">
+                                MiniITX
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         
       
     </div>
