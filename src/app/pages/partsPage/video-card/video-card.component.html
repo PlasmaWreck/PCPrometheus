@@ -206,72 +206,106 @@
             <div class="col-12">
                 <b class="">Price</b>
                 <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>Manufacturer</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="NividaCheck($event.target.checked)" [checked]="NividaIsChecked">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                NVIDIA
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="AMDCheck($event.target.checked)" [checked]="AMDIsChecked">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                AMD
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <b class="">Clock</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Memory_minValue" [(highValue)]="Memory_maxValue" [options]="Memory_options" (userChangeEnd)="ClockRange($event)"></ngx-slider>
+                    <hr>
+                </div>
         
-       
-   
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <b class="">Clock</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Clock_minValue" [(highValue)]="Clock_maxValue" [options]="Clock_options" (userChangeEnd)="ClockRange($event)"></ngx-slider>
+                    <hr>
+                </div>
         
-        <span *ngIf="partType === 'videocard'">
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Kingston
-                                </label>
-                            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>Type</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="Gddr5Check($event.target.checked)" [checked]="Gddr5IsChecked" >
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                GDDR5
+                            </label>
                         </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Samsung
-                                </label>
-                            </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault" (change)="Gddr5XCheck($event.target.checked)" [checked]="Gddr5XIsChecked">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                GDDR5X
+                            </label>
                         </div>
-                        
                     </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="capacity_minValue" [(highValue)]="capacity_maxValue" [options]="capacity_options"></ngx-slider>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"id="flexCheckDefault" (change)="Gddr6Check($event.target.checked)" [checked]="Gddr6IsChecked">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                GDDR6
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="coreClock_minValue" [(highValue)]="coreClock_maxValue" [options]="coreClock_options"></ngx-slider>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"  id="flexCheckDefault" (change)="Gddr6XCheck($event.target.checked)" [checked]="Gddr6XIsChecked">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                GDDR6X
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="boostClock_minValue" [(highValue)]="boostClock_maxValue" [options]="boostClock_options"></ngx-slider>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="Hbm2Check($event.target.checked)" [checked]="Hbm2IsChecked">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                HBM2
+                            </label>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
-        </span>
-        powersupply
-        <span *ngIf="partType === 'powersupply'">
-            
-        </span>
-        opticaldrive
-        <span *ngIf="partType === 'opticaldrive'">
-            
-        </span>
-        case
-        <span *ngIf="partType === 'case'">
-            
-        </span>
+        </div>
+
       
     </div>
     <div class="modal-footer">

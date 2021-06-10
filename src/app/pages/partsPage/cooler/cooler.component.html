@@ -225,238 +225,139 @@
     </div>
     <div class="modal-body">
         <!--Filters-->
-        <div class="row">
+        <div class="row bg-filter">
+            <div class="col-12 p-0">
+                <app-filter-dropdown></app-filter-dropdown>
+            </div>
             <div class="col-12">
-                <b class="">Price</b>
-                <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options">
-                    </ngx-slider>
+                <!--Filters-->
+                <div class="row">
+                    <div class="col-12">
+                        <b class="">Price</b>
+                        <div class="custom-slider py-3">
+                            <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue"
+                                [options]="Price_options" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                            <hr>
+                        </div>
+
+                    </div>
                 </div>
+               
+                <div class="row">
+                    <div class="col-12 pb-2">
+                        <b>Manufacturer</b>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="CoolerMasterCheck($event.target.checked)" [checked]="CoolerMasterIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Cooler Master
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="CorsairCheck($event.target.checked)" [checked]="CorsairIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Corsair
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="ASUSCheck($event.target.checked)" [checked]="ASUSIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        ASUS
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="WJCoolCheck($event.target.checked)" [checked]="WJCoolIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        WJCOOLMAN
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="AresgameCheck($event.target.checked)" [checked]="AresgameIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        ARESGAME
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="NoctuaCheck($event.target.checked)" [checked]="NoctuaIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Noctua
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="BeQuietCheck($event.target.checked)" [checked]="BeQuietIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        be quiet!
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="VetrooCheck($event.target.checked)" [checked]="VetrooIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Vetroo
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="NzxtCheck($event.target.checked)" [checked]="NzxtIsChecked">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        NZXT
+                                    </label>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                                    
+                    <div class="col-12">
+                        <b>Liquid Cooling?</b>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="YesIsChecked" id="flexCheckDefault" (change)="YesCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+               
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [checked]="NoIsChecked" id="flexCheckDefault" (change)="NoCheck($event.target.checked)">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col-12">
+                <b class=""># of Fans</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Fans_minValue" [(highValue)]="Fans_maxValue"
+                        [options]="Fans_options" (userChangeEnd)="FanRange($event)"></ngx-slider>
+                </div>
+            </div>
+
             </div>
         </div>
-        
-
-
-
-        <span>
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cooler Master
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Noctura
-                                </label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">Fan RPM</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="Fans_minValue" [(highValue)]="Fans_maxValue"
-                            [options]="Fans_options"></ngx-slider>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">Noise Level</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="noiseLevel_minValue" [(highValue)]="noiseLevel_maxValue"
-                            [options]="noiseLevel_options"></ngx-slider>
-                    </div>
-                </div>
-            </div>
-        </span>
-        <!--memory
-        <span *ngIf="partType === 'memory'">
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cotsair
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Crucials
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="speed_minValue" [(highValue)]="speed_maxValue" [options]="speed_options"></ngx-slider>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Module</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cooler Master
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Noctura
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </span>
-        storage
-        <span *ngIf="partType === 'storage'">
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Kingston
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Samsung
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Type</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cotsair
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Crucials
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="Cache_minValue" [(highValue)]="Cache_maxValue" [options]="Cache_options"></ngx-slider>
-                    </div>
-                </div>
-            </div>
-        </span>
-        videocard
-        <span *ngIf="partType === 'videocard'">
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Kingston
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Samsung
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="capacity_minValue" [(highValue)]="capacity_maxValue" [options]="capacity_options"></ngx-slider>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="coreClock_minValue" [(highValue)]="coreClock_maxValue" [options]="coreClock_options"></ngx-slider>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <b class="">Speed</b>
-                    <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="boostClock_minValue" [(highValue)]="boostClock_maxValue" [options]="boostClock_options"></ngx-slider>
-                    </div>
-                </div>
-            </div>
-        </span>
-        powersupply
-        <span *ngIf="partType === 'powersupply'">
-            
-        </span>
-        opticaldrive
-        <span *ngIf="partType === 'opticaldrive'">
-            
-        </span>
-        case
-        <span *ngIf="partType === 'case'">
-            
-        </span> -->
+       
 
     </div>
     <div class="modal-footer">

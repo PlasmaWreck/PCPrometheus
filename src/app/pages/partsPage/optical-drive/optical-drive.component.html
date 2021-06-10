@@ -159,19 +159,76 @@
       </button>
     </div>
     <div class="modal-body">
-        <!--Filters-->
-        <div class="row">
+        <div class="row bg-filter">
+            <div class="col-12 p-0">
+                <app-filter-dropdown></app-filter-dropdown>
+            </div>
             <div class="col-12">
-                <b class="">Price</b>
-                <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                <!--Filters-->
+                <div class="row">
+                    <div class="col-12">
+                        <b class="">Price</b>
+                        <div class="custom-slider py-3">
+                            <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                            <hr>
+                        </div>
+                
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="DellIsChecked" (change)="DellCheck($event.target.checked)" id="flexCheckDefault" >
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Dell
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="ASUSIsChecked" (change)="ASUSCheck($event.target.checked)" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                ASUS
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="OSGEARIsChecked" (change)="OSGEARCheck($event.target.checked)" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                OSGEAR
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="LGIsChecked" (change)="LGCheck($event.target.checked)" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                LG
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="LiteIsChecked" (change)="LiteCheck($event.target.checked)" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Lite-On
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="PioneerIsChecked" (change)="PioneerCheck($event.target.checked)" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Pioneer
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
-        
-       
-        <!--Add Filter-->
-      
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
