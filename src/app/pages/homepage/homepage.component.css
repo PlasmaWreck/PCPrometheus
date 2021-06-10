@@ -1,7 +1,29 @@
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}
+
+html, body {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+.stylestart{
+  font-family: 'Mitr', sans-serif;
+}
+.herobtn{
+background-color: #FF6D17;
+border-radius: 20px;
+font-size: 20px;
+color:white;
+}
+
+.homeSecondaryBG{
+  background-color: #446A74;
+}
 .white{
     color: white;
 }
-
 .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
@@ -13,3 +35,4 @@
   @media (min-width: 992px) {
     .rounded-lg-3 { border-radius: .3rem; }
   }
+

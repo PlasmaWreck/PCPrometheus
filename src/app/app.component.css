@@ -79,3 +79,23 @@
     vertical-align: middle;
     margin-left: .5rem
 }
+
+#productsDropDown .dropdown-menu{
+    width: 645%;
+    border-radius: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color:#24363B;
+    text-align: center;
+}
+
+#productsDropDown img{
+    width: 8rem;
+    height: 6rem;
+}
+
+.collapse-item{
+    color: white;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}

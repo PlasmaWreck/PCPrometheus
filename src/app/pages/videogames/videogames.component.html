@@ -17,7 +17,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;"> Games
                             infrequently, plays games that aren't visually complex, or games mostly in-browser</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q1', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;">Games
                             pretty frequently, enjoys more striking graphics, engages in multiplayer games.</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q1', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;">Gamers who
                             play very frequently, wants a tournament ready computer.</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q1', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 100px;">I mostly
                             play minimalistic and retro games.</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q2', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 100px;">The games
                             I play are colorful, but not intense or realistic.</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q2', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                         <div class="cardBorder"></div>
                         <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 100px;">I play
                             games with open worlds with complex, vivid details.</p>
-                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                        <app-hollow-btn (click)="recordResponse('q2', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                             <div class="cardBorder"></div>
                             <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;">Oh I
                                 just need something within my budget, I don't need an excess of firepower.</p>
-                            <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                            <app-hollow-btn (click)="recordResponse('q3', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                             <div class="cardBorder"></div>
                             <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;">I want
                                 nothing but the best! I don't want to worry about upgrading for a good while.</p>
-                            <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                            <app-hollow-btn (click)="recordResponse('q3', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                             <div class="cardBorder"></div>
                             <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 75px;">Gamers
                                 who play very frequently, wants a tournament ready computer.</p>
-                            <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                            <app-hollow-btn (click)="recordResponse('q3', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                                 <div class="cardBorder"></div>
                                 <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 100px;">
                                     No, I know exactly what I need this computer to do.</p>
-                                <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                <app-hollow-btn (click)="recordResponse('q4', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                 <div class="cardBorder"></div>
                                 <p class="card-text lightFont cardTextCenter cardMargin" style="margin-bottom: 77px;">
                                     Yes, I plan on investing on this setup and changing out or adding parts. </p>
-                                <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                <app-hollow-btn (click)="recordResponse('q4', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                                 <div class="cardBorder"></div>
                                 <p class="card-text lightFont cardTextCenter" style="margin-bottom: 105px; margin-top: 110px;">
                                     I'm not sure.</p>
-                                <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                <app-hollow-btn (click)="recordResponse('q4', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                                     <p class="card-text lightFont cardTextCenter"
                                         style="margin-bottom: 105px; margin-top: 110px;">
                                         I mainly use cloud storage.</p>
-                                    <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                    <app-hollow-btn (click)="recordResponse('q5', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                                     <p class="card-text lightFont cardTextCenter"
                                         style="margin-bottom: 85px; margin-top: 105px;">
                                         I don't save a whole lot on my computer.</p>
-                                    <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                    <app-hollow-btn (click)="recordResponse('q5', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
                                     <p class="card-text lightFont cardTextCenter"
                                         style="margin-bottom: 85px; margin-top: 105px;">
                                         I store a lot of programs and large files on my computer.</p>
-                                    <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                    <app-hollow-btn (click)="recordResponse('q5', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +261,7 @@
                                         <p class="card-text lightFont cardTextCenter"
                                             style="margin-bottom: 105px; margin-top: 110px;">
                                             I don't need a very fast computer.</p>
-                                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                        <app-hollow-btn (click)="recordResponse('q6', 1)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +274,7 @@
                                         <p class="card-text lightFont cardTextCenter"
                                             style="margin-bottom: 87px; margin-top: 105px;">
                                             It doesn't have to be the fastest, but I also don't want it to be slow.</p>
-                                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                        <app-hollow-btn (click)="recordResponse('q6', 2)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@
                                         <p class="card-text lightFont cardTextCenter"
                                             style="margin-bottom: 105px; margin-top: 110px;">
                                             I want it to be really fast!</p>
-                                        <app-hollow-btn style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
+                                        <app-hollow-btn (click)="recordResponse('q6', 3)" style="margin-left:105px;" BtnText="Select!"></app-hollow-btn>
                                     </div>
                                 </div>
                             </div>
@@ -301,6 +301,6 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="d-flex justify-content-center" style="font-size: 40px;">Now you will be asked to choose your parts!</div>
                                 <div class="contentRow mt-1"></div>
-                                    <app-hollow-btn class="d-flex justify-content-center" style="margin-top: 75px; margin-bottom: 100px;" BtnText="Next Page" routerLink = "/surveyparts"></app-hollow-btn>
+                                    <app-hollow-btn class="d-flex justify-content-center" style="margin-top: 75px; margin-bottom: 100px;" BtnText="Next Page" (click)="calculateCuts()" routerLink = "/surveyparts"></app-hollow-btn>
                             </div>
                         </div>

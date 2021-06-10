@@ -1,9 +1,14 @@
 .OddBG{
     background-color: #182023;
+    font-family: 'Mitr', sans-serif;
 }
 .EvenBG{
     background-color: #446A74;
+    font-family: 'Mitr', sans-serif;
 }
 .title{
     border-bottom: #FF6D17 solid 1px;
+}
+.imgBG{
+    background-color: #8D969A;
 }

@@ -1,0 +1,16 @@
+<div class="d-inline-block w-100" ngbDropdown #myDrop="ngbDropdown">
+    <button class="btn btn-danger text-start Select-Parts-Dropdown" id="dropdownManual " ngbDropdownAnchor
+        (focus)="myDrop.open()">Select Part</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownManual" class="DM ">
+        <button routerLink="/CPU" ngbDropdownItem>CPU</button>
+        <button routerLink="/Cooler" ngbDropdownItem>CPU Cooler</button>
+        <button routerLink="/Motherboard" ngbDropdownItem>Motherboard</button>
+        <button routerLink="/Memory" ngbDropdownItem>Memory</button>
+        <button routerLink="/Storage" ngbDropdownItem>Storage</button>
+        <button routerLink="/VideoCard" ngbDropdownItem>Video Card</button>
+        <button routerLink="/PowerSupply" ngbDropdownItem>Power Supply</button>
+        <button routerLink="/OpticalDrive" ngbDropdownItem>Optical Drive</button>
+        <button routerLink="/OperatingSystem" ngbDropdownItem>Operating System</button>
+        <button routerLink="/Case" ngbDropdownItem>Case</button>
+    </div>
+</div>

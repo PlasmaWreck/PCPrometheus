@@ -18,3 +18,17 @@
     min-width: 987px;
     border-radius: 2px;
 }
+@media only screen and (max-width: 768px) {
+    .title hr{
+        border: 1px solid #FF6D17;
+        margin-top: 5px ;
+        opacity: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        border-radius: 2px;
+    }
+    .title h1{
+        font-size: 40px;
+        text-align: center;
+    }
+  }

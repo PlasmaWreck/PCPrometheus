@@ -1,0 +1,328 @@
+<div class="container-fluid text-light">
+    <div class="row py-4">
+     
+        <div class=" offset-lg-2 col-12 col-lg-10 text-center">
+            <h1>PC Building</h1>
+            <hr class="hr-tag">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 d-none d-lg-block m-0">
+            <!--Filter-->
+            <div class="row bg-filter">
+                <div class="col-12 p-0">
+                    <app-filter-dropdown></app-filter-dropdown>
+                </div>
+                <div class="col-12">
+                    <!--Filters-->
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Price</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"(userChangeEnd)="PriceRange($event)"></ngx-slider>
+                                <hr>
+                            </div>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Wattage</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Wattage_minValue" [(highValue)]="Wattage_maxValue" [options]="Wattage_options" (userChangeEnd)="WattageRange($event)"></ngx-slider>
+                                <hr>
+                            </div>
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="AresGameIsChecked" id="flexCheckDefault" (change)="AresGameCheck($event.target.checked)" [checked]="">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    ARESGAME
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="CorsairCheck($event.target.checked)" [checked]="CorsairIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    CORSAIR
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="  AsusCheck($event.target.checked)" [checked]="AsusIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    ASUS
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="PoinwerCheck($event.target.checked)" [checked]="">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    POINWER
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="HiearCoolCheck($event.target.checked)" [checked]="HiearlcoolIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Hiearcool
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="BeQuietCheck($event.target.checked)" [checked]="BeQuietIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    be quiet!
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="GamemaxCheck($event.target.checked)" [checked]="GamemaxIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    GAMEMAX
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="EVGACheck($event.target.checked)" [checked]="EVGAIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    EVGA
+                                </label>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    <hr>
+                    <div class="row">
+
+                        <div class="col-12">
+                            <b>Modular?</b>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="YesCheck($event.target.checked)" [checked]="YesIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="NoCheck($event.target.checked)" [checked]="NoIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--empty Space-->
+            <div class="row empty_Space">
+
+            </div>
+        </div>
+        <div class="col-12 col-lg-10">
+            <!--Body-->
+            <div class="row bg-list">
+                <div class="col-12">
+                    <div class="row pt-5">
+                        <div class="col-6 ">
+                            <h2>
+                                Power Supply
+                            </h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input class="form-control form-control-default" type="text" placeholder="Search"
+                                        aria-label=".form-control-lg example">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 d-lg-none">
+                            <div class="row">
+                                <div class="col-6">
+                                    <app-filter-dropdown></app-filter-dropdown>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="spec_title col-3 d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-8 offset-4 ">
+                                    <b>Name</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Wattage</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Modular</div>
+                        
+                        <div class="spec_title col-3 d-none d-lg-block">Price</div>
+                    </div>
+                    <!--//Item-->
+                    <div *ngFor="let item of filteredArray; let i = index ">
+                        <app-pow-sup-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Watts="{{item.power}}" Modular="{{item.modular}}"  Price="{{item.price}}" ></app-pow-sup-box>
+                    </div>
+                    
+                    
+                    <!--//Item-->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #longContent let-modal class="dark-modal">
+    <div class="modal-header ">
+      <h4 class="modal-title">Filter</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!--Filters-->
+        <div class="row">
+            <div class="col-12">
+                <b class="">Price</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"(userChangeEnd)="PriceRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <b class="">Wattage</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Wattage_minValue" [(highValue)]="Wattage_maxValue" [options]="Wattage_options" (userChangeEnd)="WattageRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="AresGameIsChecked" id="flexCheckDefault" (change)="AresGameCheck($event.target.checked)" [checked]="">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        ARESGAME
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="CorsairCheck($event.target.checked)" [checked]="CorsairIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        CORSAIR
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="  AsusCheck($event.target.checked)" [checked]="AsusIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        ASUS
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="PoinwerCheck($event.target.checked)" [checked]="">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        POINWER
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="HiearCoolCheck($event.target.checked)" [checked]="HiearlcoolIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Hiearcool
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="BeQuietCheck($event.target.checked)" [checked]="BeQuietIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        be quiet!
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="GamemaxCheck($event.target.checked)" [checked]="GamemaxIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        GAMEMAX
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="EVGACheck($event.target.checked)" [checked]="EVGAIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        EVGA
+                    </label>
+                </div>
+            </div>
+            
+
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-12">
+                <b>Modular?</b>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="YesCheck($event.target.checked)" [checked]="YesIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Yes
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" (change)="NoCheck($event.target.checked)" [checked]="NoIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  

@@ -14,3 +14,14 @@
     max-height: 4rem;
     
 }
+@media only screen and (max-width: 992px) {
+    .thumbnail{
+        width: 2rem;
+        height: 2rem;
+        
+        
+    }
+  }
+.Specs{
+    opacity: .8;
+}

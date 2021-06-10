@@ -1,8 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid d-none d-lg-block">
   <div class="row">
     <div class="col-12 topNavbar d-flex align-center my-auto">
       <img id="navBrand" routerLink="/" class="my-auto ms-2" src="assets/images/NavBrand.png"
         alt="Pc Prometheus Navbar Brand">
+
       <img class="my-auto ms-auto" src="assets/images/IonicSearch.png" alt="Search Icon">
       <app-search-bar class="my-auto ms-3"></app-search-bar>
       <img class="my-auto ms-4 me-5" src="assets/images/CartIcon.png" alt="Cart Icon">
@@ -15,16 +16,16 @@
         <button class="btn btn-secondary " id="dropdownBuilders" ngbDropdownAnchor (focus)="builderDrop.open()">Computer
           Builders</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBuilders" class="DM">
-          <button routerLink="/ComputerBuilding" class="w-100" ngbDropdownItem>Component Picker</button>
+          <button routerLink="{{partsPage_Route}}" class="w-100" ngbDropdownItem>Component Picker</button>
           <hr>
-          <button routerLink="/questionnaire" ngbDropdownItem>Prometheus' Path</button>
+          <button routerLink="{{questionnaire_Route}}" ngbDropdownItem>Prometheus' Path</button>
         </div>
       </div>
 
 
 
       <div class="h-100" ngbDropdown #myDrop="ngbDropdown">
-        <button routerLink="/recbuild" class="btn btn-secondary">Recommended Builds</button>
+        <button routerLink="{{recBuild_Route}}" class="btn btn-secondary">Recommended Builds</button>
       </div>
 
 
@@ -34,24 +35,157 @@
         <button class="btn btn-secondary " id="dropdownResources" ngbDropdownAnchor (focus)="resourcesDrop.open()">PC
           Building Resources</button>
         <div ngbDropdownMenu aria-labelledby="dropdownResources" class="DM">
-          <button routerLink="/partdescription" ngbDropdownItem>The Parts that Make A Computer</button>
+          <button routerLink="{{partDesc_Route}}" ngbDropdownItem>The Parts that Make A Computer</button>
           <hr>
-          <button routerLink="/partinstallation" ngbDropdownItem>Putting The Pieces Together</button>
+          <button routerLink="{{partsInstall_Route}}" ngbDropdownItem>Putting The Pieces Together</button>
         </div>
       </div>
 
 
 
-      <div class="h-100" ngbDropdown #productsDrop="ngbDropdown">
+      <div class="h-100" id="productsDropDown" ngbDropdown #productsDrop="ngbDropdown">
         <button class="btn btn-secondary " id="dropdownProducts" ngbDropdownAnchor
           (focus)="productsDrop.open()">Products</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownProducts" class="DM">
-          <button class="w-100" ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownProducts" class="productsDD">
+          <div class="container-fluid px-3">
+            <div class="row d-flex">
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{cpu_Route}}" ngbDropdownItem><img
+                    src="assets/images/Processor.png"><p class="w-100 my-0">Processors</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{cpuCooler_Route}}" ngbDropdownItem><img
+                    src="assets/images/CpuCooler.png"><p class="w-100 my-0">CPU Coolers</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{motherboard_Route}}" ngbDropdownItem><img
+                    src="assets/images/MotherBoard.png"><p class="w-100 my-0">Motherboards</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{memory_Route}}" ngbDropdownItem><img
+                    src="assets/images/Memory.png"><p class="w-100 my-0">Memories</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{storage_Route}}" ngbDropdownItem><img
+                    src="assets/images/Storage.png"><p class="w-100 my-0">Hard Drives</p></button>
+              </div>
+            </div>
+            <div class="row d-flex">
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{videoCard_Route}}" ngbDropdownItem><img
+                    src="assets/images/GraphicsCard.png"><p class="w-100 my-0">Video Cards</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{powerSupply_Route}}" ngbDropdownItem><img
+                    src="assets/images/PowerSupply.png"><p class="w-100 my-0">Power Supplies</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{opticalDrive_Route}}" ngbDropdownItem><img
+                    src="assets/images/opticaldrive/ASUS24xDVD-RWSerial-ATAInternalOEMOpticalDriveDRW-24B1ST.png"><p class="w-100 my-0">Optical Drives</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{operatingSystem_Route}}" ngbDropdownItem><img
+                    src="assets/images/Processor.png"><p class="w-100 my-0">Operating Systems</p></button>
+              </div>
+              <div class="col px-1">
+                <button class="d-flex flex-column align-items-center" routerLink="{{case_Route}}" ngbDropdownItem><img
+                    src="assets/images/cases/corsair5000d.png"><p class="w-100 my-0">Cases</p></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<router-outlet (activate)="onActivate($event)" ></router-outlet>
+
+<nav class="navbar navbar-expand-lg navbar-dark d-lg-none" style="background-color:#24363B;">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="'.'">
+      <img id="navBrand" routerLink="/" class="my-auto ms-2" style="width: 13rem;" src="assets/images/NavBrand.png"
+        alt="Pc Prometheus Navbar Brand">
+
+    </a>
+
+    <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      &#9776;
+    </button>
+
+    <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <form class="d-flex mt-3">
+
+          <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <li class="nav-item active">
+          <!-- Step 4: Close the menu when a link is clicked. -->
+          <a class="nav-link" (click)="isComputerBuildsCollapsed = !isComputerBuildsCollapsed">Computer Builders <i
+              class="fas fa-sort-down"></i></a>
+          <ul #collapse="ngbCollapse" [ngbCollapse]="isComputerBuildsCollapsed" class="navbar-nav ">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'{{partsPage_Route}}'">
+              Component Picker
+            </li>
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" [routerLink]="'{{questionnaire_Route}}'">
+              Prometheus' Path
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/recbuild'" (click)="isMenuCollapsed = true">Reccommended Builds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="isPCResourcesCollapsed = !isPCResourcesCollapsed">PC Building Resources <i
+              class="fas fa-sort-down"></i></a>
+          <ul #collapse="ngbCollapse" [ngbCollapse]="isPCResourcesCollapsed" class="navbar-nav ">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partDesc_Route}}">
+              The Parts That Make A Computer
+            </li>
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{partsInstall_Route}}">
+              Putting the Pieces Together
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="isProductsCollapsed = !isProductsCollapsed">Products <i
+              class="fas fa-sort-down"></i></a>
+          <ul #collapse="ngbCollapse" [ngbCollapse]="isProductsCollapsed" class="navbar-nav ">
+            <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{cpu_Route}}">
+            CPU
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{cpuCooler_Route}}">
+            CPU Cooler
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{motherboard_Route}}">
+            Motherboard
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{memory_Route}}">
+            Memory
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{storage_Route}}">
+            Storage
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{videoCard_Route}}">
+            Video Card
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{powerSupply_Route}}">
+            Power Supply
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{opticalDrive_Route}}">
+            Optical Drive
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{operatingSystem_Route}}">
+            Operating System
+          </li>
+          <li class="nav-item collapse-item" (click)="isMenuCollapsed = true" routerLink="{{case_Route}}">
+            Case
+          </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
