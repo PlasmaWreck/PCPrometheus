@@ -19,7 +19,7 @@
                         <div class="col-12">
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
                                 <hr>
                             </div>
                     
@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault">
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="HpIsChecked" (change)="HpCheck($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault" >
                                             HP
                                         </label>
@@ -39,7 +39,8 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="NemixIsChecked" (change)="  NemixCheck
+                                            ($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Nemix Ram
                                         </label>
@@ -47,7 +48,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="CorsairIsChecked" (change)="CorsairCheck($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Corsair
                                         </label>
@@ -55,7 +56,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="TeamGroupIsChecked" (change)="TeamGroupCheck($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             TEAMGROUP
                                         </label>
@@ -63,7 +64,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="LevenIsChecked" (change)="LevenCheck($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             LEVEN
                                         </label>
@@ -71,7 +72,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" >
+                                        <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="CrucialIsChecked" (change)="CrucialCheck($event.target.checked)">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Crucial
                                         </label>
@@ -86,7 +87,7 @@
                         <div class="col-12">
                             <b class="">Capacity</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Capacity_minValue" [(highValue)]="Capacity_maxValue" [options]="Capacity_options" (userChangeEnd)="CapacityRange($event)"></ngx-slider>
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                             <div class="col-12">
                                 <b class="">Clock Frequency</b>
                                 <div class="custom-slider py-3">
-                                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                    <ngx-slider [(value)]="Clock_minValue" [(highValue)]="Clock_maxValue" [options]="Clock_options" (userChangeEnd)="ClockRange($event)"></ngx-slider>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +160,7 @@
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
-                    <div *ngFor="let item of array; let i = index ">
+                    <div *ngFor="let item of filteredList; let i = index ">
                         <app-memory-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Capacity="{{item.capacity}}" Clock="{{item.clockFrequency}}" Threads="f" Price="{{item.price}}" ></app-memory-box>
                     </div>
                     
@@ -187,71 +188,89 @@
             <div class="col-12">
                 <b class="">Price</b>
                 <div class="custom-slider py-3">
-                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-2">
+                <b>Manufacturer</b>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="HpIsChecked" (change)="HpCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                HP
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="NemixIsChecked" (change)="  NemixCheck
+                                ($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Nemix Ram
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="CorsairIsChecked" (change)="CorsairCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Corsair
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="TeamGroupIsChecked" (change)="TeamGroupCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                TEAMGROUP
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="LevenIsChecked" (change)="LevenCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                LEVEN
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [checked]="" id="flexCheckDefault" [checked]="CrucialIsChecked" (change)="CrucialCheck($event.target.checked)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Crucial
+                            </label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-        
-       
-    
-        <span >
-            <div class="row">
-                <div class="col-12 pb-2">
-                    <b>Manufacturer</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cotsair
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Crucials
-                                </label>
-                            </div>
-                        </div>
-                        
-                    </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <b class="">Capacity</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Capacity_minValue" [(highValue)]="Capacity_maxValue" [options]="Capacity_options" (userChangeEnd)="CapacityRange($event)"></ngx-slider>
                 </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
                 <div class="col-12">
-                    <b class="">Speed</b>
+                    <b class="">Clock Frequency</b>
                     <div class="custom-slider py-3">
-                        <ngx-slider [(value)]="speed_minValue" [(highValue)]="speed_maxValue" [options]="speed_options"></ngx-slider>
-                    </div>
-                </div>
-                <hr>
-                <div class="col-12 pb-2">
-                    <b>Module</b>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Cooler Master
-                                </label>
-                            </div>
-                        </div>
-                      
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Noctura
-                                </label>
-                            </div>
-                        </div>
-                        
+                        <ngx-slider [(value)]="Clock_minValue" [(highValue)]="Clock_maxValue" [options]="Clock_options" (userChangeEnd)="ClockRange($event)"></ngx-slider>
                     </div>
                 </div>
             </div>
-        </span>
-        
+        </div>
       
     </div>
     <div class="modal-footer">

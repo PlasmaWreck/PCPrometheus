@@ -1,6 +1,6 @@
 <div class="container-fluid text-light">
     <div class="row py-4">
-     
+
         <div class=" offset-lg-2 col-12 col-lg-10 text-center">
             <h1>PC Building</h1>
             <hr class="hr-tag">
@@ -19,7 +19,8 @@
                         <div class="col-12">
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider  [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue"
+                                    [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
                                 <hr>
                             </div>
                             <span>
@@ -28,21 +29,24 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" [checked]="intelIsChecked" id="flexCheckDefault" (change)="IntelCheck($event.target.checked)">
-                                                <label class="form-check-label" for="flexCheckDefault" >
+                                                <input class="form-check-input" type="checkbox"
+                                                    [checked]="intelIsChecked" id="flexCheckDefault"
+                                                    (change)="IntelCheck($event.target.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
                                                     Intel
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" [checked]="AMDIsChecked" id="flexCheckDefault" (change)="AMDCheck($event.target.checked)">
+                                                <input class="form-check-input" type="checkbox" [checked]="AMDIsChecked"
+                                                    id="flexCheckDefault" (change)="AMDCheck($event.target.checked)">
                                                 <label class="form-check-label" for="flexCheckDefault">
                                                     AMD
                                                 </label>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 <hr>
@@ -50,19 +54,22 @@
                                     <div class="col-12">
                                         <b class="">Cores</b>
                                         <div class="custom-slider py-3">
-                                            <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue" [options]="Cores_options" (userChangeEnd)="CoresRange($event)"></ngx-slider>
+                                            <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue"
+                                                [options]="Cores_options" (userChangeEnd)="CoresRange($event)">
+                                            </ngx-slider>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="col-12">
                                         <b class="">GHz</b>
                                         <div class="custom-slider py-3">
-                                            <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue" [options]="GHz_options" (userChangeEnd)="GhzRange($event)"></ngx-slider>
+                                            <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue"
+                                                [options]="GHz_options" (userChangeEnd)="GhzRange($event)"></ngx-slider>
                                         </div>
                                     </div>
                                 </div>
                             </span>
-                    
+
                         </div>
                     </div>
 
@@ -98,10 +105,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <app-filter-dropdown></app-filter-dropdown>
-                                    
+
                                 </div>
                                 <div class="col-6">
-                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown"
+                                        (click)="openScrollableContent(longContent)">Filter</button>
                                 </div>
                             </div>
                             <hr>
@@ -126,10 +134,12 @@
                     </div>
                     <!--//Item-->
                     <div *ngFor="let item of filteredArray; let i = index ">
-                        <app-cpu-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" Cores="{{item.coreCount}}" GHz="{{item.frequency}}" Threads="{{item.socket}}" Price="{{item.price}}" ></app-cpu-box>
+                        <app-cpu-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}"
+                            Manuf="{{item.brand}}" Cores="{{item.coreCount}}" GHz="{{item.frequency}}"
+                            Threads="{{item.socket}}" Price="{{item.price}}"></app-cpu-box>
                     </div>
-                    
-                    
+
+
                     <!--//Item-->
 
                 </div>
@@ -142,69 +152,85 @@
 
 <ng-template #longContent let-modal class="dark-modal">
     <div class="modal-header ">
-      <h4 class="modal-title">Filter</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        <h4 class="modal-title">Filter</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
         <!--Filters-->
-        <div class="row">
+        <div class="row bg-filter">
+            <div class="col-12 p-0">
+                <app-filter-dropdown></app-filter-dropdown>
+            </div>
             <div class="col-12">
-                <b class="">Price</b>
-                            <div class="custom-slider py-3">
-                                <ngx-slider  [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
-                                <hr>
-                            </div>
-                            <span>
-                                <div class="col-12 pb-2">
-                                    <b>Manufacturer</b>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" [checked]="intelIsChecked" id="flexCheckDefault" (change)="IntelCheck($event.target.checked)">
-                                                <label class="form-check-label" for="flexCheckDefault" >
-                                                    Intel
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" [checked]="AMDIsChecked" id="flexCheckDefault" (change)="AMDCheck($event.target.checked)">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    AMD
-                                                </label>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <hr>
+                <!--Filters-->
+                <div class="row">
+                    <div class="col-12">
+                        <b class="">Price</b>
+                        <div class="custom-slider py-3">
+                            <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue"
+                                [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                            <hr>
+                        </div>
+                        <span>
+                            <div class="col-12 pb-2">
+                                <b>Manufacturer</b>
                                 <div class="row">
                                     <div class="col-12">
-                                        <b class="">Cores</b>
-                                        <div class="custom-slider py-3">
-                                            <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue" [options]="Cores_options" (userChangeEnd)="CoresRange($event)"></ngx-slider>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"
+                                                [checked]="intelIsChecked" id="flexCheckDefault"
+                                                (change)="IntelCheck($event.target.checked)">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Intel
+                                            </label>
                                         </div>
                                     </div>
-                                    <hr>
                                     <div class="col-12">
-                                        <b class="">GHz</b>
-                                        <div class="custom-slider py-3">
-                                            <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue" [options]="GHz_options" (userChangeEnd)="GhzRange($event)"></ngx-slider>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" [checked]="AMDIsChecked"
+                                                id="flexCheckDefault" (change)="AMDCheck($event.target.checked)">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                AMD
+                                            </label>
                                         </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <b class="">Cores</b>
+                                    <div class="custom-slider py-3">
+                                        <ngx-slider [(value)]="Cores_minValue" [(highValue)]="Cores_maxValue"
+                                            [options]="Cores_options" (userChangeEnd)="CoresRange($event)">
+                                        </ngx-slider>
                                     </div>
                                 </div>
-                            </span>
+                                <hr>
+                                <div class="col-12">
+                                    <b class="">GHz</b>
+                                    <div class="custom-slider py-3">
+                                        <ngx-slider [(value)]="GHz_minValue" [(highValue)]="GHz_maxValue"
+                                            [options]="GHz_options" (userChangeEnd)="GhzRange($event)"></ngx-slider>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-        
-       
-         
-      
+
+
+
+
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
     </div>
-  </ng-template>
-  
+</ng-template>
