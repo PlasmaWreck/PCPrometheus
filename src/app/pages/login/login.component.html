@@ -11,12 +11,12 @@
                 <label for="">Password</label>
                 <input type="text" class="form-control" id="Password" formControlName="Password">
             </div>
-            <button type="submit" class="btn btn-primary mt-3 d-flex justify-content-center" [disabled]="!LoginForm.valid">Submit</button>
+            <div class="row">
+               <div class="col-12">
+                <button type="submit" class="btn btn-primary btn my-3 " [disabled]="!LoginForm.valid">Submit</button>
+                <button style="float:right" class="btn-primary btn my-3" (click)="LogOut()">Log-out</button>
+               </div>
+            </div>
         </form>
     </fieldset>
-    <div class="row d-flex justify-content-center">
-      <button class="btn-primary btn my-3" (click)="clickMe()">Get list</button>
-    <hr>
-    <button class="btn-primary btn my-3" (click)="LogOut()">Log-out</button>
-    </div>
 </div>
