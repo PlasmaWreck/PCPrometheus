@@ -19,11 +19,62 @@
                         <div class="col-12">
                             <b class="">Price</b>
                             <div class="custom-slider py-3">
-                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options"></ngx-slider>
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
                                 <hr>
                             </div>
                     
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="DellIsChecked" (change)="DellCheck($event.target.checked)" id="flexCheckDefault" >
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Dell
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="ASUSIsChecked" (change)="ASUSCheck($event.target.checked)" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    ASUS
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="OSGEARIsChecked" (change)="OSGEARCheck($event.target.checked)" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    OSGEAR
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="LGIsChecked" (change)="LGCheck($event.target.checked)" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    LG
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="LiteIsChecked" (change)="LiteCheck($event.target.checked)" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lite-On
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" [checked]="PioneerIsChecked" (change)="PioneerCheck($event.target.checked)" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Pioneer
+                                </label>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -85,7 +136,7 @@
                         <div class="spec_title col-3 d-none d-lg-block">Price</div>
                     </div>
                     <!--//Item-->
-                    <div *ngFor="let item of array; let i = index ">
+                    <div *ngFor="let item of filteredArray; let i = index ">
                         <app-opt-drive-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" BlueRay="{{item.bluRay}}" ConType="{{item.connectionType}}" Price="{{item.price}}" ></app-opt-drive-box>
                     </div>
                     
