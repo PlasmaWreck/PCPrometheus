@@ -25,4 +25,9 @@ export class PowSupBoxComponent implements OnInit {
       return "Odd-bg"
     }
   }
+  sendToAmazon(input){
+    let test = new RegExp("\\s", "g");
+    input = input.replace(test, "+")
+    window.open(`https://www.amazon.com/s?k=${input}&i=computers`);
+  }
 }
