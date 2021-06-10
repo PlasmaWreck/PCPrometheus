@@ -16,6 +16,25 @@ export class ProPathService {
     "q5" : 0,
     "q6" : 0 
   }
+  partsCut = {
+    gpu: 0,
+    cpu: 0,
+    case: 0,
+    psu: 0,
+    motherboard: 0,
+    ram: 0,
+    storage: 0}
+
+    partsChosen = {
+      gpu: 0,
+      cpu: 0,
+      case: 0,
+      psu: 0,
+      motherboard: 0,
+      ram: 0,
+      storage: 0}
+  
+
 
  getBudget(){
   return this.budget
