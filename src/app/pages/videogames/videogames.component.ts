@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProPathService } from 'src/app/service/ProPath/pro-path.service';
 
 @Component({
   selector: 'app-videogames',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideogamesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private DataService: ProPathService) {}
+budget = 0;
 responses = {
   "q1" : 0,
   "q2" : 0,
@@ -21,10 +22,18 @@ responses = {
 
 
   ngOnInit(): void {
+    this.budget=this.DataService.getBudget();
+    console.log(this.budget);
   }
 
   recordResponse(qNum, ansNum){
     this.responses[qNum] = ansNum;
    console.log(this.responses);
+   
   }
+
+  // getBudget(){
+  //   this.budget = this.DataService.budget;
+  //   console.log(this.budget)
+  // }
 }

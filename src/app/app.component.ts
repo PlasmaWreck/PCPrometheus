@@ -20,8 +20,8 @@ export class AppComponent {
   memory_Route = "/Memory"
   storage_Route = "/Storage"
   videoCard_Route = "/VideoCard"
-  powerSupply_Route = "/Powersupply"
-  opticalDrive_Route = "/Opticaldrive"
+  powerSupply_Route = "/PowerSupply"
+  opticalDrive_Route = "/OpticalDrive"
   operatingSystem_Route = "/OperatingSystem"
   case_Route = "/Case"
   partTypesArray=[this.cpu_Route, this.cpuCooler_Route, this.motherboard_Route, ]
