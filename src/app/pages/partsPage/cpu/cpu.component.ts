@@ -9,10 +9,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./cpu.component.css']
 })
 export class CPUComponent implements OnInit {
-  Price_minValue: number = 0;
+  Price_minValue: number = 202;
   Price_maxValue: number = 583;
   Price_options: Options = {
-    floor: 0,
+    floor: 202,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -25,10 +25,10 @@ export class CPUComponent implements OnInit {
       }
     }
   };
-  Cores_minValue: number = 0;
+  Cores_minValue: number = 4;
   Cores_maxValue: number = 8;
   Cores_options: Options = {
-    floor: 0,
+    floor: 4,
     ceil: this.Cores_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -41,20 +41,20 @@ export class CPUComponent implements OnInit {
       }
     }
   };
-  GHz_minValue: number = 0;
+  GHz_minValue: number = 1.4;
   GHz_maxValue: number = 4;
   GHz_options: Options = {
     step: 0.1,
-    floor: 0,
+    floor: 1.4,
     ceil: this.GHz_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return "" + value;
+          return value +" GHz";
         case LabelType.High:
-          return "" + value;
+          return value+" GHz";
         default:
-          return "" + value;
+          return value+" GHz";
       }
     }
   };
@@ -70,6 +70,7 @@ export class CPUComponent implements OnInit {
   intelIsChecked = false;
   filteredArray;
   array;
+  SearchbarText;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -139,6 +140,13 @@ export class CPUComponent implements OnInit {
     
     this.FilterList()
   }
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
   FilterList(){
     console.log("Now Filtering")
     let ManfactArray = []
@@ -157,7 +165,7 @@ export class CPUComponent implements OnInit {
         {
           return ManfactArray.includes(item.brand) && this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh
         }else{
-          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh
+          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
         }
       })
       console.log(this.filteredArray);

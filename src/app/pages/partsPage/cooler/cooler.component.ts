@@ -9,10 +9,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./cooler.component.css']
 })
 export class CoolerComponent implements OnInit {
-  Price_minValue: number = 0;
+  Price_minValue: number = 34;
   Price_maxValue: number = 240;
   Price_options: Options = {
-    floor: 0,
+    floor: 34,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -25,10 +25,10 @@ export class CoolerComponent implements OnInit {
       }
     }
   };
-  Fans_minValue: number = 0;
-  Fans_maxValue: number = 13;
+  Fans_minValue: number = 1;
+  Fans_maxValue: number = 3;
   Fans_options: Options = {
-    floor: 0,
+    floor: 1,
     ceil: this.Fans_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -58,6 +58,7 @@ export class CoolerComponent implements OnInit {
   //Liquid Cooling
   YesIsChecked = false;
   NoIsChecked = false;
+  SearchbarText;
 
   filteredArray;
   array;
@@ -183,6 +184,16 @@ speed_minValue: number = 0;
     this.NzxtIsChecked = val;
     this.FilterList();
   }
+
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
+
+
   FilterList(){
     console.log("hit")
     let ManufactureArray = [];
@@ -225,7 +236,7 @@ speed_minValue: number = 0;
     console.log(ManufactureArray)
 
     this.filteredArray = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
   

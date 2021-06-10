@@ -58,6 +58,12 @@ export class SurveypartpickerComponent implements OnInit {
   })
 
   }
+
+  sendToAmazon(input){
+    let test = new RegExp("\\s", "g");
+    input = input.replace(test, "+")
+    window.open(`https://www.amazon.com/s?k=${input}&i=computers`);
+  }
   
       toggleBorder(selectedInput, deInput1, deInput2){
       let selected = document.getElementById(selectedInput);
