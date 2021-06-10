@@ -9,6 +9,7 @@ import { RecbuildComponent } from './pages/recbuild/recbuild.component';
 import { GamingBuildComponent } from './pages/gaming-build/gaming-build.component';
 import { VideogamesComponent } from './pages/videogames/videogames.component';
 import { SurveypartpickerComponent } from './pages/surveypartpicker/surveypartpicker.component';
+import { ShoppingcartComponent } from './pages/shoppingcart/shoppingcart.component';
 import { ApigroundsComponent } from './pages/apigrounds/apigrounds.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OfficeBuildComponent } from './pages/office-build/office-build.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', component :HomepageComponent},
   {path: 'GamingBuild', component :GamingBuildComponent},
+  {path: 'shoppingcart', component : ShoppingcartComponent},
   {path: 'OfficeBuild', component :OfficeBuildComponent},
   {path: 'VideoEditingBuild', component :VideoEditingBuildComponent},
   {path: 'videogames', component : VideogamesComponent},

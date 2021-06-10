@@ -116,7 +116,6 @@
 }
 .card-text{
     text-align: start;
-    position: relative;
 }
 
 .marginTop{
@@ -125,7 +124,6 @@
 
 .priceBtn{
     margin-left: 185px;
-    position:absolute;
 }
 
 .cardColor2{
@@ -137,7 +135,4 @@
 }
 .cardMargin{
     margin-top: 90px;
-}
-.cardPadding{
-    column-gap: 10px;
 }
