@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./power-supply.component.css']
 })
 export class PowerSupplyComponent implements OnInit {
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 40;
+  Price_maxValue: number = 400;
   Price_options: Options = {
-    floor: 0,
+    floor: 40,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -26,11 +26,11 @@ export class PowerSupplyComponent implements OnInit {
       }
     }
   };
-  Wattage_minValue: number = 0;
+  Wattage_minValue: number = 650;
   Wattage_maxValue: number = 1200;
   Wattage_options: Options = {
     step: 50,
-    floor: 0,
+    floor: 650,
     ceil: this.Wattage_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

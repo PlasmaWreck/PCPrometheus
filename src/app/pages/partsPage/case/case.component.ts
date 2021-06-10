@@ -11,10 +11,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 })
 export class CaseComponent implements OnInit {
 
-  Price_minValue: number = 0;
+  Price_minValue: number = 52;
   Price_maxValue: number = 300;
   Price_options: Options = {
-    floor: 0,
+    floor: 52,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -158,7 +158,7 @@ export class CaseComponent implements OnInit {
     }
     if(this.CorsairIsChecked)
     {
-      ManufactureArray.push("CORSAIR");
+      ManufactureArray.push("Corsair");
     }
     if(this.CoolerMasterIsChecked)
     {

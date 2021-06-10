@@ -9,10 +9,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./cooler.component.css']
 })
 export class CoolerComponent implements OnInit {
-  Price_minValue: number = 0;
+  Price_minValue: number = 34;
   Price_maxValue: number = 240;
   Price_options: Options = {
-    floor: 0,
+    floor: 34,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -25,10 +25,10 @@ export class CoolerComponent implements OnInit {
       }
     }
   };
-  Fans_minValue: number = 0;
-  Fans_maxValue: number = 13;
+  Fans_minValue: number = 1;
+  Fans_maxValue: number = 3;
   Fans_options: Options = {
-    floor: 0,
+    floor: 1,
     ceil: this.Fans_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

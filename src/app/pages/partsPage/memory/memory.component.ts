@@ -9,10 +9,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./memory.component.css']
 })
 export class MemoryComponent implements OnInit {
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 11;
+  Price_maxValue: number = 170;
   Price_options: Options = {
-    floor: 0,
+    floor: 11,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -25,10 +25,10 @@ export class MemoryComponent implements OnInit {
       }
     }
   };
-  Capacity_minValue: number = 0;
+  Capacity_minValue: number = 2;
   Capacity_maxValue: number = 16;
   Capacity_options: Options = {
-    floor: 0,
+    floor: 2,
     ceil: this.Capacity_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

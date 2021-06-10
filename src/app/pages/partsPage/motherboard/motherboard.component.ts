@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./motherboard.component.css']
 })
 export class MotherboardComponent implements OnInit {
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 89;
+  Price_maxValue: number = 600;
   Price_options: Options = {
-    floor: 0,
+    floor: 89,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

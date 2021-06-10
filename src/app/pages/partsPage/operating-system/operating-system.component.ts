@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 })
 export class OperatingSystemComponent implements OnInit {
      
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 19;
+  Price_maxValue: number = 120;
   Price_options: Options = {
-    floor: 0,
+    floor: 19,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {

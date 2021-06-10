@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./video-card.component.css']
 })
 export class VideoCardComponent implements OnInit {
-  Price_minValue: number = 0;
+  Price_minValue: number = 328;
   Price_maxValue: number = 499;
   Price_options: Options = {
-    floor: 0,
+    floor: 328,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -26,10 +26,10 @@ export class VideoCardComponent implements OnInit {
       }
     }
   };
-  Memory_minValue: number = 0;
-  Memory_maxValue: number = 24;
+  Memory_minValue: number = 8;
+  Memory_maxValue: number = 12;
   Memory_options: Options = {
-    floor: 0,
+    floor: 8,
     ceil: this.Memory_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -42,10 +42,10 @@ export class VideoCardComponent implements OnInit {
       }
     }
   };
-  Clock_minValue: number = 0;
+  Clock_minValue: number = 1320;
   Clock_maxValue: number = 2321;
   Clock_options: Options = {
-    floor: 0,
+    floor: 1320,
     ceil: this.Clock_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -95,6 +95,7 @@ export class VideoCardComponent implements OnInit {
   }
   ConvertToNumbers(val){
     val = parseFloat(val.replace(/[^0-9.]/g, ''))
+    console.log(val)
     return val
   }
   PriceRange(val){
@@ -108,14 +109,12 @@ export class VideoCardComponent implements OnInit {
     console.log(val)
     this.MemoryHigh = val.highValue;
     this.MemoryLow = val.value;
-    console.log(this.PriceLow, this.PriceHigh)
     this.FilterList()
   }
   ClockRange(val){
     console.log(val)
     this.ClockHigh = val.highValue;
     this.ClockLow = val.value;
-    console.log(this.PriceLow, this.PriceHigh)
     this.FilterList()
   }
   //---------------------------------
@@ -182,7 +181,6 @@ export class VideoCardComponent implements OnInit {
     {
       TypeArray.push("HBM2");
     }
-    console.log(ManufactureArray)
     this.fitlerArray = this.array.filter(item=>{
       return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.gpu) : true) && (TypeArray.length > 0 ? TypeArray.includes(item.memoryType) : true)
       && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.memorySize) >= this.MemoryLow && this.ConvertToNumbers(item.memorySize) <= this.MemoryHigh && this.ConvertToNumbers(item.coreClockSpeed) >= this.ClockLow && this.ConvertToNumbers(item.coreClockSpeed) <= this.ClockHigh;
