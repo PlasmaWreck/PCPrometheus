@@ -36,7 +36,7 @@ export class OpticalDriveComponent implements OnInit {
   LGIsChecked = false;
   LiteIsChecked = false;
   PioneerIsChecked = false;
-
+  SearchbarText;
   array;
   filteredArray;
   constructor(private dService: DataService,private modalService: NgbModal) { }
@@ -95,6 +95,13 @@ export class OpticalDriveComponent implements OnInit {
     this.PioneerIsChecked = val;
     this.FilterList();
   }
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
 
   FilterList()
   {
@@ -126,7 +133,7 @@ export class OpticalDriveComponent implements OnInit {
     }
 
     this.filteredArray = this.array.filter(item=>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 }

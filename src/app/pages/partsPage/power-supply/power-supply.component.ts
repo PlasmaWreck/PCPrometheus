@@ -10,10 +10,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
   styleUrls: ['./power-supply.component.css']
 })
 export class PowerSupplyComponent implements OnInit {
-  Price_minValue: number = 0;
-  Price_maxValue: number = 500;
+  Price_minValue: number = 40;
+  Price_maxValue: number = 400;
   Price_options: Options = {
-    floor: 0,
+    floor: 40,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -26,11 +26,11 @@ export class PowerSupplyComponent implements OnInit {
       }
     }
   };
-  Wattage_minValue: number = 0;
+  Wattage_minValue: number = 650;
   Wattage_maxValue: number = 1200;
   Wattage_options: Options = {
     step: 50,
-    floor: 0,
+    floor: 650,
     ceil: this.Wattage_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -60,7 +60,7 @@ export class PowerSupplyComponent implements OnInit {
   //Modular
   YesIsChecked = false;
   NoIsChecked = false;
-
+  SearchbarText;
   
 
   array;
@@ -168,6 +168,13 @@ export class PowerSupplyComponent implements OnInit {
     this.YesIsChecked = false;
     this.FilterList()
   }
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
 
   FilterList()
   {
@@ -211,7 +218,7 @@ export class PowerSupplyComponent implements OnInit {
     //(this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true)
 
     this.filteredArray = this.array.filter(item =>{
-      return (this.YesIsChecked || this.NoIsChecked ? item.modular === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.power) >= this.WattageLow && this.ConvertToNumbers(item.power) <= this.WattageHigh && (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true)
+      return (this.YesIsChecked || this.NoIsChecked ? item.modular === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.power) >= this.WattageLow && this.ConvertToNumbers(item.power) <= this.WattageHigh && (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 

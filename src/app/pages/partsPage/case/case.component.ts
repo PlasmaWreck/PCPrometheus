@@ -11,10 +11,10 @@ import { DataService } from 'src/app/service/prometheusapi/Data/data.service';
 })
 export class CaseComponent implements OnInit {
 
-  Price_minValue: number = 0;
+  Price_minValue: number = 52;
   Price_maxValue: number = 300;
   Price_options: Options = {
-    floor: 0,
+    floor: 52,
     ceil: this.Price_maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
@@ -46,6 +46,8 @@ export class CaseComponent implements OnInit {
   MiniIsChecked = false;
   MidIsChecked = false;
   FullIsChecked = false;
+
+  SearchbarText;
 
   array;
   filteredArray;
@@ -143,6 +145,13 @@ export class CaseComponent implements OnInit {
     this.FilterList();
   }
 
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
+
   FilterList()
   {
     console.log("hit");
@@ -158,7 +167,7 @@ export class CaseComponent implements OnInit {
     }
     if(this.CorsairIsChecked)
     {
-      ManufactureArray.push("CORSAIR");
+      ManufactureArray.push("Corsair");
     }
     if(this.CoolerMasterIsChecked)
     {
@@ -195,7 +204,7 @@ export class CaseComponent implements OnInit {
     }
 
     this.filteredArray = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (SizeArray.length > 0 ? SizeArray.includes(item.size)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.YesIsChecked || this.NoIsChecked ? item.rgb === this.YesIsChecked : true)
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (SizeArray.length > 0 ? SizeArray.includes(item.size)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.YesIsChecked || this.NoIsChecked ? item.rgb === this.YesIsChecked : true) && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 
