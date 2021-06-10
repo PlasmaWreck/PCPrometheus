@@ -70,6 +70,7 @@ export class CPUComponent implements OnInit {
   intelIsChecked = false;
   filteredArray;
   array;
+  SearchbarText;
   constructor(private dService: DataService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -139,6 +140,13 @@ export class CPUComponent implements OnInit {
     
     this.FilterList()
   }
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
   FilterList(){
     console.log("Now Filtering")
     let ManfactArray = []
@@ -157,7 +165,7 @@ export class CPUComponent implements OnInit {
         {
           return ManfactArray.includes(item.brand) && this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh
         }else{
-          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh
+          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
         }
       })
       console.log(this.filteredArray);

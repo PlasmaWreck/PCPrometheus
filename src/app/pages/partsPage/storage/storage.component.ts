@@ -68,7 +68,7 @@ export class StorageComponent implements OnInit {
   ToshibaIsChecked = false;
   WesternIsChecked = false;
   SeagateIsChecked = false;
-
+  SearchbarText;
   array;
   filterArray;
   constructor(private dService: DataService,private modalService: NgbModal) { }
@@ -125,6 +125,13 @@ export class StorageComponent implements OnInit {
     this.SeagateIsChecked = val;
     this.FilterList();
   }
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
 
   FilterList()
   {
@@ -146,7 +153,7 @@ export class StorageComponent implements OnInit {
     
     this.filterArray = this.array.filter(item=>{
       console.log(this.ConvertToNumbers(item.diskSize))
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.diskSize) >= this.CapacityLow && this.ConvertToNumbers(item.diskSize) <= this.CapacityHigh && this.ConvertToNumbers(item.rpm) >= this.RPMLow && this.ConvertToNumbers(item.rpm) <= this.RPMHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.diskSize) >= this.CapacityLow && this.ConvertToNumbers(item.diskSize) <= this.CapacityHigh && this.ConvertToNumbers(item.rpm) >= this.RPMLow && this.ConvertToNumbers(item.rpm) <= this.RPMHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
  

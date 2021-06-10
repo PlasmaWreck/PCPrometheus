@@ -71,7 +71,7 @@ export class MemoryComponent implements OnInit {
   TeamGroupIsChecked = false;
   LevenIsChecked = false;
   CrucialIsChecked = false;
-
+  SearchbarText;
   array;
   filteredList;
   constructor(private dService: DataService,private modalService: NgbModal) { }
@@ -160,7 +160,12 @@ export class MemoryComponent implements OnInit {
     this.CrucialIsChecked = val;
     this.FilterList();
   }
-  
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
 
   FilterList()
   {
@@ -192,7 +197,7 @@ export class MemoryComponent implements OnInit {
     }
 
     this.filteredList = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 

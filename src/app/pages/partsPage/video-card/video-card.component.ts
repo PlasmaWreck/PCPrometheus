@@ -73,6 +73,7 @@ export class VideoCardComponent implements OnInit {
   Gddr6IsChecked = false;
   Gddr6XIsChecked = false;
   Hbm2IsChecked = false;
+  SearchbarText;
 
   fitlerArray;
   array;
@@ -148,6 +149,12 @@ export class VideoCardComponent implements OnInit {
     this.FilterList();
     
   }
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
   FilterList(){
     console.log("hit")
     let ManufactureArray = [];
@@ -183,7 +190,7 @@ export class VideoCardComponent implements OnInit {
     }
     this.fitlerArray = this.array.filter(item=>{
       return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.gpu) : true) && (TypeArray.length > 0 ? TypeArray.includes(item.memoryType) : true)
-      && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.memorySize) >= this.MemoryLow && this.ConvertToNumbers(item.memorySize) <= this.MemoryHigh && this.ConvertToNumbers(item.coreClockSpeed) >= this.ClockLow && this.ConvertToNumbers(item.coreClockSpeed) <= this.ClockHigh;
+      && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.memorySize) >= this.MemoryLow && this.ConvertToNumbers(item.memorySize) <= this.MemoryHigh && this.ConvertToNumbers(item.coreClockSpeed) >= this.ClockLow && this.ConvertToNumbers(item.coreClockSpeed) <= this.ClockHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
     console.log(this.fitlerArray)
   }

@@ -58,6 +58,7 @@ export class CoolerComponent implements OnInit {
   //Liquid Cooling
   YesIsChecked = false;
   NoIsChecked = false;
+  SearchbarText;
 
   filteredArray;
   array;
@@ -183,6 +184,16 @@ speed_minValue: number = 0;
     this.NzxtIsChecked = val;
     this.FilterList();
   }
+
+  
+GetSearchBar(text)
+{
+  console.log(text)
+  this.SearchbarText = text;
+  this.FilterList();
+}
+
+
   FilterList(){
     console.log("hit")
     let ManufactureArray = [];
@@ -225,7 +236,7 @@ speed_minValue: number = 0;
     console.log(ManufactureArray)
 
     this.filteredArray = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
   

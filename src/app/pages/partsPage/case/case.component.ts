@@ -47,6 +47,8 @@ export class CaseComponent implements OnInit {
   MidIsChecked = false;
   FullIsChecked = false;
 
+  SearchbarText;
+
   array;
   filteredArray;
   constructor(private dService: DataService,private modalService: NgbModal) { }
@@ -143,6 +145,13 @@ export class CaseComponent implements OnInit {
     this.FilterList();
   }
 
+  GetSearchBar(text)
+  {
+    console.log(text)
+    this.SearchbarText = text;
+    this.FilterList();
+  }
+
   FilterList()
   {
     console.log("hit");
@@ -195,7 +204,7 @@ export class CaseComponent implements OnInit {
     }
 
     this.filteredArray = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (SizeArray.length > 0 ? SizeArray.includes(item.size)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.YesIsChecked || this.NoIsChecked ? item.rgb === this.YesIsChecked : true)
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (SizeArray.length > 0 ? SizeArray.includes(item.size)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.YesIsChecked || this.NoIsChecked ? item.rgb === this.YesIsChecked : true) && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 
