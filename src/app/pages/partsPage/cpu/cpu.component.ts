@@ -165,7 +165,7 @@ GetSearchBar(text)
         {
           return ManfactArray.includes(item.brand) && this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh
         }else{
-          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+          return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && item.coreCount >= this.CoreLow && item.coreCount <= this.CoreHigh && this.ConvertToGHZ(item.frequency) >= this.GhzLow && this.ConvertToGHZ(item.frequency) <= this.GhzHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
         }
       })
       console.log(this.filteredArray);

@@ -190,7 +190,7 @@ export class VideoCardComponent implements OnInit {
     }
     this.fitlerArray = this.array.filter(item=>{
       return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.gpu) : true) && (TypeArray.length > 0 ? TypeArray.includes(item.memoryType) : true)
-      && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.memorySize) >= this.MemoryLow && this.ConvertToNumbers(item.memorySize) <= this.MemoryHigh && this.ConvertToNumbers(item.coreClockSpeed) >= this.ClockLow && this.ConvertToNumbers(item.coreClockSpeed) <= this.ClockHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.memorySize) >= this.MemoryLow && this.ConvertToNumbers(item.memorySize) <= this.MemoryHigh && this.ConvertToNumbers(item.coreClockSpeed) >= this.ClockLow && this.ConvertToNumbers(item.coreClockSpeed) <= this.ClockHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
     console.log(this.fitlerArray)
   }

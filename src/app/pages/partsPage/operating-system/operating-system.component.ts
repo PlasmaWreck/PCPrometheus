@@ -92,7 +92,7 @@ export class OperatingSystemComponent implements OnInit {
   FilterList()
   {
     this.filteredArray = this.array.filter(item =>{
-      return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && (this.BDIsChecked ? item.installMethod.split("/").includes("BD") : true) && (this.DVDIsChecked ? item.installMethod.split("/").includes("DVD") : true) && (this.CDIsChecked ? item.installMethod.split("/").includes("CD") : true) && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      return this.ConvertToMoney(item.price) >= this.PriceLow && this.ConvertToMoney(item.price) <= this.PriceHigh && (this.BDIsChecked ? item.installMethod.split("/").includes("BD") : true) && (this.DVDIsChecked ? item.installMethod.split("/").includes("DVD") : true) && (this.CDIsChecked ? item.installMethod.split("/").includes("CD") : true) && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
     console.log(this.filteredArray)
   }

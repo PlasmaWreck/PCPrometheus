@@ -236,7 +236,7 @@ GetSearchBar(text)
     console.log(ManufactureArray)
 
     this.filteredArray = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true) && (this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && item.numOfFans >= this.FansLow && item.numOfFans <= this.FansHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
   

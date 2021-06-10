@@ -218,7 +218,7 @@ GetSearchBar(text)
     //(this.YesIsChecked || this.NoIsChecked ? item.liquidCooling === this.YesIsChecked : true)
 
     this.filteredArray = this.array.filter(item =>{
-      return (this.YesIsChecked || this.NoIsChecked ? item.modular === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.power) >= this.WattageLow && this.ConvertToNumbers(item.power) <= this.WattageHigh && (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      return (this.YesIsChecked || this.NoIsChecked ? item.modular === this.YesIsChecked : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.power) >= this.WattageLow && this.ConvertToNumbers(item.power) <= this.WattageHigh && (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 

@@ -197,7 +197,7 @@ export class MemoryComponent implements OnInit {
     }
 
     this.filteredList = this.array.filter(item =>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand) : true)&& this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && this.ConvertToNumbers(item.capacity) >= this.CapacityLow && this.ConvertToNumbers(item.capacity) <= this.CapacityHigh && this.ConvertToNumbers(item.clockFrequency) >= this.ClockLow && this.ConvertToNumbers(item.clockFrequency) <= this.ClockHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 

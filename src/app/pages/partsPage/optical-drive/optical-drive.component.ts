@@ -133,7 +133,7 @@ GetSearchBar(text)
     }
 
     this.filteredArray = this.array.filter(item=>{
-      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
   }
 }

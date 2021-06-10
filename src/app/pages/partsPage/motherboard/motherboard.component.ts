@@ -185,7 +185,7 @@ export class MotherboardComponent implements OnInit {
 
     this.filteredArray = this.array.filter(item=>{
       return (ManufactureArray.length > 0 ? ManufactureArray.includes(item.brand)  : true) && (SocketArray.length > 0 ? SocketArray.includes(item.cpuSocket)  : true) && (FactorArray.length > 0 ? FactorArray.includes(item.formFactor)  : true) && this.ConvertToNumbers(item.price) >= this.PriceLow && this.ConvertToNumbers(item.price) <= this.PriceHigh 
-      && (this.SearchbarText !== "" ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
+      && (this.SearchbarText !== undefined ? item.name.toLowerCase().includes(this.SearchbarText.toLowerCase()) : true)
     })
     console.log(this.filteredArray)
   }
