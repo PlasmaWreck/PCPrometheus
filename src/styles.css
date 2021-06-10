@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #182023;;
+}
+
+.custom-slider .ngx-slider .ngx-slider-selection {
+    background: rgb(255, 255, 255) !important;
+  }
+  .custom-slider .ngx-slider .ngx-slider-pointer-min {
+      background-color: rgb(255, 255, 255);
+  }
+  .custom-slider .ngx-slider .ngx-slider-pointer-max {
+    background-color: rgb(255, 255, 255);
+}
+  .custom-slider .ngx-slider .ngx-slider-bubble {
+    color: white;
+}
+.modal-content {
+  background-color: #292b2c !important;
+  color: white !important;
+}
+.dark-modal .close {
+  color: white;
+}

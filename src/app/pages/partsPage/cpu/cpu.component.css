@@ -1,0 +1,56 @@
+.hr-tag{
+    border: 1px solid #FF6D17;
+    margin-top: 5px ;
+    opacity: 100%;
+    border-radius: 2px;
+    margin-left: 17rem;
+    margin-right: 17rem;
+}
+
+.spec_title{
+    border-bottom: rgb(175, 175, 175) solid .001rem;
+}
+.bg-list{
+    background-color: #3B5C65;
+}
+.bg-filter{
+    background-color: #24363B;
+    
+}
+.empty_Space{
+    height: 100vh;
+    background-color: #24363B;
+
+}
+.DM {
+    width: 100%;
+}
+.Select-Parts-Dropdown{
+    background-color: #EF4A34 !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    -webkit-text-stroke: .9px black;
+    -webkit-text-fill-color: white;
+    border-radius: 0%;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0% !important;
+}
+.fa-search{
+    font-size: 1.6rem;
+    transform: translate(.6rem,.4rem);
+    cursor: pointer;
+    
+}
+.fa-search:hover{
+    color: rgb(158, 158, 158);
+    
+}
+
+ .modal-content {
+    background-color: #292b2c !important;
+    color: white !important;
+  }
+  .dark-modal .close {
+    color: white;
+  }

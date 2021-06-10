@@ -1,0 +1,226 @@
+<div class="container-fluid text-light">
+    <div class="row py-4">
+     
+        <div class=" offset-lg-2 col-12 col-lg-10 text-center">
+            <h1>PC Building</h1>
+            <hr class="hr-tag">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 d-none d-lg-block m-0">
+            <!--Filter-->
+            <div class="row bg-filter">
+                <div class="col-12 p-0">
+                   <app-filter-dropdown></app-filter-dropdown>
+                </div>
+                <div class="col-12">
+                    <!--Filters-->
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Price</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                                <hr>
+                            </div>
+                            
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <b>Manufacturer</b>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="SeagateCheck($event.target.checked)" [checked]="SeagateIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Seagate
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="WesternCheck($event.target.checked)" [checked]="WesternIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Western Digital
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="ToshibaCheck($event.target.checked)" [checked]="ToshibaIsChecked">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Toshiba
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">Capacity</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="Capacity_minValue" [(highValue)]="Capacity_maxValue" [options]="Capacity_options" (userChangeEnd)="CapacityRange($event)"></ngx-slider >
+                                <hr>
+                            </div>
+                            
+                    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <b class="">RPM</b>
+                            <div class="custom-slider py-3">
+                                <ngx-slider [(value)]="RPM_minValue" [(highValue)]="RPM_maxValue" [options]="RPM_options" (userChangeEnd)="RPMRange($event)"></ngx-slider >
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--empty Space-->
+            <div class="row empty_Space">
+
+            </div>
+        </div>
+        <div class="col-12 col-lg-10">
+            <!--Body-->
+            <div class="row bg-list">
+                <div class="col-12">
+                    <div class="row pt-5">
+                        <div class="col-6 ">
+                            <h2>
+                                Storage
+                            </h2>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input class="form-control form-control-default" type="text" placeholder="Search"
+                                        aria-label=".form-control-lg example">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 d-lg-none">
+                            <div class="row">
+                                <div class="col-6">
+                                    <app-filter-dropdown></app-filter-dropdown>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-danger w-100 Select-Parts-Dropdown" (click)="openScrollableContent(longContent)">Filter</button>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="spec_title col-3 d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-8 offset-4 ">
+                                    <b>Name</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spec_title col-2 d-none d-lg-block">Manufacturer</div>
+                        <div class="spec_title col-1 d-none d-lg-block">Capacity</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Type</div>
+                        <div class="spec_title col-2 d-none d-lg-block">RPM</div>
+                        <div class="spec_title col-2 d-none d-lg-block">Price</div>
+                    </div>
+                    <!--//Item-->
+                    <div *ngFor="let item of filterArray; let i = index ">
+                        <app-storage-box thumbnail="{{item.imagePath}}" index="{{i}}" name="{{item.name}}" Manuf="{{item.brand}}" capacity="{{item.diskSize}}" Type="{{item.connectionType}}" RPM="{{item.rpm}}" Price="{{item.price}}" ></app-storage-box>
+                    </div>
+                    
+                    
+                    <!--//Item-->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #longContent let-modal class="dark-modal">
+    <div class="modal-header ">
+      <h4 class="modal-title">Filter</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-12">
+                <b class="">Price</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Price_minValue" [(highValue)]="Price_maxValue" [options]="Price_options" (userChangeEnd)="PriceRange($event)"></ngx-slider>
+                    <hr>
+                </div>
+                
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <b>Manufacturer</b>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="SeagateCheck($event.target.checked)" [checked]="SeagateIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Seagate
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="WesternCheck($event.target.checked)" [checked]="WesternIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Western Digital
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" (change)="ToshibaCheck($event.target.checked)" [checked]="ToshibaIsChecked">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Toshiba
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <b class="">Capacity</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="Capacity_minValue" [(highValue)]="Capacity_maxValue" [options]="Capacity_options" (userChangeEnd)="CapacityRange($event)"></ngx-slider >
+                    <hr>
+                </div>
+                
+        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <b class="">RPM</b>
+                <div class="custom-slider py-3">
+                    <ngx-slider [(value)]="RPM_minValue" [(highValue)]="RPM_maxValue" [options]="RPM_options" (userChangeEnd)="RPMRange($event)"></ngx-slider >
+                    <hr>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  

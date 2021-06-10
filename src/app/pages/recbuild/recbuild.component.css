@@ -1,0 +1,21 @@
+.secondary{
+    background-color: #446A74;
+}
+.orangebtn {
+    border: solid #FF6D17;
+    border-color: #FF6D17;
+   border-radius: 40%;
+  }
+  .box{
+    box-sizing: border-box;
+    border: 70px solid transparent;
+    background-clip:padding-box;
+  }
+
+ .stylestart{
+      font-family: 'Mitr', sans-serif;
+    }
+
+ 
+
+  
